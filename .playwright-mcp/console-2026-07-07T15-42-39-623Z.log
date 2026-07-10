@@ -1,0 +1,2682 @@
+[     141ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    2555ms] [LOG] [Fast Refresh] done in 2520ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    2792ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    2853ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    3201ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    3313ms] [LOG] [Fast Refresh] done in 281ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   12138ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   13052ms] [LOG] [Fast Refresh] done in 1026ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   22456ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   22567ms] [LOG] [Fast Refresh] done in 222ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   27915ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   29090ms] [LOG] [Fast Refresh] done in 1280ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   38167ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   38285ms] [LOG] [Fast Refresh] done in 221ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   42743ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   43415ms] [LOG] [Fast Refresh] done in 773ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   82435ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   82909ms] [LOG] [Fast Refresh] done in 563ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   83235ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   83876ms] [LOG] [Fast Refresh] done in 747ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   83997ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   84025ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  101216ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  101495ms] [LOG] [Fast Refresh] done in 384ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  143279ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  143774ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:3318
+[  143959ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:3318
+[  144079ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  144090ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/sports/live?_rsc=FQhr-cqA6lIAxQRQ:0
+[  144130ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:3318
+[  144186ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:3318
+[  144299ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  144483ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/sports/live?_rsc=FQhr-cqA6lIAxQRQ:0
+[  144537ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:3318
+[  144599ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/sports/live:0
+[  145465ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_react-dom_1q1b5tu._.js:15305
+[  145639ms] [ERROR] Refused to execute script from 'http://localhost:3000/_next/static/development/_clientMiddlewareManifest.js' because its MIME type ('application/json') is not executable, and strict MIME type checking is enabled. @ http://localhost:3000/sports/live:0
+[  145693ms] Error: ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (Error: ./betnova/app/(app)/profile/page.tsx:6:1)
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    at Object.getCompilationErrors (file://C:\Users\cxderxnin\Documents\betnova\node_modules\next\dist\server\dev\hot-reloader-turbopack.js:1186:59)
+    at DevBundlerService.getCompilationError (file://C:\Users\cxderxnin\Documents\betnova\node_modules\next\dist\server\lib\dev-bundler-service.js:44:55)
+    at DevServer.getCompilationError (file://C:\Users\cxderxnin\Documents\betnova\node_modules\next\dist\server\dev\next-dev-server.js:720:42)
+    at DevServer.findPageComponents (file://C:\Users\cxderxnin\Documents\betnova\node_modules\next\dist\server\dev\next-dev-server.js:690:43)
+    at async DevServer.renderErrorToResponseImpl (file://C:\Users\cxderxnin\Documents\betnova\node_modules\next\dist\server\base-server.js:1753:26)
+[  145665ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  145677ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  145797ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  145895ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  145916ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  145950ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146040ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146055ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  146150ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146212ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146289ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146368ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146448ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146525ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146602ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146680ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146743ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146804ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146865ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146927ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  146989ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147051ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147115ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147178ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147240ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147302ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147380ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147458ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147536ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147613ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147691ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147768ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147846ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  147922ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148000ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148061ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148137ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148198ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148260ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148322ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148383ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148446ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148509ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148572ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148633ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148695ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148758ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148819ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148880ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  148942ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149005ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149067ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149129ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149192ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149254ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149316ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149394ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149456ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149517ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149579ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149642ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149720ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149782ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149845ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149907ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  149969ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150030ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150091ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150153ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150216ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150278ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150342ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150402ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150464ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150526ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150604ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150665ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150728ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150791ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150853ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150913ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  150975ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151038ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151100ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151162ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151224ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151286ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151349ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151411ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151473ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151536ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151597ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151660ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151721ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151784ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151845ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151907ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  151970ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152030ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152091ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152167ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152229ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152292ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152353ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152414ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152476ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152539ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152602ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152664ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152726ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152788ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152850ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  152908ms] [ERROR] ./betnova/app/(app)/profile/page.tsx:6:1
+Module not found: Can't resolve '@/components/shared/profile-nav'
+  4 | import { toast } from "sonner";
+  5 | import { PageHeader } from "@/components/shared/page-header";
+> 6 | import { ProfileNav } from "@/components/shared/profile-nav";
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  7 | import { CURRENT_USER } from "@/lib/mock-data";
+  8 | import { Button } from "@/components/ui/button";
+  9 | import { Input } from "@/components/ui/input";
+
+Import map: aliased to relative './components/shared/profile-nav' inside of [project]/betnova
+
+Import traces:
+  Client Component Browser:
+    ./betnova/app/(app)/profile/page.tsx [Client Component Browser]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./betnova/app/(app)/profile/page.tsx [Client Component SSR]
+    ./betnova/app/(app)/profile/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1945
+[  153019ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  153654ms] [LOG] [Fast Refresh] done in 743ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  153847ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  153917ms] [LOG] [Fast Refresh] done in 175ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  154060ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  154923ms] [LOG] [Fast Refresh] done in 970ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_05shkz2._.js:1226
+[  156116ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  156204ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  156397ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  156492ms] [LOG] [Fast Refresh] done in 203ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  175997ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  176645ms] [LOG] [Fast Refresh] done in 745ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  176828ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  176959ms] [LOG] [Fast Refresh] done in 239ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  177079ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  177756ms] [LOG] [Fast Refresh] done in 779ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  177910ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  178176ms] [LOG] [Fast Refresh] done in 375ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  195534ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  195967ms] [LOG] [Fast Refresh] done in 496ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  229685ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  231112ms] [LOG] [Fast Refresh] done in 1521ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  231216ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  231437ms] [LOG] [Fast Refresh] done in 322ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  231699ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232273ms] [LOG] [Fast Refresh] done in 682ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232408ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232443ms] [LOG] [Fast Refresh] done in 137ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232578ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232585ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232689ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232859ms] [LOG] [Fast Refresh] done in 271ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  232963ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233076ms] [LOG] [Fast Refresh] done in 216ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233214ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233223ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233464ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233515ms] [LOG] [Fast Refresh] done in 154ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233663ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233781ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233895ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  233957ms] [LOG] [Fast Refresh] done in 174ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  293807ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  294084ms] [LOG] [Fast Refresh] done in 347ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  304187ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  304343ms] [LOG] [Fast Refresh] done in 266ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  315411ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  315533ms] [LOG] [Fast Refresh] done in 224ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  353419ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  353746ms] [LOG] [Fast Refresh] done in 377ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  362240ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  362782ms] [LOG] [Fast Refresh] done in 648ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  365618ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  365701ms] [LOG] [Fast Refresh] done in 184ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  380173ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  380361ms] [LOG] [Fast Refresh] done in 292ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  397706ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  398064ms] [LOG] [Fast Refresh] done in 459ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  416160ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  416275ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  441390ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  441510ms] [LOG] [Fast Refresh] done in 220ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  471702ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  471858ms] [LOG] [Fast Refresh] done in 261ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477

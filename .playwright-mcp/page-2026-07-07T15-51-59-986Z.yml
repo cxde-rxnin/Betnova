@@ -1,0 +1,124 @@
+- generic [ref=f37e1]:
+  - generic [ref=f37e2]:
+    - complementary [ref=f37e3]:
+      - link [ref=f37e110] [cursor=pointer]:
+        - /url: /admin
+        - generic [ref=f37e6]:
+          - generic [ref=f37e8]: B
+          - generic [ref=f37e9]: Betnova
+        - generic [ref=f37e10]: Admin
+      - navigation [ref=f37e11]:
+        - link [ref=f37e111] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=f37e13]
+          - text: Overview
+        - link [ref=f37e112] [cursor=pointer]:
+          - /url: /admin/users
+          - img [ref=f37e19]
+          - text: Users
+        - link [ref=f37e113] [cursor=pointer]:
+          - /url: /admin/events
+          - img [ref=f37e25]
+          - text: Events
+        - link [ref=f37e114] [cursor=pointer]:
+          - /url: /admin/bets
+          - img [ref=f37e28]
+          - text: Bets
+        - link [ref=f37e115] [cursor=pointer]:
+          - /url: /admin/wallets
+          - img [ref=f37e31]
+          - text: Wallets
+        - link [ref=f37e116] [cursor=pointer]:
+          - /url: /admin/transactions
+          - img [ref=f37e35]
+          - text: Transactions
+        - link [ref=f37e117] [cursor=pointer]:
+          - /url: /admin/reports
+          - img [ref=f37e39]
+          - text: Reports
+        - link [ref=f37e118] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=f37e42]
+          - text: Settings
+    - generic [ref=f37e45]:
+      - banner [ref=f37e46]
+      - main [ref=f37e47]:
+        - generic [ref=f37e48]:
+          - generic [ref=f37e50]:
+            - heading [level=1] [ref=f37e119]: Users
+            - paragraph [ref=f37e52]: Manage all platform users.
+          - generic [ref=f37e53]:
+            - generic [ref=f37e54]:
+              - img
+              - textbox [ref=f37e120]:
+                - /placeholder: Search by name or email...
+            - combobox [ref=f37e56]
+          - generic [ref=f37e57]:
+            - table [ref=f37e58]:
+              - rowgroup [ref=f37e59]:
+                - row [ref=f37e121]:
+                  - columnheader [ref=f37e122]: Name
+                  - columnheader [ref=f37e123]: Email
+                  - columnheader [ref=f37e124]: Role
+                  - columnheader [ref=f37e125]: Status
+              - rowgroup [ref=f37e65]:
+                - row [ref=f37e126] [cursor=pointer]:
+                  - cell [ref=f37e127]: Alex Johnson
+                  - cell [ref=f37e128]: alex@example.com
+                  - cell [ref=f37e129]:
+                    - generic [ref=f37e70]: USER
+                  - cell [ref=f37e130]:
+                    - generic [ref=f37e72]: active
+                - row [ref=f37e131] [cursor=pointer]:
+                  - cell [ref=f37e132]: Sarah Chen
+                  - cell [ref=f37e133]: sarah@example.com
+                  - cell [ref=f37e134]:
+                    - generic [ref=f37e77]: USER
+                  - cell [ref=f37e135]:
+                    - generic [ref=f37e79]: active
+                - row [ref=f37e136] [cursor=pointer]:
+                  - cell [ref=f37e137]: Marcus Williams
+                  - cell [ref=f37e138]: marcus@example.com
+                  - cell [ref=f37e139]:
+                    - generic [ref=f37e84]: ADMIN
+                  - cell [ref=f37e140]:
+                    - generic [ref=f37e86]: active
+                - row [ref=f37e141] [cursor=pointer]:
+                  - cell [ref=f37e142]: Emily Davis
+                  - cell [ref=f37e143]: emily@example.com
+                  - cell [ref=f37e144]:
+                    - generic [ref=f37e91]: USER
+                  - cell [ref=f37e145]:
+                    - generic [ref=f37e93]: suspended
+            - generic [ref=f37e95]:
+              - paragraph [ref=f37e96]: Showing 1-4 of 5
+              - generic [ref=f37e97]:
+                - button [disabled]:
+                  - img
+                - generic [ref=f37e98]: Page 1 of 2
+                - button [ref=f37e146]:
+                  - img
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f37e105] [cursor=pointer]:
+    - img [ref=f37e106]
+  - alert [ref=f37e109]
+  - dialog "Alex Johnson" [ref=f37e150]:
+    - generic [ref=f37e151]:
+      - heading "Alex Johnson" [level=2] [ref=f37e152]
+      - paragraph [ref=f37e153]: alex@example.com
+    - generic [ref=f37e154]:
+      - generic [ref=f37e155]:
+        - generic [ref=f37e156]: User ID
+        - generic [ref=f37e157]: u1
+      - generic [ref=f37e158]:
+        - generic [ref=f37e159]: Role
+        - generic [ref=f37e160]: USER
+      - generic [ref=f37e161]:
+        - generic [ref=f37e162]: Status
+        - generic [ref=f37e164]: active
+      - generic [ref=f37e165]:
+        - generic [ref=f37e166]: Joined
+        - generic [ref=f37e167]: 11/15/2025
+    - button "Close" [active] [ref=f37e168]:
+      - img
+      - generic [ref=f37e169]: Close

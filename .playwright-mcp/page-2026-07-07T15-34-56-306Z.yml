@@ -1,0 +1,25 @@
+- generic [active] [ref=f30e1]:
+  - generic [ref=f30e2]:
+    - generic [ref=f30e3]:
+      - link "B Betnova" [ref=f30e5] [cursor=pointer]:
+        - /url: /
+        - generic [ref=f30e6]:
+          - generic [ref=f30e8]: B
+          - generic [ref=f30e9]: Betnova
+      - img [ref=f30e16]
+      - generic [ref=f30e30]:
+        - heading "Bet smarter. Trade every moment." [level=2] [ref=f30e31]
+        - paragraph [ref=f30e32]: Real-time markets, crypto deposits, instant settlement.
+    - generic [ref=f30e35]:
+      - img [ref=f30e37]
+      - heading "Two-Factor Authentication" [level=1] [ref=f30e40]
+      - paragraph [ref=f30e41]: Enter the 6-digit code from your authenticator app.
+      - generic [ref=f30e42]:
+        - textbox "000000" [ref=f30e43]
+        - button "Verify Code" [ref=f30e44]
+      - paragraph [ref=f30e45]:
+        - text: Lost access to your authenticator?
+        - button "Use recovery code" [ref=f30e46]
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f30e52] [cursor=pointer]:
+    - img [ref=f30e53]

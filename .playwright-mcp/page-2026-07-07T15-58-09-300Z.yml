@@ -1,0 +1,80 @@
+- generic [active] [ref=f39e1]:
+  - generic [ref=f39e2]:
+    - complementary [ref=f39e3]:
+      - link "B Betnova" [ref=f39e5] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=f39e6]:
+          - generic [ref=f39e8]: B
+          - generic [ref=f39e9]: Betnova
+      - navigation [ref=f39e10]:
+        - link "Dashboard" [ref=f39e11] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=f39e12]
+          - text: Dashboard
+        - link "Sports" [ref=f39e15] [cursor=pointer]:
+          - /url: /sports
+          - img [ref=f39e16]
+          - text: Sports
+        - link "My Bets" [ref=f39e22] [cursor=pointer]:
+          - /url: /bets
+          - img [ref=f39e23]
+          - text: My Bets
+        - link "Wallet" [ref=f39e25] [cursor=pointer]:
+          - /url: /wallet
+          - img [ref=f39e26]
+          - text: Wallet
+        - link "Notifications" [ref=f39e29] [cursor=pointer]:
+          - /url: /notifications
+          - img [ref=f39e30]
+          - text: Notifications
+        - link "Profile" [ref=f39e33] [cursor=pointer]:
+          - /url: /profile
+          - img [ref=f39e34]
+          - text: Profile
+      - link "Settings" [ref=f39e38] [cursor=pointer]:
+        - /url: /profile
+        - img [ref=f39e39]
+        - text: Settings
+    - generic [ref=f39e42]:
+      - banner [ref=f39e43]:
+        - generic [ref=f39e44]:
+          - button "Toggle theme" [ref=f39e45]:
+            - img
+          - link "3" [ref=f39e46] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=f39e47]
+            - generic [ref=f39e50]: "3"
+          - button "AJ" [ref=f39e51]:
+            - generic [ref=f39e54] [cursor=pointer]: AJ
+      - main [ref=f39e55]:
+        - generic [ref=f39e56]:
+          - generic [ref=f39e58]:
+            - heading "Profile" [level=1] [ref=f39e59]
+            - paragraph [ref=f39e60]: Manage your personal information.
+          - generic [ref=f39e61]:
+            - link "Personal Info" [ref=f39e62] [cursor=pointer]:
+              - /url: /profile
+            - link "Security" [ref=f39e63] [cursor=pointer]:
+              - /url: /profile/security
+            - link "Preferences" [ref=f39e64] [cursor=pointer]:
+              - /url: /profile/preferences
+          - generic [ref=f39e65]:
+            - generic [ref=f39e66]:
+              - generic [ref=f39e67]:
+                - generic [ref=f39e68]: Full Name
+                - textbox "Full Name" [ref=f39e69]: Alex Johnson
+              - generic [ref=f39e70]:
+                - generic [ref=f39e71]: Email
+                - textbox "Email" [ref=f39e72]: alex@example.com
+            - generic [ref=f39e73]:
+              - generic [ref=f39e74]: Phone Number
+              - textbox "Phone Number" [ref=f39e75]:
+                - /placeholder: +1 (555) 000-0000
+            - button "Save Changes" [ref=f39e76]
+    - button "Open bet slip":
+      - img
+      - text: Bet Slip
+      - generic: "0"
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f39e82] [cursor=pointer]:
+    - img [ref=f39e83]

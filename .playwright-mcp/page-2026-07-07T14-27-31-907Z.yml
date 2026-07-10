@@ -1,0 +1,281 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "B Betnova" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e6]:
+            - generic [ref=e8]: B
+            - generic [ref=e9]: Betnova
+        - navigation [ref=e10]:
+          - link "Features" [ref=e11] [cursor=pointer]:
+            - /url: /features
+          - link "How It Works" [ref=e12] [cursor=pointer]:
+            - /url: /how-it-works
+          - link "FAQ" [ref=e13] [cursor=pointer]:
+            - /url: /faq
+          - link "Contact" [ref=e14] [cursor=pointer]:
+            - /url: /contact
+        - generic [ref=e15]:
+          - link "Log In" [ref=e16] [cursor=pointer]:
+            - /url: /login
+          - link "Get Started" [ref=e17] [cursor=pointer]:
+            - /url: /register
+    - main [ref=e18]:
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e25]: Premier League
+          - generic [ref=e26]: Arsenal 2 – 1 Chelsea
+          - generic [ref=e27]: 67'
+          - generic [ref=e28]: /
+        - generic [ref=e29]:
+          - generic [ref=e33]: Premier League
+          - generic [ref=e34]: Manchester Utd 0 – 0 Liverpool
+          - generic [ref=e35]: 34'
+          - generic [ref=e36]: /
+        - generic [ref=e37]:
+          - generic [ref=e41]: NBA
+          - generic [ref=e42]: LA Lakers 98 – 102 Golden State
+          - generic [ref=e43]: 42'
+          - generic [ref=e44]: /
+        - generic [ref=e45]:
+          - generic [ref=e49]: Premier League
+          - generic [ref=e50]: Arsenal 2 – 1 Chelsea
+          - generic [ref=e51]: 67'
+          - generic [ref=e52]: /
+        - generic [ref=e53]:
+          - generic [ref=e57]: Premier League
+          - generic [ref=e58]: Manchester Utd 0 – 0 Liverpool
+          - generic [ref=e59]: 34'
+          - generic [ref=e60]: /
+        - generic [ref=e61]:
+          - generic [ref=e65]: NBA
+          - generic [ref=e66]: LA Lakers 98 – 102 Golden State
+          - generic [ref=e67]: 42'
+          - generic [ref=e68]: /
+      - generic [ref=e69]:
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - generic [ref=e74]: Live events available now
+            - heading "Betting, built for speed and trust" [level=1] [ref=e78]
+            - paragraph [ref=e79]: Real-time odds, instant payouts, and a premium interface built for the modern bettor. No clutter — just the fastest way to follow the action.
+            - generic [ref=e80]:
+              - link "Get Started Free" [ref=e81] [cursor=pointer]:
+                - /url: /register
+                - text: Get Started Free
+                - img
+              - link "Explore Features" [ref=e82] [cursor=pointer]:
+                - /url: /features
+            - generic [ref=e83]:
+              - generic [ref=e84]:
+                - generic [ref=e85]: A
+                - generic [ref=e86]: K
+                - generic [ref=e87]: M
+                - generic [ref=e88]: S
+              - generic [ref=e89]:
+                - img [ref=e90]
+                - strong [ref=e92]: 4.9/5
+                - text: from 12,000+ bettors
+          - generic [ref=e93]:
+            - generic [ref=e95]:
+              - generic [ref=e96]:
+                - generic [ref=e97]: La Liga
+                - generic [ref=e98]: Upcoming
+              - generic [ref=e99]:
+                - generic [ref=e100]: Barcelona
+                - generic [ref=e101]: vs
+                - generic [ref=e102]: Real Madrid
+              - generic [ref=e103]:
+                - generic [ref=e104]: "2.1"
+                - generic [ref=e105]: "3.4"
+                - generic [ref=e106]: "3.2"
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - generic [ref=e109]: LIVE · 67'
+                - generic [ref=e113]: Premier League
+              - generic [ref=e114]:
+                - generic [ref=e115]:
+                  - generic [ref=e116]: ARS
+                  - paragraph [ref=e117]: Arsenal
+                - generic [ref=e118]: 2 – 1
+                - generic [ref=e119]:
+                  - generic [ref=e120]: CHE
+                  - paragraph [ref=e121]: Chelsea
+              - generic [ref=e122]:
+                - button "1 1.45" [ref=e123]:
+                  - generic [ref=e124]: "1"
+                  - text: "1.45"
+                - button "X 4.2" [ref=e125]:
+                  - generic [ref=e126]: X
+                  - text: "4.2"
+                - button "2 6.5" [ref=e127]:
+                  - generic [ref=e128]: "2"
+                  - text: "6.5"
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - img [ref=e131]
+                  - text: Odds boosted +12%
+                - generic [ref=e134]:
+                  - img [ref=e135]
+                  - text: instant cashout
+        - generic [ref=e138]:
+          - generic [ref=e139]:
+            - paragraph [ref=e140]: 480K+
+            - paragraph [ref=e141]: Active bettors
+          - generic [ref=e142]:
+            - paragraph [ref=e143]: 38 sec
+            - paragraph [ref=e144]: Avg. payout time
+          - generic [ref=e145]:
+            - paragraph [ref=e146]: 2,100+
+            - paragraph [ref=e147]: Daily events
+          - generic [ref=e148]:
+            - paragraph [ref=e149]: 99.98%
+            - paragraph [ref=e150]: Platform uptime
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - heading "Why choose Betnova?" [level=2] [ref=e154]
+          - paragraph [ref=e155]: Built from the ground up for speed, security, and the best user experience.
+        - generic [ref=e156]:
+          - generic [ref=e158]:
+            - img [ref=e160]
+            - heading "Lightning-fast odds" [level=3] [ref=e162]
+            - paragraph [ref=e163]: Real-time price updates and instant bet placement — no lag, no stale lines.
+          - generic [ref=e165]:
+            - img [ref=e167]
+            - heading "Bank-grade security" [level=3] [ref=e169]
+            - paragraph [ref=e170]: Encrypted end-to-end with proactive fraud monitoring on every account.
+          - generic [ref=e172]:
+            - img [ref=e174]
+            - heading "Live in-play betting" [level=3] [ref=e177]
+            - paragraph [ref=e178]: Dynamic odds that move with the action, second by second.
+          - generic [ref=e180]:
+            - img [ref=e182]
+            - heading "Instant payouts" [level=3] [ref=e185]
+            - paragraph [ref=e186]: Withdraw winnings in seconds. No holds, no hidden fees, ever.
+          - generic [ref=e188]:
+            - img [ref=e190]
+            - heading "Global coverage" [level=3] [ref=e193]
+            - paragraph [ref=e194]: Thousands of markets across football, basketball, tennis, esports, and more — updated around the clock.
+      - generic [ref=e196]:
+        - generic [ref=e197]:
+          - heading "Every sport, one platform" [level=2] [ref=e198]
+          - paragraph [ref=e199]: Coverage across hundreds of leagues and events, updated daily.
+        - generic [ref=e200]:
+          - link "⚽ Football 124 events" [ref=e202] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e203]: ⚽
+            - heading "Football" [level=3] [ref=e204]
+            - paragraph [ref=e205]: 124 events
+          - link "🏀 Basketball 89 events" [ref=e207] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e208]: 🏀
+            - heading "Basketball" [level=3] [ref=e209]
+            - paragraph [ref=e210]: 89 events
+          - link "🎾 Tennis 56 events" [ref=e212] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e213]: 🎾
+            - heading "Tennis" [level=3] [ref=e214]
+            - paragraph [ref=e215]: 56 events
+          - link "🏏 Cricket 34 events" [ref=e217] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e218]: 🏏
+            - heading "Cricket" [level=3] [ref=e219]
+            - paragraph [ref=e220]: 34 events
+          - link "⚾ Baseball 42 events" [ref=e222] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e223]: ⚾
+            - heading "Baseball" [level=3] [ref=e224]
+            - paragraph [ref=e225]: 42 events
+          - link "🏒 Ice Hockey 28 events" [ref=e227] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e228]: 🏒
+            - heading "Ice Hockey" [level=3] [ref=e229]
+            - paragraph [ref=e230]: 28 events
+          - link "🥊 MMA 15 events" [ref=e232] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e233]: 🥊
+            - heading "MMA" [level=3] [ref=e234]
+            - paragraph [ref=e235]: 15 events
+          - link "🎮 Esports 67 events" [ref=e237] [cursor=pointer]:
+            - /url: /sports
+            - generic [ref=e238]: 🎮
+            - heading "Esports" [level=3] [ref=e239]
+            - paragraph [ref=e240]: 67 events
+      - generic [ref=e243]:
+        - generic [ref=e244]:
+          - img [ref=e246]
+          - generic [ref=e249]:
+            - heading "Licensed & regulated" [level=3] [ref=e250]
+            - paragraph [ref=e251]: Operating under full regulatory compliance in every supported market.
+        - generic [ref=e252]:
+          - img [ref=e254]
+          - generic [ref=e256]:
+            - heading "256-bit encryption" [level=3] [ref=e257]
+            - paragraph [ref=e258]: The same standard trusted by major financial institutions.
+        - generic [ref=e259]:
+          - img [ref=e261]
+          - generic [ref=e263]:
+            - heading "Fully transparent" [level=3] [ref=e264]
+            - paragraph [ref=e265]: Real-time transaction history and audit-ready reporting.
+      - generic [ref=e268]:
+        - generic [ref=e269]:
+          - generic [ref=e270]: Mobile-first
+          - heading "A seamless experience on every device" [level=2] [ref=e271]
+          - paragraph [ref=e272]: Bet from anywhere with a fast, native-feeling interface tuned for touch — one-handed navigation, quick bet-slip access, and instant confirmations.
+          - list [ref=e273]:
+            - listitem [ref=e274]:
+              - img [ref=e276]
+              - text: One-tap bet slip from any event card
+            - listitem [ref=e278]:
+              - img [ref=e280]
+              - text: Biometric login and secure quick-withdraw
+            - listitem [ref=e282]:
+              - img [ref=e284]
+              - text: Push alerts for live odds movement
+        - generic [ref=e289]:
+          - generic [ref=e290]: Betnova
+          - generic [ref=e291]: 3 live
+      - generic [ref=e317]:
+        - heading "Ready to start winning?" [level=2] [ref=e318]
+        - paragraph [ref=e319]: Join thousands of bettors already on the platform. Sign up in seconds.
+        - generic [ref=e320]:
+          - link "Create Free Account" [ref=e321] [cursor=pointer]:
+            - /url: /register
+            - text: Create Free Account
+            - img
+          - link "See How It Works" [ref=e322] [cursor=pointer]:
+            - /url: /how-it-works
+    - contentinfo [ref=e323]:
+      - generic [ref=e324]:
+        - generic [ref=e325]:
+          - generic [ref=e326]:
+            - generic [ref=e327]:
+              - generic [ref=e329]: B
+              - generic [ref=e330]: Betnova
+            - paragraph [ref=e331]: The future of sports betting. Fast, secure, and built for the modern bettor.
+          - generic [ref=e332]:
+            - heading "Product" [level=4] [ref=e333]
+            - list [ref=e334]:
+              - listitem [ref=e335]:
+                - link "Features" [ref=e336] [cursor=pointer]:
+                  - /url: /features
+              - listitem [ref=e337]:
+                - link "How It Works" [ref=e338] [cursor=pointer]:
+                  - /url: /how-it-works
+              - listitem [ref=e339]:
+                - link "FAQ" [ref=e340] [cursor=pointer]:
+                  - /url: /faq
+          - generic [ref=e341]:
+            - heading "Company" [level=4] [ref=e342]
+            - list [ref=e343]:
+              - listitem [ref=e344]:
+                - link "Contact" [ref=e345] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=e346]:
+                - link "Terms of Service" [ref=e347] [cursor=pointer]:
+                  - /url: /terms
+              - listitem [ref=e348]:
+                - link "Privacy Policy" [ref=e349] [cursor=pointer]:
+                  - /url: /privacy
+        - generic [ref=e350]: © 2026 Betnova. All rights reserved.
+  - region "Notifications alt+T"

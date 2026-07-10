@@ -1,0 +1,199 @@
+- generic [active] [ref=f32e1]:
+  - generic [ref=f32e2]:
+    - complementary [ref=f32e3]:
+      - generic [ref=f32e4]:
+        - link "B Betnova" [ref=f32e5] [cursor=pointer]:
+          - /url: /dashboard
+          - generic [ref=f32e6]:
+            - generic [ref=f32e8]: B
+            - generic [ref=f32e9]: Betnova
+        - button [ref=f32e10]:
+          - img
+      - navigation [ref=f32e11]:
+        - link "Dashboard" [ref=f32e12] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=f32e13]
+          - text: Dashboard
+        - link "Sports" [ref=f32e16] [cursor=pointer]:
+          - /url: /sports
+          - img [ref=f32e17]
+          - text: Sports
+        - link "My Bets" [ref=f32e23] [cursor=pointer]:
+          - /url: /bets
+          - img [ref=f32e24]
+          - text: My Bets
+        - link "Wallet" [ref=f32e26] [cursor=pointer]:
+          - /url: /wallet
+          - img [ref=f32e27]
+          - text: Wallet
+        - link "Notifications" [ref=f32e30] [cursor=pointer]:
+          - /url: /notifications
+          - img [ref=f32e31]
+          - text: Notifications
+        - link "Profile" [ref=f32e34] [cursor=pointer]:
+          - /url: /profile
+          - img [ref=f32e35]
+          - text: Profile
+      - link "Settings" [ref=f32e39] [cursor=pointer]:
+        - /url: /profile
+        - img [ref=f32e40]
+        - text: Settings
+    - generic [ref=f32e43]:
+      - banner [ref=f32e44]:
+        - button "Open menu" [ref=f32e45]:
+          - img
+        - generic [ref=f32e46]:
+          - button "Toggle theme" [ref=f32e47]:
+            - img
+          - link "3" [ref=f32e48] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=f32e49]
+            - generic [ref=f32e52]: "3"
+          - button "AJ" [ref=f32e53]:
+            - generic [ref=f32e56] [cursor=pointer]: AJ
+      - main [ref=f32e57]:
+        - generic [ref=f32e58]:
+          - generic [ref=f32e60]:
+            - heading "Dashboard" [level=1] [ref=f32e61]
+            - paragraph [ref=f32e62]: Welcome back, Alex.
+          - generic [ref=f32e63]:
+            - generic [ref=f32e64]:
+              - generic [ref=f32e65]:
+                - generic [ref=f32e66]:
+                  - paragraph [ref=f32e67]: Wallet Balance
+                  - paragraph [ref=f32e68]: $2,847.5
+                - img [ref=f32e70]
+              - generic [ref=f32e73]:
+                - generic [ref=f32e74]: +12.5%
+                - generic [ref=f32e75]: from last month
+            - generic [ref=f32e76]:
+              - generic [ref=f32e77]:
+                - generic [ref=f32e78]:
+                  - paragraph [ref=f32e79]: Active Bets
+                  - paragraph [ref=f32e80]: "3"
+                - img [ref=f32e82]
+              - generic [ref=f32e85]: pending settlement
+            - generic [ref=f32e86]:
+              - generic [ref=f32e87]:
+                - generic [ref=f32e88]:
+                  - paragraph [ref=f32e89]: Total Winnings
+                  - paragraph [ref=f32e90]: $1,430.00
+                - img [ref=f32e92]
+              - generic [ref=f32e95]:
+                - generic [ref=f32e96]: +8.2%
+                - generic [ref=f32e97]: this month
+            - generic [ref=f32e98]:
+              - generic [ref=f32e99]:
+                - generic [ref=f32e100]:
+                  - paragraph [ref=f32e101]: Live Events
+                  - paragraph [ref=f32e102]: "3"
+                - img [ref=f32e104]
+              - generic [ref=f32e111]: happening now
+          - generic [ref=f32e112]:
+            - generic [ref=f32e113]:
+              - generic [ref=f32e114]:
+                - heading "Live Now" [level=2] [ref=f32e116]
+                - link "View all" [ref=f32e117] [cursor=pointer]:
+                  - /url: /sports/live
+              - generic [ref=f32e118]:
+                - link "Premier League Arsenal vs Chelsea LIVE 67' 2 - 1" [ref=f32e119] [cursor=pointer]:
+                  - /url: /sports/event/e1
+                  - generic [ref=f32e120]:
+                    - paragraph [ref=f32e121]: Premier League
+                    - paragraph [ref=f32e122]: Arsenal vs Chelsea
+                    - generic [ref=f32e123]:
+                      - generic [ref=f32e124]: LIVE
+                      - generic [ref=f32e126]: 67'
+                  - paragraph [ref=f32e128]: 2 - 1
+                - link "Premier League Manchester Utd vs Liverpool LIVE 34' 0 - 0" [ref=f32e129] [cursor=pointer]:
+                  - /url: /sports/event/e2
+                  - generic [ref=f32e130]:
+                    - paragraph [ref=f32e131]: Premier League
+                    - paragraph [ref=f32e132]: Manchester Utd vs Liverpool
+                    - generic [ref=f32e133]:
+                      - generic [ref=f32e134]: LIVE
+                      - generic [ref=f32e136]: 34'
+                  - paragraph [ref=f32e138]: 0 - 0
+                - link "NBA LA Lakers vs Golden State LIVE 42' 98 - 102" [ref=f32e139] [cursor=pointer]:
+                  - /url: /sports/event/e4
+                  - generic [ref=f32e140]:
+                    - paragraph [ref=f32e141]: NBA
+                    - paragraph [ref=f32e142]: LA Lakers vs Golden State
+                    - generic [ref=f32e143]:
+                      - generic [ref=f32e144]: LIVE
+                      - generic [ref=f32e146]: 42'
+                  - paragraph [ref=f32e148]: 98 - 102
+            - generic [ref=f32e149]:
+              - generic [ref=f32e150]:
+                - heading "Recent Bets" [level=2] [ref=f32e152]
+                - link "View all" [ref=f32e153] [cursor=pointer]:
+                  - /url: /bets
+              - generic [ref=f32e154]:
+                - generic [ref=f32e155]:
+                  - generic [ref=f32e156]:
+                    - paragraph [ref=f32e157]: Arsenal Win
+                    - paragraph [ref=f32e158]: Arsenal vs Chelsea
+                  - generic [ref=f32e159]:
+                    - paragraph [ref=f32e160]: $50.00
+                    - generic [ref=f32e161]: PENDING
+                - generic [ref=f32e162]:
+                  - generic [ref=f32e163]:
+                    - paragraph [ref=f32e164]: Draw
+                    - paragraph [ref=f32e165]: Barcelona vs Real Madrid
+                  - generic [ref=f32e166]:
+                    - paragraph [ref=f32e167]: $25.00
+                    - generic [ref=f32e168]: PENDING
+                - generic [ref=f32e169]:
+                  - generic [ref=f32e170]:
+                    - paragraph [ref=f32e171]: Man City Win
+                    - paragraph [ref=f32e172]: Man City vs Aston Villa
+                  - generic [ref=f32e173]:
+                    - paragraph [ref=f32e174]: $100.00
+                    - generic [ref=f32e175]: WON
+                - generic [ref=f32e176]:
+                  - generic [ref=f32e177]:
+                    - paragraph [ref=f32e178]: CSK Win
+                    - paragraph [ref=f32e179]: Mumbai Indians vs CSK
+                  - generic [ref=f32e180]:
+                    - paragraph [ref=f32e181]: $30.00
+                    - generic [ref=f32e182]: LOST
+          - generic [ref=f32e183]:
+            - generic [ref=f32e184]:
+              - heading "Recent Transactions" [level=2] [ref=f32e186]
+              - link "View all" [ref=f32e187] [cursor=pointer]:
+                - /url: /wallet/transactions
+            - table [ref=f32e189]:
+              - rowgroup [ref=f32e190]:
+                - row "Type Amount Status" [ref=f32e191]:
+                  - columnheader "Type" [ref=f32e192]
+                  - columnheader "Amount" [ref=f32e193]
+                  - columnheader "Status" [ref=f32e194]
+              - rowgroup [ref=f32e195]:
+                - row "Bank Transfer Deposit +500.00 USD completed" [ref=f32e196]:
+                  - cell "Bank Transfer Deposit" [ref=f32e197]
+                  - cell "+500.00 USD" [ref=f32e198]
+                  - cell "completed" [ref=f32e199]:
+                    - generic [ref=f32e200]: completed
+                - 'row "Bet: Arsenal vs Chelsea -50.00 USD completed" [ref=f32e201]':
+                  - 'cell "Bet: Arsenal vs Chelsea" [ref=f32e202]'
+                  - cell "-50.00 USD" [ref=f32e203]
+                  - cell "completed" [ref=f32e204]:
+                    - generic [ref=f32e205]: completed
+                - 'row "Won: Man City vs Aston Villa +130.00 USD completed" [ref=f32e206]':
+                  - 'cell "Won: Man City vs Aston Villa" [ref=f32e207]'
+                  - cell "+130.00 USD" [ref=f32e208]
+                  - cell "completed" [ref=f32e209]:
+                    - generic [ref=f32e210]: completed
+                - row "Withdrawal to Bank Account -200.00 USD pending" [ref=f32e211]:
+                  - cell "Withdrawal to Bank Account" [ref=f32e212]
+                  - cell "-200.00 USD" [ref=f32e213]
+                  - cell "pending" [ref=f32e214]:
+                    - generic [ref=f32e215]: pending
+                - row "Crypto Deposit (BTC) +1000.00 USD completed" [ref=f32e216]:
+                  - cell "Crypto Deposit (BTC)" [ref=f32e217]
+                  - cell "+1000.00 USD" [ref=f32e218]
+                  - cell "completed" [ref=f32e219]:
+                    - generic [ref=f32e220]: completed
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f32e226] [cursor=pointer]:
+    - img [ref=f32e227]

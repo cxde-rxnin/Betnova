@@ -1,0 +1,105 @@
+- generic [active] [ref=f37e1]:
+  - generic [ref=f37e2]:
+    - complementary [ref=f37e3]:
+      - link "B Betnova Admin" [ref=f37e5] [cursor=pointer]:
+        - /url: /admin
+        - generic [ref=f37e6]:
+          - generic [ref=f37e8]: B
+          - generic [ref=f37e9]: Betnova
+        - generic [ref=f37e10]: Admin
+      - navigation [ref=f37e11]:
+        - link "Overview" [ref=f37e12] [cursor=pointer]:
+          - /url: /admin
+          - img [ref=f37e13]
+          - text: Overview
+        - link "Users" [ref=f37e18] [cursor=pointer]:
+          - /url: /admin/users
+          - img [ref=f37e19]
+          - text: Users
+        - link "Events" [ref=f37e24] [cursor=pointer]:
+          - /url: /admin/events
+          - img [ref=f37e25]
+          - text: Events
+        - link "Bets" [ref=f37e27] [cursor=pointer]:
+          - /url: /admin/bets
+          - img [ref=f37e28]
+          - text: Bets
+        - link "Wallets" [ref=f37e30] [cursor=pointer]:
+          - /url: /admin/wallets
+          - img [ref=f37e31]
+          - text: Wallets
+        - link "Transactions" [ref=f37e34] [cursor=pointer]:
+          - /url: /admin/transactions
+          - img [ref=f37e35]
+          - text: Transactions
+        - link "Reports" [ref=f37e38] [cursor=pointer]:
+          - /url: /admin/reports
+          - img [ref=f37e39]
+          - text: Reports
+        - link "Settings" [ref=f37e41] [cursor=pointer]:
+          - /url: /admin/settings
+          - img [ref=f37e42]
+          - text: Settings
+    - generic [ref=f37e45]:
+      - banner [ref=f37e46]
+      - main [ref=f37e47]:
+        - generic [ref=f37e48]:
+          - generic [ref=f37e50]:
+            - heading "Users" [level=1] [ref=f37e51]
+            - paragraph [ref=f37e52]: Manage all platform users.
+          - generic [ref=f37e53]:
+            - generic [ref=f37e54]:
+              - img
+              - textbox "Search by name or email..." [ref=f37e55]
+            - combobox [ref=f37e56]:
+              - option "All statuses" [selected]
+              - option "Active"
+              - option "Suspended"
+          - generic [ref=f37e57]:
+            - table [ref=f37e58]:
+              - rowgroup [ref=f37e59]:
+                - row "Name Email Role Status" [ref=f37e60]:
+                  - columnheader "Name" [ref=f37e61]
+                  - columnheader "Email" [ref=f37e62]
+                  - columnheader "Role" [ref=f37e63]
+                  - columnheader "Status" [ref=f37e64]
+              - rowgroup [ref=f37e65]:
+                - row "Alex Johnson alex@example.com USER active" [ref=f37e66] [cursor=pointer]:
+                  - cell "Alex Johnson" [ref=f37e67]
+                  - cell "alex@example.com" [ref=f37e68]
+                  - cell "USER" [ref=f37e69]:
+                    - generic [ref=f37e70]: USER
+                  - cell "active" [ref=f37e71]:
+                    - generic [ref=f37e72]: active
+                - row "Sarah Chen sarah@example.com USER active" [ref=f37e73] [cursor=pointer]:
+                  - cell "Sarah Chen" [ref=f37e74]
+                  - cell "sarah@example.com" [ref=f37e75]
+                  - cell "USER" [ref=f37e76]:
+                    - generic [ref=f37e77]: USER
+                  - cell "active" [ref=f37e78]:
+                    - generic [ref=f37e79]: active
+                - row "Marcus Williams marcus@example.com ADMIN active" [ref=f37e80] [cursor=pointer]:
+                  - cell "Marcus Williams" [ref=f37e81]
+                  - cell "marcus@example.com" [ref=f37e82]
+                  - cell "ADMIN" [ref=f37e83]:
+                    - generic [ref=f37e84]: ADMIN
+                  - cell "active" [ref=f37e85]:
+                    - generic [ref=f37e86]: active
+                - row "Emily Davis emily@example.com USER suspended" [ref=f37e87] [cursor=pointer]:
+                  - cell "Emily Davis" [ref=f37e88]
+                  - cell "emily@example.com" [ref=f37e89]
+                  - cell "USER" [ref=f37e90]:
+                    - generic [ref=f37e91]: USER
+                  - cell "suspended" [ref=f37e92]:
+                    - generic [ref=f37e93]: suspended
+            - generic [ref=f37e95]:
+              - paragraph [ref=f37e96]: Showing 1-4 of 5
+              - generic [ref=f37e97]:
+                - button "Previous page" [disabled]:
+                  - img
+                - generic [ref=f37e98]: Page 1 of 2
+                - button "Next page" [ref=f37e99]:
+                  - img
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f37e105] [cursor=pointer]:
+    - img [ref=f37e106]

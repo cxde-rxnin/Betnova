@@ -1,0 +1,424 @@
+- generic [active] [ref=f25e1]:
+  - generic [ref=f25e2]:
+    - banner [ref=f25e3]:
+      - generic [ref=f25e4]:
+        - link "B Betnova" [ref=f25e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=f25e6]:
+            - generic [ref=f25e8]: B
+            - generic [ref=f25e9]: Betnova
+        - button "Toggle navigation" [ref=f25e10]:
+          - img
+      - generic [ref=f25e11]:
+        - link "Sports" [ref=f25e12] [cursor=pointer]:
+          - /url: /sports
+        - link "Live Markets" [ref=f25e13] [cursor=pointer]:
+          - /url: /sports?status=live
+        - link "Features" [ref=f25e14] [cursor=pointer]:
+          - /url: /features
+        - link "How It Works" [ref=f25e15] [cursor=pointer]:
+          - /url: /how-it-works
+        - link "About" [ref=f25e16] [cursor=pointer]:
+          - /url: /faq
+        - generic [ref=f25e17]:
+          - link "Log In" [ref=f25e18] [cursor=pointer]:
+            - /url: /login
+          - link "Sign Up" [ref=f25e19] [cursor=pointer]:
+            - /url: /register
+    - main [ref=f25e20]:
+      - generic [ref=f25e22]:
+        - generic [ref=f25e23]:
+          - generic [ref=f25e27]: Premier League
+          - generic [ref=f25e28]: Arsenal 2 – 1 Chelsea
+          - generic [ref=f25e29]: 67'
+          - generic [ref=f25e30]: /
+        - generic [ref=f25e31]:
+          - generic [ref=f25e35]: Premier League
+          - generic [ref=f25e36]: Manchester Utd 0 – 0 Liverpool
+          - generic [ref=f25e37]: 34'
+          - generic [ref=f25e38]: /
+        - generic [ref=f25e39]:
+          - generic [ref=f25e43]: NBA
+          - generic [ref=f25e44]: LA Lakers 98 – 102 Golden State
+          - generic [ref=f25e45]: 42'
+          - generic [ref=f25e46]: /
+        - generic [ref=f25e47]:
+          - generic [ref=f25e51]: Premier League
+          - generic [ref=f25e52]: Arsenal 2 – 1 Chelsea
+          - generic [ref=f25e53]: 67'
+          - generic [ref=f25e54]: /
+        - generic [ref=f25e55]:
+          - generic [ref=f25e59]: Premier League
+          - generic [ref=f25e60]: Manchester Utd 0 – 0 Liverpool
+          - generic [ref=f25e61]: 34'
+          - generic [ref=f25e62]: /
+        - generic [ref=f25e63]:
+          - generic [ref=f25e67]: NBA
+          - generic [ref=f25e68]: LA Lakers 98 – 102 Golden State
+          - generic [ref=f25e69]: 42'
+          - generic [ref=f25e70]: /
+      - generic [ref=f25e71]:
+        - generic [ref=f25e73]:
+          - generic [ref=f25e74]:
+            - generic [ref=f25e75]: Live markets available now
+            - heading "Bet smarter. Trade every moment." [level=1] [ref=f25e79]:
+              - text: Bet smarter.
+              - text: Trade every moment.
+            - paragraph [ref=f25e80]: Real-time sports markets, crypto-powered deposits, and lightning-fast settlement — on a platform built for precision, not noise.
+            - generic [ref=f25e81]:
+              - link "Start Betting" [ref=f25e82] [cursor=pointer]:
+                - /url: /register
+                - text: Start Betting
+                - img
+              - link "View Live Markets" [ref=f25e83] [cursor=pointer]:
+                - /url: /sports
+          - img [ref=f25e91]
+        - generic [ref=f25e106]:
+          - generic [ref=f25e107]:
+            - paragraph [ref=f25e108]: 480K+
+            - paragraph [ref=f25e109]: Active users
+          - generic [ref=f25e110]:
+            - paragraph [ref=f25e111]: 2,100+
+            - paragraph [ref=f25e112]: Daily markets
+          - generic [ref=f25e113]:
+            - paragraph [ref=f25e114]: 38 sec
+            - paragraph [ref=f25e115]: Avg. settlement
+          - generic [ref=f25e116]:
+            - paragraph [ref=f25e117]: $210M+
+            - paragraph [ref=f25e118]: Secure transactions
+      - generic [ref=f25e120]:
+        - generic [ref=f25e121]:
+          - generic [ref=f25e122]:
+            - heading "Live markets, right now" [level=2] [ref=f25e123]
+            - paragraph [ref=f25e124]: A preview of what's trading on Betnova. Every card updates in real time once connected to live data.
+          - link "View all markets" [ref=f25e125] [cursor=pointer]:
+            - /url: /sports
+            - text: View all markets
+            - img
+        - generic [ref=f25e126]:
+          - generic [ref=f25e128]:
+            - generic [ref=f25e129]:
+              - generic [ref=f25e130]: Premier League
+              - generic [ref=f25e131]: LIVE 67'
+            - generic [ref=f25e135]:
+              - generic [ref=f25e136]:
+                - generic [ref=f25e137]: Arsenal
+                - generic [ref=f25e138]: "2"
+              - generic [ref=f25e139]:
+                - generic [ref=f25e140]: Chelsea
+                - generic [ref=f25e141]: "1"
+            - generic [ref=f25e142]:
+              - generic [ref=f25e143]:
+                - paragraph [ref=f25e144]: Moneyline
+                - paragraph [ref=f25e145]: "1.45"
+              - generic [ref=f25e146]:
+                - paragraph [ref=f25e147]: Spread
+                - paragraph [ref=f25e148]: "-7.5"
+              - generic [ref=f25e149]:
+                - paragraph [ref=f25e150]: Total
+                - paragraph [ref=f25e151]: O 4.0
+            - generic [ref=f25e152]: Market open · odds moving
+          - generic [ref=f25e155]:
+            - generic [ref=f25e156]:
+              - generic [ref=f25e157]: Premier League
+              - generic [ref=f25e158]: LIVE 34'
+            - generic [ref=f25e162]:
+              - generic [ref=f25e163]:
+                - generic [ref=f25e164]: Manchester Utd
+                - generic [ref=f25e165]: "0"
+              - generic [ref=f25e166]:
+                - generic [ref=f25e167]: Liverpool
+                - generic [ref=f25e168]: "0"
+            - generic [ref=f25e169]:
+              - generic [ref=f25e170]:
+                - paragraph [ref=f25e171]: Moneyline
+                - paragraph [ref=f25e172]: "2.80"
+              - generic [ref=f25e173]:
+                - paragraph [ref=f25e174]: Spread
+                - paragraph [ref=f25e175]: "+0.5"
+              - generic [ref=f25e176]:
+                - paragraph [ref=f25e177]: Total
+                - paragraph [ref=f25e178]: O 3.5
+            - generic [ref=f25e179]: Market open · odds moving
+          - generic [ref=f25e182]:
+            - generic [ref=f25e183]:
+              - generic [ref=f25e184]: La Liga
+              - generic [ref=f25e185]: Wed 9:00 PM
+            - generic [ref=f25e186]:
+              - generic [ref=f25e187]:
+                - generic [ref=f25e188]: Barcelona
+                - generic [ref=f25e189]: –
+              - generic [ref=f25e190]:
+                - generic [ref=f25e191]: Real Madrid
+                - generic [ref=f25e192]: –
+            - generic [ref=f25e193]:
+              - generic [ref=f25e194]:
+                - paragraph [ref=f25e195]: Moneyline
+                - paragraph [ref=f25e196]: "2.10"
+              - generic [ref=f25e197]:
+                - paragraph [ref=f25e198]: Spread
+                - paragraph [ref=f25e199]: "-1.5"
+              - generic [ref=f25e200]:
+                - paragraph [ref=f25e201]: Total
+                - paragraph [ref=f25e202]: O 3.5
+            - generic [ref=f25e203]: Market opens at kickoff
+          - generic [ref=f25e206]:
+            - generic [ref=f25e207]:
+              - generic [ref=f25e208]: NBA
+              - generic [ref=f25e209]: LIVE 42'
+            - generic [ref=f25e213]:
+              - generic [ref=f25e214]:
+                - generic [ref=f25e215]: LA Lakers
+                - generic [ref=f25e216]: "98"
+              - generic [ref=f25e217]:
+                - generic [ref=f25e218]: Golden State
+                - generic [ref=f25e219]: "102"
+            - generic [ref=f25e220]:
+              - generic [ref=f25e221]:
+                - paragraph [ref=f25e222]: Moneyline
+                - paragraph [ref=f25e223]: "1.90"
+              - generic [ref=f25e224]:
+                - paragraph [ref=f25e225]: Spread
+                - paragraph [ref=f25e226]: "-0.5"
+              - generic [ref=f25e227]:
+                - paragraph [ref=f25e228]: Total
+                - paragraph [ref=f25e229]: O 3.0
+            - generic [ref=f25e230]: Market open · odds moving
+          - generic [ref=f25e233]:
+            - generic [ref=f25e234]:
+              - generic [ref=f25e235]: NBA
+              - generic [ref=f25e236]: Thu 2:00 AM
+            - generic [ref=f25e237]:
+              - generic [ref=f25e238]:
+                - generic [ref=f25e239]: Boston Celtics
+                - generic [ref=f25e240]: –
+              - generic [ref=f25e241]:
+                - generic [ref=f25e242]: Miami Heat
+                - generic [ref=f25e243]: –
+            - generic [ref=f25e244]:
+              - generic [ref=f25e245]:
+                - paragraph [ref=f25e246]: Moneyline
+                - paragraph [ref=f25e247]: "1.65"
+              - generic [ref=f25e248]:
+                - paragraph [ref=f25e249]: Spread
+                - paragraph [ref=f25e250]: "-1"
+              - generic [ref=f25e251]:
+                - paragraph [ref=f25e252]: Total
+                - paragraph [ref=f25e253]: O 3.0
+            - generic [ref=f25e254]: Market opens at kickoff
+          - generic [ref=f25e257]:
+            - generic [ref=f25e258]:
+              - generic [ref=f25e259]: Wimbledon
+              - generic [ref=f25e260]: Fri 3:00 PM
+            - generic [ref=f25e261]:
+              - generic [ref=f25e262]:
+                - generic [ref=f25e263]: C. Alcaraz
+                - generic [ref=f25e264]: –
+              - generic [ref=f25e265]:
+                - generic [ref=f25e266]: N. Djokovic
+                - generic [ref=f25e267]: –
+            - generic [ref=f25e268]:
+              - generic [ref=f25e269]:
+                - paragraph [ref=f25e270]: Moneyline
+                - paragraph [ref=f25e271]: "1.80"
+              - generic [ref=f25e272]:
+                - paragraph [ref=f25e273]: Spread
+                - paragraph [ref=f25e274]: "-0.5"
+              - generic [ref=f25e275]:
+                - paragraph [ref=f25e276]: Total
+                - paragraph [ref=f25e277]: O 3.0
+            - generic [ref=f25e278]: Market opens at kickoff
+      - generic [ref=f25e281]:
+        - generic [ref=f25e282]:
+          - heading "Every sport, one platform" [level=2] [ref=f25e283]
+          - paragraph [ref=f25e284]: Coverage across major leagues and events, updated around the clock.
+        - generic [ref=f25e285]:
+          - link "Football 124 events" [ref=f25e287] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e288]
+            - heading "Football" [level=3] [ref=f25e292]
+            - paragraph [ref=f25e293]: 124 events
+          - link "Basketball 89 events" [ref=f25e295] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e296]
+            - heading "Basketball" [level=3] [ref=f25e299]
+            - paragraph [ref=f25e300]: 89 events
+          - link "Tennis 56 events" [ref=f25e302] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e303]
+            - heading "Tennis" [level=3] [ref=f25e307]
+            - paragraph [ref=f25e308]: 56 events
+          - link "Cricket 34 events" [ref=f25e310] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e311]
+            - heading "Cricket" [level=3] [ref=f25e317]
+            - paragraph [ref=f25e318]: 34 events
+          - link "Baseball 42 events" [ref=f25e320] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e321]
+            - heading "Baseball" [level=3] [ref=f25e330]
+            - paragraph [ref=f25e331]: 42 events
+          - link "Ice Hockey 28 events" [ref=f25e333] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e334]
+            - heading "Ice Hockey" [level=3] [ref=f25e340]
+            - paragraph [ref=f25e341]: 28 events
+          - link "MMA 15 events" [ref=f25e343] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e344]
+            - heading "MMA" [level=3] [ref=f25e353]
+            - paragraph [ref=f25e354]: 15 events
+          - link "Esports 67 events" [ref=f25e356] [cursor=pointer]:
+            - /url: /sports
+            - img [ref=f25e357]
+            - heading "Esports" [level=3] [ref=f25e359]
+            - paragraph [ref=f25e360]: 67 events
+      - generic [ref=f25e362]:
+        - generic [ref=f25e363]:
+          - heading "Why Betnova" [level=2] [ref=f25e364]
+          - paragraph [ref=f25e365]: Built for speed, precision, and trust — not flash.
+        - generic [ref=f25e366]:
+          - generic [ref=f25e368]:
+            - img [ref=f25e370]
+            - heading "Real-Time Odds" [level=3] [ref=f25e372]
+            - paragraph [ref=f25e373]: Prices update the instant markets move — no stale lines, no delay between the action and your bet slip.
+          - generic [ref=f25e375]:
+            - img [ref=f25e377]
+            - heading "Crypto Deposits" [level=3] [ref=f25e380]
+            - paragraph [ref=f25e381]: Fund your account directly on-chain. No intermediaries, no waiting on bank rails.
+          - generic [ref=f25e383]:
+            - img [ref=f25e385]
+            - heading "Lightning Settlement" [level=3] [ref=f25e387]
+            - paragraph [ref=f25e388]: Winnings settle in seconds, not days. Withdraw the moment a market resolves.
+          - generic [ref=f25e390]:
+            - img [ref=f25e392]
+            - heading "Secure & Transparent" [level=3] [ref=f25e395]
+            - paragraph [ref=f25e396]: Every transaction is verifiable on-chain, with audit-ready history at all times.
+      - generic [ref=f25e398]:
+        - generic [ref=f25e399]:
+          - heading "How it works" [level=2] [ref=f25e400]
+          - paragraph [ref=f25e401]: From sign-up to your first trade in three steps.
+        - generic [ref=f25e402]:
+          - generic [ref=f25e403]:
+            - generic [ref=f25e404]:
+              - img [ref=f25e405]
+              - generic [ref=f25e408]: "01"
+            - heading "Create an account" [level=3] [ref=f25e409]
+            - paragraph [ref=f25e410]: Sign up in under a minute — no lengthy verification queues.
+          - generic [ref=f25e411]:
+            - generic [ref=f25e412]:
+              - img [ref=f25e413]
+              - generic [ref=f25e416]: "02"
+            - heading "Deposit crypto" [level=3] [ref=f25e417]
+            - paragraph [ref=f25e418]: Fund your wallet directly with the assets you already hold.
+          - generic [ref=f25e419]:
+            - generic [ref=f25e420]:
+              - img [ref=f25e421]
+              - generic [ref=f25e424]: "03"
+            - heading "Place bets on live markets" [level=3] [ref=f25e425]
+            - paragraph [ref=f25e426]: Trade moneylines, spreads, and totals as odds move in real time.
+      - generic [ref=f25e428]:
+        - generic [ref=f25e429]:
+          - heading "Platform features" [level=2] [ref=f25e430]
+          - paragraph [ref=f25e431]: Everything under the hood, engineered for real-time performance.
+        - generic [ref=f25e432]:
+          - generic [ref=f25e434]:
+            - img [ref=f25e435]
+            - generic [ref=f25e442]: Live odds across every market
+          - generic [ref=f25e444]:
+            - img [ref=f25e445]
+            - generic [ref=f25e449]: 9+ sports and growing
+          - generic [ref=f25e451]:
+            - img [ref=f25e452]
+            - generic [ref=f25e454]: Instant, streaming updates
+          - generic [ref=f25e456]:
+            - img [ref=f25e457]
+            - generic [ref=f25e459]: Built mobile-first
+          - generic [ref=f25e461]:
+            - img [ref=f25e462]
+            - generic [ref=f25e465]: Secure wallet integration
+          - generic [ref=f25e467]:
+            - img [ref=f25e468]
+            - generic [ref=f25e470]: Advanced market analytics
+          - generic [ref=f25e472]:
+            - img [ref=f25e473]
+            - generic [ref=f25e476]: Fast, resilient performance
+          - generic [ref=f25e478]:
+            - img [ref=f25e479]
+            - generic [ref=f25e484]: Real-time notifications
+      - generic [ref=f25e487]:
+        - heading "The future of sports betting." [level=2] [ref=f25e488]
+        - paragraph [ref=f25e489]: Real-time markets. Instant settlement. Start in seconds.
+        - link "Get Started" [ref=f25e491] [cursor=pointer]:
+          - /url: /register
+          - text: Get Started
+          - img
+    - contentinfo [ref=f25e492]:
+      - generic [ref=f25e493]:
+        - generic [ref=f25e494]:
+          - generic [ref=f25e495]:
+            - generic [ref=f25e496]:
+              - generic [ref=f25e498]: B
+              - generic [ref=f25e499]: Betnova
+            - paragraph [ref=f25e500]: Real-time sports markets, settled instantly. A premium platform for the modern bettor.
+            - generic [ref=f25e501]:
+              - link "X" [ref=f25e502] [cursor=pointer]:
+                - /url: https://x.com
+                - img [ref=f25e503]
+              - link "Discord" [ref=f25e506] [cursor=pointer]:
+                - /url: https://discord.com
+                - img [ref=f25e507]
+              - link "Telegram" [ref=f25e509] [cursor=pointer]:
+                - /url: https://telegram.org
+                - img [ref=f25e510]
+          - generic [ref=f25e513]:
+            - heading "Product" [level=4] [ref=f25e514]
+            - list [ref=f25e515]:
+              - listitem [ref=f25e516]:
+                - link "Sports" [ref=f25e517] [cursor=pointer]:
+                  - /url: /sports
+              - listitem [ref=f25e518]:
+                - link "Features" [ref=f25e519] [cursor=pointer]:
+                  - /url: /features
+              - listitem [ref=f25e520]:
+                - link "How It Works" [ref=f25e521] [cursor=pointer]:
+                  - /url: /how-it-works
+          - generic [ref=f25e522]:
+            - heading "Company" [level=4] [ref=f25e523]
+            - list [ref=f25e524]:
+              - listitem [ref=f25e525]:
+                - link "About" [ref=f25e526] [cursor=pointer]:
+                  - /url: /faq
+              - listitem [ref=f25e527]:
+                - link "Contact" [ref=f25e528] [cursor=pointer]:
+                  - /url: /contact
+              - listitem [ref=f25e529]:
+                - link "FAQ" [ref=f25e530] [cursor=pointer]:
+                  - /url: /faq
+          - generic [ref=f25e531]:
+            - heading "Resources" [level=4] [ref=f25e532]
+            - list [ref=f25e533]:
+              - listitem [ref=f25e534]:
+                - link "API Status" [ref=f25e535] [cursor=pointer]:
+                  - /url: /faq
+              - listitem [ref=f25e536]:
+                - link "Security" [ref=f25e537] [cursor=pointer]:
+                  - /url: /faq
+              - listitem [ref=f25e538]:
+                - link "Support" [ref=f25e539] [cursor=pointer]:
+                  - /url: /contact
+          - generic [ref=f25e540]:
+            - heading "Legal" [level=4] [ref=f25e541]
+            - list [ref=f25e542]:
+              - listitem [ref=f25e543]:
+                - link "Terms of Service" [ref=f25e544] [cursor=pointer]:
+                  - /url: /terms
+              - listitem [ref=f25e545]:
+                - link "Privacy Policy" [ref=f25e546] [cursor=pointer]:
+                  - /url: /privacy
+        - generic [ref=f25e547]:
+          - paragraph [ref=f25e548]: © 2026 Betnova. All rights reserved.
+          - paragraph [ref=f25e549]: Betting involves risk. Please play responsibly.
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f25e555] [cursor=pointer]:
+    - img [ref=f25e556]

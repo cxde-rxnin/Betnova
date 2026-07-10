@@ -1,0 +1,11 @@
+[     129ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[     988ms] [LOG] [Fast Refresh] done in 960ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1062ms] [VERBOSE] [DOM] Input elements should have autocomplete attributes (suggested: "current-password"): (More info: https://goo.gl/9p2vKq) %o @ http://localhost:3000/register:0
+[    1160ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1215ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1447ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1589ms] [LOG] [Fast Refresh] done in 249ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    6730ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    7334ms] [LOG] [Fast Refresh] done in 714ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   78061ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   78513ms] [LOG] [Fast Refresh] done in 517ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477

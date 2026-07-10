@@ -1,0 +1,122 @@
+- generic [active] [ref=f38e1]:
+  - generic [ref=f38e2]:
+    - complementary [ref=f38e3]:
+      - link "B Betnova" [ref=f38e5] [cursor=pointer]:
+        - /url: /dashboard
+        - generic [ref=f38e6]:
+          - generic [ref=f38e8]: B
+          - generic [ref=f38e9]: Betnova
+      - navigation [ref=f38e10]:
+        - link "Dashboard" [ref=f38e11] [cursor=pointer]:
+          - /url: /dashboard
+          - img [ref=f38e12]
+          - text: Dashboard
+        - link "Sports" [ref=f38e15] [cursor=pointer]:
+          - /url: /sports
+          - img [ref=f38e16]
+          - text: Sports
+        - link "My Bets" [ref=f38e22] [cursor=pointer]:
+          - /url: /bets
+          - img [ref=f38e23]
+          - text: My Bets
+        - link "Wallet" [ref=f38e25] [cursor=pointer]:
+          - /url: /wallet
+          - img [ref=f38e26]
+          - text: Wallet
+        - link "Notifications" [ref=f38e29] [cursor=pointer]:
+          - /url: /notifications
+          - img [ref=f38e30]
+          - text: Notifications
+        - link "Profile" [ref=f38e33] [cursor=pointer]:
+          - /url: /profile
+          - img [ref=f38e34]
+          - text: Profile
+      - link "Settings" [ref=f38e38] [cursor=pointer]:
+        - /url: /profile
+        - img [ref=f38e39]
+        - text: Settings
+    - generic [ref=f38e42]:
+      - banner [ref=f38e43]:
+        - generic [ref=f38e44]:
+          - button "Toggle theme" [ref=f38e45]:
+            - img
+          - link "3" [ref=f38e46] [cursor=pointer]:
+            - /url: /notifications
+            - img [ref=f38e47]
+            - generic [ref=f38e50]: "3"
+          - button "AJ" [ref=f38e51]:
+            - generic [ref=f38e54] [cursor=pointer]: AJ
+      - main [ref=f38e55]:
+        - generic [ref=f38e56]:
+          - generic [ref=f38e57]:
+            - generic [ref=f38e58]:
+              - heading "Wallet" [level=1] [ref=f38e59]
+              - paragraph [ref=f38e60]: Manage your funds.
+            - generic [ref=f38e61]:
+              - link "Deposit" [ref=f38e62] [cursor=pointer]:
+                - /url: /wallet/deposit
+                - img
+                - text: Deposit
+              - link "Withdraw" [ref=f38e63] [cursor=pointer]:
+                - /url: /wallet/withdraw
+                - img
+                - text: Withdraw
+          - generic [ref=f38e64]:
+            - generic [ref=f38e66]:
+              - generic [ref=f38e67]:
+                - paragraph [ref=f38e68]: Available Balance
+                - paragraph [ref=f38e69]: $2,847.5
+              - img [ref=f38e71]
+            - generic [ref=f38e75]:
+              - generic [ref=f38e76]:
+                - paragraph [ref=f38e77]: Total Deposited
+                - paragraph [ref=f38e78]: $3,500.00
+              - img [ref=f38e80]
+            - generic [ref=f38e83]:
+              - generic [ref=f38e84]:
+                - paragraph [ref=f38e85]: Total Withdrawn
+                - paragraph [ref=f38e86]: $700.00
+              - img [ref=f38e88]
+          - generic [ref=f38e90]:
+            - generic [ref=f38e91]:
+              - heading "Recent Transactions" [level=2] [ref=f38e92]
+              - link "View all" [ref=f38e93] [cursor=pointer]:
+                - /url: /wallet/transactions
+                - img
+                - text: View all
+            - generic [ref=f38e94]:
+              - generic [ref=f38e95]:
+                - generic [ref=f38e96]:
+                  - paragraph [ref=f38e97]: Bank Transfer Deposit
+                  - paragraph [ref=f38e98]: Jul 7, 10:00 AM
+                - generic [ref=f38e99]:
+                  - paragraph [ref=f38e100]: +500.00 USD
+                  - generic [ref=f38e101]: completed
+              - generic [ref=f38e102]:
+                - generic [ref=f38e103]:
+                  - paragraph [ref=f38e104]: "Bet: Arsenal vs Chelsea"
+                  - paragraph [ref=f38e105]: Jul 7, 03:30 PM
+                - generic [ref=f38e106]:
+                  - paragraph [ref=f38e107]: "-50.00 USD"
+                  - generic [ref=f38e108]: completed
+              - generic [ref=f38e109]:
+                - generic [ref=f38e110]:
+                  - paragraph [ref=f38e111]: "Won: Man City vs Aston Villa"
+                  - paragraph [ref=f38e112]: Jul 6, 06:00 PM
+                - generic [ref=f38e113]:
+                  - paragraph [ref=f38e114]: +130.00 USD
+                  - generic [ref=f38e115]: completed
+              - generic [ref=f38e116]:
+                - generic [ref=f38e117]:
+                  - paragraph [ref=f38e118]: Withdrawal to Bank Account
+                  - paragraph [ref=f38e119]: Jul 6, 11:00 AM
+                - generic [ref=f38e120]:
+                  - paragraph [ref=f38e121]: "-200.00 USD"
+                  - generic [ref=f38e122]: pending
+    - button "Open bet slip":
+      - img
+      - text: Bet Slip
+      - generic: "0"
+  - region "Notifications alt+T"
+  - button "Open Next.js Dev Tools" [ref=f38e128] [cursor=pointer]:
+    - img [ref=f38e129]

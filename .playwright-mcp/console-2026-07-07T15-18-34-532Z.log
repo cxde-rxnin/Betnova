@@ -1,0 +1,18 @@
+[     780ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[     957ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1313ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1464ms] [LOG] [Fast Refresh] done in 265ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  109080ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  109870ms] [LOG] [Fast Refresh] done in 891ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  122799ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  122962ms] [LOG] [Fast Refresh] done in 274ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  126682ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  127073ms] [LOG] [Fast Refresh] done in 495ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  137620ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  137950ms] [LOG] [Fast Refresh] done in 441ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  151882ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  152275ms] [LOG] [Fast Refresh] done in 496ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  166600ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  166974ms] [LOG] [Fast Refresh] done in 478ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  202845ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  203071ms] [LOG] [Fast Refresh] done in 332ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477

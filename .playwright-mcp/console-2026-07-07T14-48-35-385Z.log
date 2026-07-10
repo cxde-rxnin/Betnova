@@ -1,0 +1,22 @@
+[    1071ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1295ms] [LOG] [HMR] connected @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1651ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[    1755ms] [LOG] [Fast Refresh] done in 216ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   26452ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   26687ms] [LOG] [Fast Refresh] done in 340ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   29278ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   29402ms] [LOG] [Fast Refresh] done in 228ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   29511ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[   29652ms] [LOG] [Fast Refresh] done in 247ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  148363ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  148505ms] [LOG] [Fast Refresh] done in 251ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  155190ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  156412ms] [LOG] [Fast Refresh] done in 1334ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  215270ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  215446ms] [LOG] [Fast Refresh] done in 284ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  279325ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  280092ms] [LOG] [Fast Refresh] done in 879ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  544811ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  544880ms] [LOG] [Fast Refresh] done in 170ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  568291ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477
+[  571830ms] [LOG] [Fast Refresh] done in 3646ms @ http://localhost:3000/_next/static/chunks/0wa7_next_dist_0lytrpc._.js:2477

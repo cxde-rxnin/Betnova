@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Betnova
 
-## Getting Started
+Betnova is a scalable, feature-driven Next.js platform designed for robustness, security, and high performance.
 
-First, run the development server:
+## Architecture
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+This project strictly adheres to a **feature-driven** architecture. Instead of organizing by file type (e.g., placing all hooks together, all components together), code is grouped by domain area inside the `features/` directory where appropriate.
+
+### Folder Structure
+- **`app/`**: Next.js App Router mapping. Contains route groups (e.g. `(auth)`, `(app)`) and Next.js route handlers `api/`.
+- **`features/`**: Encapsulated business domains (`auth`, `wallet`, `betting`, etc.). Each feature should export its public API via an `index.ts` barrel file.
+- **`components/`**: Global reusable UI components (e.g., shadcn components in `components/ui`).
+- **`lib/`**: Global utilities, configuration, and shared tools.
+  - `lib/constants/`: Centralized application constants (routes, roles, configuration).
+  - `lib/db/`: Database connection logic.
+  - `lib/errors.ts`: Centralized custom error classes.
+  - `lib/logger.ts`: Application logger wrapper.
+  - `lib/utils/api-response.ts`: Standardized API response wrappers.
+- **`types/`**: Global TypeScript definitions.
+- **`actions/`**: Next.js Server Actions grouped by domain.
+
+## Conventions
+
+### Logging
+Always use the centralized logger from `lib/logger.ts` instead of `console.log`.
+```ts
+import { logger } from "@/lib/logger";
+logger.info("User logged in", { userId });
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Error Handling
+Throw structured errors from `lib/errors.ts` for consistent error catching.
+```ts
+import { NotFoundError } from "@/lib/errors";
+if (!user) throw new NotFoundError("User not found");
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### API Responses
+Return standardized responses from `lib/utils/api-response.ts`.
+```ts
+import { successResponse, badRequest } from "@/lib/utils/api-response";
+return successResponse({ data: user });
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Setup & Development
 
-## Learn More
+1. Ensure environment variables are configured. Copy `.env.example` to `.env`.
+2. Run `npm install` to install dependencies.
+3. Run `npm run dev` to start the development server.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Health Check
+You can verify the API and Database connectivity by visiting `/api/health`.

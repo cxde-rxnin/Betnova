@@ -96,3 +96,30 @@ export async function getSupportHistoryForAdmin(userId: string) {
     timestamp: msg.createdAt.getTime(),
   }));
 }
+
+export async function getUnreadSupportCount() {
+  const session = await auth();
+  if (!session?.user?.id) return 0; // Return 0 if not authenticated
+
+  await connectToDatabase();
+  const count = await SupportMessage.countDocuments({
+    userId: session.user.id,
+    sender: "ADMIN",
+    isRead: false,
+  });
+
+  return count;
+}
+
+export async function markSupportMessagesAsRead() {
+  const session = await auth();
+  if (!session?.user?.id) throw new Error("Unauthorized");
+
+  await connectToDatabase();
+  await SupportMessage.updateMany(
+    { userId: session.user.id, sender: "ADMIN", isRead: false },
+    { $set: { isRead: true } }
+  );
+  
+  return { success: true };
+}

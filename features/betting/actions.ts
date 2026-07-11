@@ -4,6 +4,7 @@ import { auth } from "@/lib/auth";
 import { BettingService } from "./services/BettingService";
 import { SettlementService } from "./services/SettlementService";
 import { Bet } from "@/models/Bet";
+import { User } from "@/models/User";
 import connectToDatabase from "@/lib/db/connect";
 import { revalidatePath } from "next/cache";
 import { requirePermission } from "@/lib/rbac";
@@ -17,6 +18,12 @@ async function getUserId() {
 
 export async function submitBet(selections: any[], stake: number, currency: string = "USDT") {
   const userId = await getUserId();
+  
+  await connectToDatabase();
+  const user = await User.findById(userId).select("kycStatus").lean();
+  if (!user || user.kycStatus !== "VERIFIED") {
+    throw new Error("KYC Verification required to place bets");
+  }
   
   const parsedStake = Number(stake);
   if (isNaN(parsedStake) || parsedStake <= 0) {

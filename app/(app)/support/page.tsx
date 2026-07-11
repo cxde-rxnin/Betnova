@@ -5,10 +5,12 @@ import { Send, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useCurrentUser } from "@/hooks/useCurrentUser";
-import { sendSupportMessage, getSupportHistory } from "@/features/support/actions";
+import { sendSupportMessage, getSupportHistory, markSupportMessagesAsRead } from "@/features/support/actions";
+import { useQueryClient } from "@tanstack/react-query";
 
 export default function SupportPage() {
   const { data: user } = useCurrentUser();
+  const queryClient = useQueryClient();
   const [messages, setMessages] = useState<any[]>([]);
   const [newMessage, setNewMessage] = useState("");
   const [connectionError, setConnectionError] = useState(false);
@@ -22,6 +24,10 @@ export default function SupportPage() {
         const history = await getSupportHistory();
         setMessages(history);
         setConnectionError(false);
+
+        // Mark as read and invalidate unread count
+        await markSupportMessagesAsRead();
+        queryClient.invalidateQueries({ queryKey: ["unreadSupportCount"] });
       } catch (err) {
         console.error("Failed to fetch support history via proxy:", err);
         setConnectionError(true);

@@ -4,6 +4,9 @@ import { auth } from "@/lib/auth";
 import { WalletService } from "./services/WalletService";
 import { revalidatePath } from "next/cache";
 import { v2 as cloudinary } from "cloudinary";
+import connectToDatabase from "@/lib/db/connect";
+import { User } from "@/models/User";
+import { DepositMethod } from "@/models/DepositMethod";
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
@@ -31,6 +34,12 @@ export async function getTransactionHistory() {
 
 export async function requestDeposit(formData: FormData) {
   const userId = await getUserId();
+  
+  await connectToDatabase();
+  const user = await User.findById(userId).select("kycStatus").lean();
+  if (!user || user.kycStatus !== "VERIFIED") {
+    throw new Error("KYC Verification required to make a deposit");
+  }
   
   const amountStr = formData.get("amount") as string;
   const currency = formData.get("currency") as string;
@@ -72,6 +81,13 @@ export async function requestDeposit(formData: FormData) {
 
 export async function requestWithdrawal(amount: number, currency: string, destinationAddress: string) {
   const userId = await getUserId();
+
+  await connectToDatabase();
+  const user = await User.findById(userId).select("kycStatus").lean();
+  if (!user || user.kycStatus !== "VERIFIED") {
+    throw new Error("KYC Verification required to request a withdrawal");
+  }
+
   const tx = await WalletService.createWithdrawalRequest(userId, amount, currency, destinationAddress);
   
   // Removed mock processing. Admin must approve manually.
@@ -80,8 +96,6 @@ export async function requestWithdrawal(amount: number, currency: string, destin
   return { success: true, transactionId: tx._id.toString() };
 }
 
-import { DepositMethod } from "@/models/DepositMethod";
-import connectToDatabase from "@/lib/db/connect";
 
 export async function getActiveDepositMethods() {
   await connectToDatabase();

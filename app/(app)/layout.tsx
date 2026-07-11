@@ -18,7 +18,6 @@ export default async function AppLayout({ children }: { children: React.ReactNod
 
   return (
     <div className="theme-marketing dark flex min-h-screen bg-background text-foreground">
-      <KycGuard kycStatus={kycStatus} />
       <AppSidebar />
       <div className="flex flex-1 flex-col">
         <AppHeader />

@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { auth } from "@/lib/auth";
+import NextAuth from "next-auth";
+import { authConfig } from "@/auth.config";
 import { checkRateLimit } from "@/lib/rate-limit";
+
+const { auth } = NextAuth(authConfig);
 
 export default auth(async function middleware(req) {
   const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";

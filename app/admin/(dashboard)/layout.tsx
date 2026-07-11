@@ -11,7 +11,7 @@ export default async function AdminLayout({ children }: { children: ReactNode })
   }
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="dark flex flex-col min-h-screen bg-background text-foreground">
       <AppHeader />
       <div className="flex flex-1 flex-col lg:flex-row min-h-[calc(100vh-4rem)]">
         {/* Sidebar */}

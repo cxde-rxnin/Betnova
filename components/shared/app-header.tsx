@@ -21,7 +21,7 @@ export function AppHeader() {
 
   return (
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between border-b bg-background/80 backdrop-blur-lg px-4 sm:px-6">
-      <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setSidebarOpen(true)} aria-label="Open menu">
+      <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => useUIStore.getState().toggleSidebar()} aria-label="Toggle menu">
         <Menu className="h-5 w-5" />
       </Button>
 

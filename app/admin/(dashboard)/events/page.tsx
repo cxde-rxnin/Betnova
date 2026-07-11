@@ -46,21 +46,22 @@ export default function AdminEventsPage() {
           { label: "Finished", value: "finished" },
         ]}
       />
-      <div className="overflow-hidden rounded-xl border">
+      <div className="rounded-xl border bg-card overflow-hidden">
         {paged.length === 0 ? (
           <EmptyState icon={CalendarDays} title="No events found" description="Try adjusting your search or filters." />
         ) : (
           <>
-            <table className="w-full text-sm">
-              <thead className="bg-muted/50 text-left text-xs text-muted-foreground">
-                <tr>
-                  <th className="px-4 py-3 font-medium">Match</th>
-                  <th className="px-4 py-3 font-medium hidden sm:table-cell">Competition</th>
-                  <th className="px-4 py-3 font-medium hidden md:table-cell">Date</th>
-                  <th className="px-4 py-3 font-medium text-right">Status</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm whitespace-nowrap">
+                <thead className="bg-muted/50 text-left text-xs text-muted-foreground">
+                  <tr>
+                    <th className="px-4 py-3 font-medium">Match</th>
+                    <th className="px-4 py-3 font-medium hidden sm:table-cell">Competition</th>
+                    <th className="px-4 py-3 font-medium hidden md:table-cell">Date</th>
+                    <th className="px-4 py-3 font-medium text-right">Status</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y">
                 {paged.map((event) => (
                   <tr key={event.id} onClick={() => setSelected(event)} className="cursor-pointer transition-colors hover:bg-muted/30">
                     <td className="px-4 py-3 font-medium">{event.homeTeam} vs {event.awayTeam}</td>
@@ -73,6 +74,7 @@ export default function AdminEventsPage() {
                 ))}
               </tbody>
             </table>
+          </div>
             <div className="border-t">
               <TablePagination page={page} pageCount={pageCount} totalItems={filtered.length} pageSize={PAGE_SIZE} onPageChange={setPage} />
             </div>

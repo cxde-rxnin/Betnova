@@ -86,7 +86,8 @@ export default function AdminUsersPage() {
 
       {isLoading ? <Loader2 className="animate-spin" /> : (
         <div className="rounded-xl border bg-card overflow-hidden">
-          <table className="w-full text-sm text-left">
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm text-left whitespace-nowrap">
             <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
               <tr>
                 <th className="px-6 py-4">User</th>
@@ -163,7 +164,8 @@ export default function AdminUsersPage() {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         </div>
       )}
 

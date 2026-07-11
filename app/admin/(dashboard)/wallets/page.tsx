@@ -45,36 +45,38 @@ export default function AdminWalletsPage() {
 
       <div className="space-y-4">
         <TableToolbar search={search} onSearchChange={(v) => { setSearch(v); setPage(1); }} searchPlaceholder="Search by user name or email..." />
-        <div className="overflow-hidden rounded-xl border">
+        <div className="rounded-xl border bg-card overflow-hidden">
           {paged.length === 0 ? (
             <EmptyState icon={Wallet} title="No wallets found" description="Try adjusting your search." />
           ) : (
             <>
-              <table className="w-full text-sm">
-                <thead className="bg-muted/50 text-left text-xs text-muted-foreground">
-                  <tr>
-                    <th className="px-4 py-3 font-medium">User</th>
-                    <th className="px-4 py-3 font-medium text-right">Balance</th>
-                    <th className="px-4 py-3 font-medium text-right">Status</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y">
-                  {paged.map((wallet) => (
-                    <tr key={wallet.id} onClick={() => setSelected(wallet)} className="cursor-pointer transition-colors hover:bg-muted/30">
-                      <td className="px-4 py-3">
-                        <p className="font-medium">{wallet.name}</p>
-                        <p className="text-xs text-muted-foreground">{wallet.email}</p>
-                      </td>
-                      <td className="px-4 py-3 text-right font-semibold tabular-nums">${wallet.balance.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
-                      <td className="px-4 py-3 text-right">
-                        <Badge variant="secondary" className={cn("text-[10px]", wallet.frozen ? "bg-destructive/10 text-destructive" : "bg-success/10 text-success")}>
-                          {wallet.frozen ? "Frozen" : "Active"}
-                        </Badge>
-                      </td>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm whitespace-nowrap">
+                  <thead className="bg-muted/50 text-left text-xs text-muted-foreground">
+                    <tr>
+                      <th className="px-4 py-3 font-medium">User</th>
+                      <th className="px-4 py-3 font-medium text-right">Balance</th>
+                      <th className="px-4 py-3 font-medium text-right">Status</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody className="divide-y">
+                    {paged.map((wallet) => (
+                      <tr key={wallet.id} onClick={() => setSelected(wallet)} className="cursor-pointer transition-colors hover:bg-muted/30">
+                        <td className="px-4 py-3">
+                          <p className="font-medium">{wallet.name}</p>
+                          <p className="text-xs text-muted-foreground">{wallet.email}</p>
+                        </td>
+                        <td className="px-4 py-3 text-right font-semibold tabular-nums">${wallet.balance.toLocaleString(undefined, { minimumFractionDigits: 2 })}</td>
+                        <td className="px-4 py-3 text-right">
+                          <Badge variant="secondary" className={cn("text-[10px]", wallet.frozen ? "bg-destructive/10 text-destructive" : "bg-success/10 text-success")}>
+                            {wallet.frozen ? "Frozen" : "Active"}
+                          </Badge>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               <div className="border-t">
                 <TablePagination page={page} pageCount={pageCount} totalItems={filtered.length} pageSize={PAGE_SIZE} onPageChange={setPage} />
               </div>

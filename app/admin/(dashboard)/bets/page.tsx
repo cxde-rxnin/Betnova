@@ -52,12 +52,13 @@ export default function AdminBetsPage() {
           { label: "Lost", value: "lost" },
         ]}
       />
-      <div className="overflow-hidden rounded-xl border">
-        {paged.length === 0 ? (
-          <EmptyState icon={Ticket} title="No bets found" description="Try adjusting your search or filters." />
-        ) : (
-          <>
-            <table className="w-full text-sm">
+        <div className="rounded-xl border bg-card overflow-hidden">
+          {paged.length === 0 ? (
+            <EmptyState icon={Ticket} title="No bets found" description="Try adjusting your search or filters." />
+          ) : (
+            <>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm whitespace-nowrap">
               <thead className="bg-muted/50 text-left text-xs text-muted-foreground">
                 <tr>
                   <th className="px-4 py-3 font-medium">User</th>
@@ -89,8 +90,9 @@ export default function AdminBetsPage() {
                     </tr>
                   ))
                 )}
-              </tbody>
-            </table>
+                </tbody>
+                </table>
+              </div>
             <div className="border-t">
               <TablePagination page={page} pageCount={pageCount} totalItems={filtered.length} pageSize={PAGE_SIZE} onPageChange={setPage} />
             </div>

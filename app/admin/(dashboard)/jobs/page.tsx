@@ -37,34 +37,36 @@ export default function AdminJobsPage() {
 
           <div className="rounded-xl border bg-card overflow-hidden mt-8">
             <div className="p-4 border-b font-semibold bg-muted/30">Recent Jobs</div>
-            <table className="w-full text-sm text-left">
-              <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
-                <tr>
-                  <th className="px-6 py-4">Job Name</th>
-                  <th className="px-6 py-4">Status</th>
-                  <th className="px-6 py-4">Priority</th>
-                  <th className="px-6 py-4">Attempts</th>
-                  <th className="px-6 py-4">Duration</th>
-                  <th className="px-6 py-4">Created</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y">
-                {jobs.map(job => (
-                  <tr key={job._id} className="hover:bg-muted/30">
-                    <td className="px-6 py-4 font-medium">{job.name}</td>
-                    <td className="px-6 py-4">
-                      <Badge variant={job.status === "COMPLETED" ? "default" : job.status === "FAILED" || job.status === "DEAD_LETTER" ? "destructive" : "secondary"}>
-                        {job.status}
-                      </Badge>
-                    </td>
-                    <td className="px-6 py-4">{job.priority}</td>
-                    <td className="px-6 py-4">{job.attempts} / {job.maxAttempts}</td>
-                    <td className="px-6 py-4">{job.duration ? `${job.duration}ms` : "-"}</td>
-                    <td className="px-6 py-4 text-muted-foreground">{format(new Date(job.createdAt), "PPp")}</td>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm text-left whitespace-nowrap">
+                <thead className="bg-muted/50 text-muted-foreground uppercase text-xs">
+                  <tr>
+                    <th className="px-6 py-4">Job Name</th>
+                    <th className="px-6 py-4">Status</th>
+                    <th className="px-6 py-4">Priority</th>
+                    <th className="px-6 py-4">Attempts</th>
+                    <th className="px-6 py-4">Duration</th>
+                    <th className="px-6 py-4">Created</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody className="divide-y">
+                  {jobs.map(job => (
+                    <tr key={job._id} className="hover:bg-muted/30">
+                      <td className="px-6 py-4 font-medium">{job.name}</td>
+                      <td className="px-6 py-4">
+                        <Badge variant={job.status === "COMPLETED" ? "default" : job.status === "FAILED" || job.status === "DEAD_LETTER" ? "destructive" : "secondary"}>
+                          {job.status}
+                        </Badge>
+                      </td>
+                      <td className="px-6 py-4">{job.priority}</td>
+                      <td className="px-6 py-4">{job.attempts} / {job.maxAttempts}</td>
+                      <td className="px-6 py-4">{job.duration ? `${job.duration}ms` : "-"}</td>
+                      <td className="px-6 py-4 text-muted-foreground">{format(new Date(job.createdAt), "PPp")}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </div>
         </>
       )}

@@ -1,13 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getPendingTransactions, approveDeposit, rejectTransaction, approveWithdrawal, getDepositMethods, addDepositMethod, deleteDepositMethod, updateDepositMethod } from "@/features/admin/actions";
+import { getPendingTransactions, approveDeposit, rejectTransaction, approveWithdrawal, getDepositMethods, addDepositMethod, deleteDepositMethod, updateDepositMethod, getAllUsers, adjustUserBalance } from "@/features/admin/actions";
 import { useAdminBets, useAdminManualSettle } from "@/features/betting/hooks";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { format } from "date-fns";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
@@ -21,18 +22,26 @@ export default function AdminFinancePage() {
   const [methods, setMethods] = useState<any[]>([]);
   const [newMethod, setNewMethod] = useState({ currency: "BTC", network: "", address: "" });
   const [usdEquivalents, setUsdEquivalents] = useState<Record<string, string>>({});
+  const [users, setUsers] = useState<any[]>([]);
+  
+  const [creditUserId, setCreditUserId] = useState<string>("");
+  const [creditAmount, setCreditAmount] = useState("");
+  const [creditReason, setCreditReason] = useState("");
+  const [isCrediting, setIsCrediting] = useState(false);
 
   const { data: allBets, isLoading: isLoadingBets } = useAdminBets();
   const { mutate: manualSettle, isPending: isSettling } = useAdminManualSettle();
 
   const fetchData = async () => {
     try {
-      const [txData, methodsData] = await Promise.all([
+      const [txData, methodsData, usersData] = await Promise.all([
         getPendingTransactions(),
-        getDepositMethods()
+        getDepositMethods(),
+        getAllUsers()
       ]);
       setTransactions(txData);
       setMethods(methodsData);
+      setUsers(usersData);
     } catch (e) {
       toast.error("Failed to load data");
     } finally {
@@ -137,6 +146,26 @@ export default function AdminFinancePage() {
     }
   };
 
+  const handleManualCredit = async () => {
+    if (!creditUserId || !creditAmount || !creditReason) {
+      return toast.error("Please fill all fields to credit user.");
+    }
+    
+    setIsCrediting(true);
+    try {
+      await adjustUserBalance(creditUserId, "USDT", parseFloat(creditAmount), creditReason);
+      toast.success("User successfully credited!");
+      setCreditUserId("");
+      setCreditAmount("");
+      setCreditReason("");
+      // optionally refresh data if needed
+    } catch (e: any) {
+      toast.error(e.message || "Failed to credit user.");
+    } finally {
+      setIsCrediting(false);
+    }
+  };
+
   const deposits = transactions.filter(t => t.type === "DEPOSIT");
   const withdrawals = transactions.filter(t => t.type === "WITHDRAWAL");
 
@@ -150,6 +179,7 @@ export default function AdminFinancePage() {
           <TabsTrigger value="withdrawals">Withdrawals ({withdrawals.length})</TabsTrigger>
           <TabsTrigger value="bets">Active Bets</TabsTrigger>
           <TabsTrigger value="settings">Deposit Settings</TabsTrigger>
+          <TabsTrigger value="credit">Manual Credit</TabsTrigger>
         </TabsList>
 
         <TabsContent value="deposits" className="mt-6 space-y-4">
@@ -341,6 +371,50 @@ export default function AdminFinancePage() {
                   </div>
                 ))
               )}
+            </div>
+          </div>
+        </TabsContent>
+        <TabsContent value="credit" className="mt-6">
+          <div className="max-w-xl p-6 rounded-xl border bg-card space-y-6">
+            <h3 className="font-semibold text-lg border-b pb-2">Fund / Credit User Account</h3>
+            <div className="space-y-4">
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Select User</label>
+                <Select value={creditUserId} onValueChange={setCreditUserId}>
+                  <SelectTrigger>
+                    <SelectValue placeholder="Select a user..." />
+                  </SelectTrigger>
+                  <SelectContent className="max-h-[300px]">
+                    {users.map((u: any) => (
+                      <SelectItem key={u._id} value={u._id}>
+                        {u.name || u.username} ({u.email})
+                      </SelectItem>
+                    ))}
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Amount to Credit (USDT)</label>
+                <Input 
+                  type="number" 
+                  step="0.01"
+                  placeholder="e.g. 50" 
+                  value={creditAmount}
+                  onChange={(e) => setCreditAmount(e.target.value)}
+                />
+              </div>
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Reason / Note</label>
+                <Input 
+                  placeholder="e.g. Manual Deposit, Refund, Promo" 
+                  value={creditReason}
+                  onChange={(e) => setCreditReason(e.target.value)}
+                />
+              </div>
+              <Button onClick={handleManualCredit} disabled={isCrediting || !creditUserId || !creditAmount || !creditReason} className="w-full">
+                {isCrediting ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : null}
+                Credit User
+              </Button>
             </div>
           </div>
         </TabsContent>

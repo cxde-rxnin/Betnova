@@ -5,6 +5,9 @@ import { usePathname } from "next/navigation";
 import { ShieldAlert, Users, Wallet, Activity, ShieldCheck, FileText, ServerCog, AlertTriangle, MessageSquare, LogOut, Ticket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { signOut } from "next-auth/react";
+import { useUIStore } from "@/lib/store/ui-store";
+import { X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const navItems = [
   { name: "Dashboard", href: "/admin", icon: Activity, exact: true },
@@ -21,44 +24,66 @@ const navItems = [
 
 export function AdminSidebar() {
   const pathname = usePathname();
+  const { sidebarOpen, setSidebarOpen } = useUIStore();
 
   return (
-    <div className="w-full lg:w-64 border-r bg-card/50 flex flex-col p-4 space-y-2">
-      <div className="flex items-center gap-2 px-2 py-4 mb-2">
-        <ShieldCheck className="h-6 w-6 text-primary" />
-        <h2 className="text-lg font-bold">Operations Hub</h2>
-      </div>
-      
-      {navItems.map((item) => {
-        const isActive = item.exact 
-          ? pathname === item.href 
-          : pathname.startsWith(item.href);
+    <>
+      {/* Mobile overlay */}
+      {sidebarOpen && (
+        <div className="fixed inset-0 z-40 bg-black/50 lg:hidden" onClick={() => setSidebarOpen(false)} />
+      )}
 
-        return (
-          <Link
-            key={item.href}
-            href={item.href}
-            className={cn(
-              "flex items-center gap-3 px-3 py-2 rounded-md transition-colors text-sm font-medium",
-              isActive 
-                ? "bg-primary/10 text-primary" 
-                : "hover:bg-muted text-muted-foreground hover:text-foreground"
-            )}
-          >
-            <item.icon className="h-4 w-4" />
-            {item.name}
-          </Link>
-        );
-      })}
-      <div className="flex-1" />
-      
-      <button
-        onClick={() => signOut({ callbackUrl: "/admin/login" })}
-        className="flex w-full items-center gap-3 px-3 py-2 mt-auto rounded-md transition-colors text-sm font-medium text-red-500 hover:bg-red-500/10"
+      <div 
+        className={cn(
+          "fixed inset-y-0 left-0 z-50 w-64 border-r bg-card flex flex-col p-4 space-y-2 transition-transform duration-300 lg:sticky lg:top-0 lg:h-screen lg:translate-x-0 lg:bg-card/50",
+          sidebarOpen ? "translate-x-0" : "-translate-x-full"
+        )}
       >
-        <LogOut className="h-4 w-4" />
-        Log Out
-      </button>
-    </div>
+        <div className="flex items-center justify-between px-2 py-4 mb-2">
+          <div className="flex items-center gap-2">
+            <ShieldCheck className="h-6 w-6 text-primary" />
+            <h2 className="text-lg font-bold">Operations Hub</h2>
+          </div>
+          <Button variant="ghost" size="icon" className="lg:hidden h-8 w-8" onClick={() => setSidebarOpen(false)}>
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
+        
+        {navItems.map((item) => {
+          const isActive = item.exact 
+            ? pathname === item.href 
+            : pathname.startsWith(item.href);
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              onClick={() => setSidebarOpen(false)}
+              className={cn(
+                "flex items-center gap-3 px-3 py-2 rounded-md transition-colors text-sm font-medium",
+                isActive 
+                  ? "bg-primary/10 text-primary" 
+                  : "hover:bg-muted text-muted-foreground hover:text-foreground"
+              )}
+            >
+              <item.icon className="h-4 w-4" />
+              {item.name}
+            </Link>
+          );
+        })}
+        <div className="flex-1" />
+        
+        <button
+          onClick={() => {
+            setSidebarOpen(false);
+            signOut({ callbackUrl: "/admin/login" });
+          }}
+          className="flex w-full items-center gap-3 px-3 py-2 mt-auto rounded-md transition-colors text-sm font-medium text-red-500 hover:bg-red-500/10"
+        >
+          <LogOut className="h-4 w-4" />
+          Log Out
+        </button>
+      </div>
+    </>
   );
 }

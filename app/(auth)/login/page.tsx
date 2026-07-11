@@ -34,7 +34,11 @@ export default function LoginPage() {
         toast.error("Invalid email or password");
       } else {
         toast.success("Successfully logged in");
-        router.push("/dashboard");
+        
+        const searchParams = new URLSearchParams(window.location.search);
+        const callbackUrl = searchParams.get("callbackUrl") || "/dashboard";
+        
+        window.location.href = callbackUrl;
       }
     } catch (err) {
       toast.error("An unexpected error occurred");

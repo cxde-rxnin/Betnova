@@ -34,7 +34,11 @@ export default function AdminLoginPage() {
         toast.error("Invalid admin credentials");
       } else {
         toast.success("Admin authenticated");
-        router.push("/admin");
+        
+        const searchParams = new URLSearchParams(window.location.search);
+        const callbackUrl = searchParams.get("callbackUrl") || "/admin";
+        
+        window.location.href = callbackUrl;
       }
     } catch (err) {
       toast.error("An unexpected error occurred");

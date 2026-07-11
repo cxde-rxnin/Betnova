@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { getToken } from "next-auth/jwt";
+import { auth } from "@/lib/auth";
 import { checkRateLimit } from "@/lib/rate-limit";
 
-export default async function middleware(req: NextRequest) {
+export default auth(async function middleware(req) {
   const ip = req.headers.get("x-forwarded-for") || "127.0.0.1";
   const { nextUrl } = req;
   const path = nextUrl.pathname;
@@ -26,21 +26,20 @@ export default async function middleware(req: NextRequest) {
     }
   }
 
-  // 2. Authentication
-  const secret = process.env.NEXTAUTH_SECRET || process.env.AUTH_SECRET || "dummy_secret_for_development_only_123";
-  const token = await getToken({ req, secret, salt: process.env.NODE_ENV === "production" ? "__Secure-authjs.session-token" : "authjs.session-token" });
-  const isLoggedIn = !!token;
-  
+  // 2. Authentication — in v5, session is on req.auth
+  const session = req.auth;
+  const isLoggedIn = !!session;
+
   const isApiAuthRoute = path.startsWith("/api/auth");
-  const isAuthRoute = 
-    path.startsWith("/login") || 
-    path.startsWith("/register") || 
-    path.startsWith("/forgot-password") || 
-    path.startsWith("/reset-password") || 
+  const isAuthRoute =
+    path.startsWith("/login") ||
+    path.startsWith("/register") ||
+    path.startsWith("/forgot-password") ||
+    path.startsWith("/reset-password") ||
     path.startsWith("/verify-email") ||
     path.startsWith("/admin/login");
-  
-  const isProtectedRoute = 
+
+  const isProtectedRoute =
     path.startsWith("/dashboard") ||
     path.startsWith("/wallet") ||
     path.startsWith("/bets") ||
@@ -65,9 +64,8 @@ export default async function middleware(req: NextRequest) {
     if (!isLoggedIn) {
       return NextResponse.redirect(new URL("/admin/login", nextUrl));
     }
-    const role = token?.role as string;
+    const role = session?.user?.role as string;
     if (role === "USER") {
-      // If a standard user tries to access admin routes, challenge them at admin login
       return NextResponse.redirect(new URL("/admin/login", nextUrl));
     }
     return NextResponse.next();
@@ -86,8 +84,8 @@ export default async function middleware(req: NextRequest) {
   }
 
   return NextResponse.next();
-}
+});
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|.*\\.).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|images|.*\\.).*)" ],
 };

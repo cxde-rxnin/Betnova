@@ -16,6 +16,11 @@ export function KycUploadForm() {
     e.preventDefault();
     if (!file) return;
 
+    if (file.size > 5 * 1024 * 1024) {
+      toast.error("File is too large. Maximum size is 5MB.");
+      return;
+    }
+
     setLoading(true);
     const formData = new FormData();
     formData.append("document", file);

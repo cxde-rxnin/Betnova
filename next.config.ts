@@ -19,7 +19,7 @@ const securityHeaders = [
   },
   {
     key: "Content-Security-Policy",
-    value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data: https://images.unsplash.com https://ui-avatars.com https://www.thesportsdb.com https://r2.thesportsdb.com https://cdn.jsdelivr.net https://cryptologos.cc https://raw.githubusercontent.com https://res.cloudinary.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';",
+    value: "default-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://embed.tawk.to https://*.tawk.to; style-src 'self' 'unsafe-inline' https://embed.tawk.to https://*.tawk.to; img-src 'self' blob: data: https://images.unsplash.com https://ui-avatars.com https://www.thesportsdb.com https://r2.thesportsdb.com https://cdn.jsdelivr.net https://cryptologos.cc https://raw.githubusercontent.com https://res.cloudinary.com https://*.tawk.to; font-src 'self' https://*.tawk.to; connect-src 'self' https://*.tawk.to wss://*.tawk.to; frame-src https://*.tawk.to; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';",
   },
 ];
 

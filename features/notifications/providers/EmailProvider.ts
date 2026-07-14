@@ -28,7 +28,7 @@ export class EmailProvider implements NotificationProvider {
       }
 
       await this.transporter.sendMail({
-        from: process.env.SMTP_FROM || '"Betnova Notifications" <noreply@betnova.com>',
+        from: process.env.SMTP_FROM || '"Betnovo Notifications" <noreply@betnovo.com>',
         to: user.email,
         subject: params.title,
         text: params.message,
@@ -36,8 +36,8 @@ export class EmailProvider implements NotificationProvider {
           <div style="font-family: sans-serif; padding: 20px;">
             <h2>${params.title}</h2>
             <p>${params.message}</p>
-            <p style="color: #666; margin-top: 20px; font-size: 14px;">Log in to your Betnova account to view more details.</p>
-            <p style="color: #888; font-size: 12px; margin-top: 30px;">This is an automated notification from Betnova.</p>
+            <p style="color: #666; margin-top: 20px; font-size: 14px;">Log in to your Betnovo account to view more details.</p>
+            <p style="color: #888; font-size: 12px; margin-top: 30px;">This is an automated notification from Betnovo.</p>
           </div>
         `,
       });

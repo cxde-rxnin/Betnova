@@ -19,7 +19,7 @@ async function test() {
 
     console.log("Sending test email...");
     const info = await transporter.sendMail({
-      from: '"Betnova" <noreply@lynk.app>',
+      from: '"Betnovo" <noreply@lynk.app>',
       to: "okemsinachiobed01@gmail.com",
       subject: "Test",
       text: "Hello",

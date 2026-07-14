@@ -2,7 +2,7 @@ import connectToDatabase from "@/lib/db/connect";
 import { Bet, BetStatus } from "@/models/Bet";
 import { LedgerService } from "@/features/wallet/services/LedgerService";
 import mongoose from "mongoose";
-import { ApiFootballProvider } from "@/features/sportsbook/providers/api-football";
+import { SportApi7Provider } from "@/features/sportsbook/providers/sportapi7";
 import { NotificationService } from "@/features/notifications/NotificationService";
 
 export class SettlementService {
@@ -96,12 +96,12 @@ export class SettlementService {
     const bet = await Bet.findById(betId);
     if (!bet || bet.status !== "PENDING") return null;
 
-    // Auto-settlement logic using API-Football
+    // Auto-settlement logic using SportApi7Provider
     let allSettled = true;
     let anyLost = false;
     let anyVoid = false;
 
-    const provider = new ApiFootballProvider();
+    const provider = new SportApi7Provider();
 
     for (const selection of bet.selections) {
       if (selection.status !== "PENDING") {

@@ -2,18 +2,18 @@ import type { Metadata } from "next";
 import { MarketingPageHero } from "@/components/marketing/page-hero";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Betnova",
-  description: "The terms governing your use of the Betnova platform.",
+  title: "Terms of Service | Betnovo",
+  description: "The terms governing your use of the Betnovo platform.",
 };
 
 const sections = [
   {
     title: "1. Acceptance of Terms",
-    body: "By accessing or using the Betnova platform, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.",
+    body: "By accessing or using the Betnovo platform, you agree to be bound by these Terms of Service. If you do not agree, please do not use our services.",
   },
   {
     title: "2. Eligibility",
-    body: "You must be at least 18 years old (or the legal gambling age in your jurisdiction) to use Betnova. It is your responsibility to ensure that online betting is legal in your jurisdiction.",
+    body: "You must be at least 18 years old (or the legal gambling age in your jurisdiction) to use Betnovo. It is your responsibility to ensure that online betting is legal in your jurisdiction.",
   },
   {
     title: "3. Account Registration",
@@ -21,7 +21,7 @@ const sections = [
   },
   {
     title: "4. Betting Rules",
-    body: "All bets are subject to our betting rules and the specific rules for each sport and market. Betnova reserves the right to void bets in cases of obvious errors or fraud.",
+    body: "All bets are subject to our betting rules and the specific rules for each sport and market. Betnovo reserves the right to void bets in cases of obvious errors or fraud.",
   },
   {
     title: "5. Deposits & Withdrawals",
@@ -29,7 +29,7 @@ const sections = [
   },
   {
     title: "6. Limitation of Liability",
-    body: "Betnova is provided \"as is\" without warranties of any kind. We are not liable for any losses resulting from the use of our platform.",
+    body: "Betnovo is provided \"as is\" without warranties of any kind. We are not liable for any losses resulting from the use of our platform.",
   },
   {
     title: "7. Changes to Terms",

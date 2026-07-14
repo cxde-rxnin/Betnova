@@ -90,7 +90,7 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/60 pt-6 text-xs text-muted-foreground sm:flex-row">
-          <p>&copy; {new Date().getFullYear()} Betnova. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Betnovo. All rights reserved.</p>
           <p>Betting involves risk. Please play responsibly.</p>
         </div>
       </div>

@@ -380,7 +380,7 @@ export default function AdminFinancePage() {
             <div className="space-y-4">
               <div className="space-y-2">
                 <label className="text-sm font-medium">Select User</label>
-                <Select value={creditUserId} onValueChange={setCreditUserId}>
+                <Select value={creditUserId} onValueChange={(v) => setCreditUserId(v || "")}>
                   <SelectTrigger>
                     <SelectValue placeholder="Select a user..." />
                   </SelectTrigger>

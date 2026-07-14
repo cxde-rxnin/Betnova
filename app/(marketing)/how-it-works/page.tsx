@@ -8,7 +8,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "How It Works | Betnova",
+  title: "How It Works | Betnovo",
   description: "From sign-up to your first trade in four simple steps.",
 };
 
@@ -44,7 +44,7 @@ export default function HowItWorksPage() {
     <>
       <MarketingPageHero
         eyebrow="Get started"
-        title="How Betnova works"
+        title="How Betnovo works"
         description="Four steps between you and your first live market."
       />
       <div className="divide-y divide-border/30">

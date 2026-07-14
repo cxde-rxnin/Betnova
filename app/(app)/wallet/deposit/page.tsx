@@ -46,7 +46,7 @@ export default function DepositPage() {
   return (
     <div className="max-w-lg space-y-6 animate-fade-in">
       <Button variant="ghost" size="sm" render={<Link href="/wallet" />}><ArrowLeft className="mr-1 h-4 w-4" /> Back to Wallet</Button>
-      <PageHeader title="Deposit Funds" description="Add funds to your Betnova wallet." />
+      <PageHeader title="Deposit Funds" description="Add funds to your Betnovo wallet." />
 
       <div>
         <label className="mb-2 block text-sm font-medium">Payment Method</label>

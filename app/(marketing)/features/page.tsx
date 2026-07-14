@@ -15,7 +15,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Features | Betnova",
+  title: "Features | Betnovo",
   description: "Real-time odds, crypto deposits, instant settlement, and a platform engineered for precision.",
 };
 

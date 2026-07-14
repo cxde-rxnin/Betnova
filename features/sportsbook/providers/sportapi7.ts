@@ -24,8 +24,10 @@ export class SportApi7Provider implements ISportsProvider {
     });
 
     if (!response.ok) {
-      console.error(`SportApi7 error: ${response.status} ${response.statusText}`);
-      throw new Error(`SportApi7 error: ${response.status}`);
+      if (response.status !== 404 && response.status !== 429) {
+        console.error(`SportApi7 error: ${response.status} ${response.statusText}`);
+      }
+      throw new Error(`${response.status}`);
     }
 
     return await response.json();
@@ -41,10 +43,23 @@ export class SportApi7Provider implements ISportsProvider {
     esports: 7,
     baseball: 8,
     "american-football": 9,
+    bandy: 10,
+    motorsport: 11,
     rugby: 12,
     darts: 13,
     snooker: 14,
-    cricket: 19
+    futsal: 15,
+    "table-tennis": 16,
+    badminton: 18,
+    cricket: 19,
+    waterpolo: 21,
+    floorball: 22,
+    "aussie-rules": 23,
+    squash: 24,
+    "beach-volleyball": 34,
+    mma: 110,
+    cycling: 115,
+    golf: 116
   };
 
   async getSports(): Promise<Sport[]> {
@@ -60,7 +75,20 @@ export class SportApi7Provider implements ISportsProvider {
       { id: "cricket", name: "Cricket", icon: "🏏" },
       { id: "rugby", name: "Rugby", icon: "🏉" },
       { id: "darts", name: "Darts", icon: "🎯" },
-      { id: "snooker", name: "Snooker", icon: "🎱" }
+      { id: "snooker", name: "Snooker", icon: "🎱" },
+      { id: "table-tennis", name: "Table Tennis", icon: "🏓" },
+      { id: "motorsport", name: "Motorsport", icon: "🏎️" },
+      { id: "futsal", name: "Futsal", icon: "⚽" },
+      { id: "badminton", name: "Badminton", icon: "🏸" },
+      { id: "waterpolo", name: "Waterpolo", icon: "🤽" },
+      { id: "aussie-rules", name: "Aussie Rules", icon: "🏉" },
+      { id: "squash", name: "Squash", icon: "🎾" },
+      { id: "beach-volleyball", name: "Beach Volleyball", icon: "🏐" },
+      { id: "mma", name: "MMA", icon: "🥊" },
+      { id: "cycling", name: "Cycling", icon: "🚴" },
+      { id: "golf", name: "Golf", icon: "⛳" },
+      { id: "bandy", name: "Bandy", icon: "🏒" },
+      { id: "floorball", name: "Floorball", icon: "🏒" }
     ];
   }
 
@@ -111,54 +139,102 @@ export class SportApi7Provider implements ISportsProvider {
   }
 
   private async injectLogos(matches: Match[]): Promise<Match[]> {
-    if (matches.length === 0) return matches;
-
-    const teamNames = new Set<string>();
-    matches.forEach((m) => {
-      teamNames.add(m.homeTeam.name);
-      teamNames.add(m.awayTeam.name);
-    });
-
-    const logosMap = await LogoService.getLogosForTeams(Array.from(teamNames));
-
     return matches.map((m) => {
-      m.homeTeam.logo = logosMap[m.homeTeam.name] || LogoService.getFallbackLogo(m.homeTeam.name, true);
-      m.awayTeam.logo = logosMap[m.awayTeam.name] || LogoService.getFallbackLogo(m.awayTeam.name, false);
+      // Use internal Next.js proxy for team logos to safely hit RapidAPI without 403s
+      m.homeTeam.logo = `/api/sports/logo?teamId=${m.homeTeam.id}&name=${encodeURIComponent(m.homeTeam.name)}&isHome=true`;
+      m.awayTeam.logo = `/api/sports/logo?teamId=${m.awayTeam.id}&name=${encodeURIComponent(m.awayTeam.name)}&isHome=false`;
       return m;
     });
   }
 
   async getLiveMatches(sportId?: string): Promise<Match[]> {
     try {
-      const activeSport = sportId || "football";
-      const data = await this.fetchApi(`/sport/${activeSport}/events/live`);
-      
-      if (!data.events) return [];
-
-      const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId || "football"));
-      
-      return await this.injectLogos(rawMatches);
-    } catch (e) {
-      console.warn("Failed to fetch live matches:", e);
+      if (sportId) {
+        const data = await this.fetchApi(`/sport/${sportId}/events/live`);
+        if (!data.events) return [];
+        const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId));
+        return await this.injectLogos(rawMatches);
+      } else {
+        const allSports = Object.keys(this.categoryMap);
+        let allMatches: Match[] = [];
+        
+        // Use chunk of 4 to avoid exceeding 20req/s when multiple calls are made concurrently
+        for (let i = 0; i < allSports.length; i += 4) {
+          const chunk = allSports.slice(i, i + 4);
+          const chunkPromises = chunk.map(async (sport) => {
+             try {
+               const data = await this.fetchApi(`/sport/${sport}/events/live`);
+               if (data.events) {
+                 return data.events.map((item: any) => this.mapEventToMatch(item, sport));
+               }
+             } catch (e: any) {
+               if (e.message !== "404" && e.message !== "429") {
+                 console.warn(`Failed live matches for ${sport}:`, e.message);
+               }
+             }
+             return [];
+          });
+          const chunkResults = await Promise.all(chunkPromises);
+          allMatches = allMatches.concat(...chunkResults);
+          if (i + 4 < allSports.length) {
+            await new Promise(r => setTimeout(r, 1000)); // 1 second delay
+          }
+        }
+        return await this.injectLogos(allMatches);
+      }
+    } catch (e: any) {
+      if (e.message !== "404" && e.message !== "429") {
+        console.warn("Failed to fetch live matches:", e.message);
+      }
       return [];
     }
   }
 
   async getUpcomingMatches(sportId?: string, date?: string): Promise<Match[]> {
     try {
-      const activeSport = sportId || "football";
-      const categoryId = this.categoryMap[activeSport] || 1;
       const targetDate = date || new Date().toISOString().split('T')[0];
-      const data = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate}`);
       
-      if (!data.events) return [];
-
-      const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId || "football"));
-      const matches = rawMatches.filter((m: Match) => m.status === "PRE_MATCH");
-
-      return await this.injectLogos(matches);
-    } catch (e) {
-      console.warn("Failed to fetch upcoming matches:", e);
+      if (sportId) {
+        const categoryId = this.categoryMap[sportId] || 1;
+        const data = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate}`);
+        if (!data.events) return [];
+        const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId));
+        const matches = rawMatches.filter((m: Match) => m.status === "PRE_MATCH");
+        return await this.injectLogos(matches);
+      } else {
+        const allSports = Object.keys(this.categoryMap);
+        let allMatches: Match[] = [];
+        
+        // Use chunk of 4 to avoid exceeding 20req/s
+        for (let i = 0; i < allSports.length; i += 4) {
+          const chunk = allSports.slice(i, i + 4);
+          const chunkPromises = chunk.map(async (sport) => {
+             try {
+               const categoryId = this.categoryMap[sport];
+               const data = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate}`);
+               if (data.events) {
+                 return data.events.map((item: any) => this.mapEventToMatch(item, sport))
+                                   .filter((m: Match) => m.status === "PRE_MATCH");
+               }
+             } catch (e: any) {
+               if (e.message !== "404" && e.message !== "429") {
+                 console.warn(`Failed upcoming matches for ${sport}:`, e.message);
+               }
+             }
+             return [];
+          });
+          const chunkResults = await Promise.all(chunkPromises);
+          allMatches = allMatches.concat(...chunkResults);
+          if (i + 4 < allSports.length) {
+            await new Promise(r => setTimeout(r, 1000));
+          }
+        }
+        return await this.injectLogos(allMatches);
+      }
+    } catch (e: any) {
+      if (e.message !== "404" && e.message !== "429") {
+        console.warn("Failed to fetch upcoming matches:", e.message);
+      }
       return [];
     }
   }
@@ -166,14 +242,45 @@ export class SportApi7Provider implements ISportsProvider {
   async getMatchDetails(matchId: string): Promise<MatchDetails | null> {
     try {
       const data = await this.fetchApi(`/event/${matchId}`);
+      require('fs').writeFileSync('scratch/last_match_id.txt', matchId + '\n' + JSON.stringify(data.event));
       if (!data.event) return null;
 
       const match = this.mapEventToMatch(data.event, "football");
       const matchWithLogos = (await this.injectLogos([match]))[0];
 
+      let statistics: { type: string; homeValue: string | number; awayValue: string | number }[] = [];
+      try {
+        const statsData = await this.fetchApi(`/event/${matchId}/statistics`);
+        if (statsData && statsData.statistics && statsData.statistics.length > 0) {
+          const allPeriod = statsData.statistics.find((s: any) => s.period === "ALL") || statsData.statistics[0];
+          if (allPeriod && allPeriod.groups) {
+            allPeriod.groups.forEach((group: any) => {
+              if (group.statisticsItems) {
+                group.statisticsItems.forEach((item: any) => {
+                  statistics.push({
+                    type: item.name,
+                    homeValue: item.home,
+                    awayValue: item.away
+                  });
+                });
+              }
+            });
+          }
+        }
+      } catch (e: any) {
+        if (e.message !== "404") {
+          console.warn(`Could not fetch statistics for match ${matchId}:`, e.message);
+        }
+      }
+
+      // We'll leave prediction empty for now as it requires specific prediction endpoints 
+      // like /event/{matchId}/pregame-form which might not exist for all matches.
+      const prediction = undefined;
+
       return {
         ...matchWithLogos,
-        statistics: []
+        statistics,
+        prediction
       };
     } catch (e: any) {
       console.warn("Failed to fetch match details:", e);
@@ -185,6 +292,7 @@ export class SportApi7Provider implements ISportsProvider {
   }
 
   async getStandings(competitionId: string, season?: string): Promise<StandingEntry[]> {
+    // SportApi7 standings integration not yet implemented
     return [];
   }
 }

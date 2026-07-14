@@ -19,6 +19,8 @@ export interface IUser extends Document {
   lastLogin?: Date;
   resetCode?: string;
   resetCodeExpires?: Date;
+  withdrawalOtp?: string;
+  withdrawalOtpExpires?: Date;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -100,6 +102,12 @@ const UserSchema = new Schema<IUser>(
       type: String,
     },
     resetCodeExpires: {
+      type: Date,
+    },
+    withdrawalOtp: {
+      type: String,
+    },
+    withdrawalOtpExpires: {
       type: Date,
     },
   },

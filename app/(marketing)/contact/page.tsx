@@ -9,7 +9,7 @@ export default function ContactPage() {
     <>
       <MarketingPageHero
         eyebrow="Contact"
-        title="Talk to the Betnova team"
+        title="Talk to the Betnovo team"
         description="Questions about markets, deposits, or your account? Our support team is ready to help."
       />
       <div className="py-20 sm:py-28">

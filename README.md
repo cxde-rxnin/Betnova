@@ -1,6 +1,6 @@
-# Betnova
+# Betnovo
 
-Betnova is a scalable, feature-driven Next.js platform designed for robustness, security, and high performance.
+Betnovo is a scalable, feature-driven Next.js platform designed for robustness, security, and high performance.
 
 ## Architecture
 

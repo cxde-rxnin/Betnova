@@ -1,4 +1,4 @@
-import { getLiveMatches, getUpcomingMatches } from "@/features/sportsbook/actions";
+import { getLiveMatches, getUpcomingMatches, getSports } from "@/features/sportsbook/actions";
 import { LiveMarketCard } from "@/components/marketing/live-market-card";
 import type { Match } from "@/features/sportsbook/types";
 import type { SportEvent } from "@/lib/mock-data";
@@ -8,7 +8,7 @@ import Link from "next/link";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export const metadata = {
-  title: "Live Matches | Betnova",
+  title: "Live Matches | Betnovo",
   description: "View and bet on live sporting events globally.",
 };
 
@@ -19,13 +19,16 @@ type Props = {
 export default async function PublicLivePage(props: Props) {
   const searchParams = await props.searchParams;
   const pageParam = typeof searchParams?.page === "string" ? searchParams.page : "1";
+  const categoryParam = typeof searchParams?.category === "string" ? searchParams.category : undefined;
+  
   const currentPage = parseInt(pageParam, 10) || 1;
   const pageSize = 24; // Allows more than 21, perfectly fills 4 columns (4x6)
 
   // Fetch both live and upcoming so we can pad the list to guarantee pagination is testable
-  const [liveMatches, upcomingMatches] = await Promise.all([
-    getLiveMatches().catch(() => []),
-    getUpcomingMatches().catch(() => [])
+  const [liveMatches, upcomingMatches, allSports] = await Promise.all([
+    getLiveMatches(categoryParam).catch(() => []),
+    getUpcomingMatches(categoryParam).catch(() => []),
+    getSports().catch(() => [])
   ]);
 
   function mapMatchToSportEvent(match: Match): SportEvent {
@@ -64,7 +67,7 @@ export default async function PublicLivePage(props: Props) {
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-      <div className="mb-8 flex items-center gap-3">
+      <div className="mb-6 flex items-center gap-3">
         <div className="rounded-xl bg-destructive/10 p-3 text-destructive">
           <Flame className="h-6 w-6" />
         </div>
@@ -72,6 +75,18 @@ export default async function PublicLivePage(props: Props) {
           <h1 className="text-3xl font-bold tracking-tight">Live Matches</h1>
           <p className="text-muted-foreground mt-1">Real-time scores and odds from around the world.</p>
         </div>
+      </div>
+
+      <div className="flex gap-2 overflow-x-auto pb-4 mb-4 scrollbar-hide">
+        <Link href={`/live`} className={`shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${!categoryParam ? 'bg-primary text-primary-foreground' : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground'}`}>
+          All Live
+        </Link>
+        {allSports.map(sport => (
+          <Link key={sport.id} href={`/live?category=${sport.id}`} className={`shrink-0 px-4 py-2 rounded-full flex items-center gap-2 text-sm font-medium transition-colors ${categoryParam === sport.id ? 'bg-primary text-primary-foreground' : 'bg-muted/50 hover:bg-muted text-muted-foreground hover:text-foreground'}`}>
+            <span>{sport.icon}</span>
+            <span>{sport.name}</span>
+          </Link>
+        ))}
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">

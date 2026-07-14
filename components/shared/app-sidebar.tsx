@@ -8,7 +8,6 @@ import { Home, Trophy, Ticket, Wallet, Bell, User, Settings, Shield, X, LogOut, 
 import { Button } from "@/components/ui/button";
 import { useUIStore } from "@/lib/store/ui-store";
 import { useSession, signOut } from "next-auth/react";
-import { useUnreadSupportCount } from "@/features/support/hooks";
 
 const navItems = [
   { label: "Dashboard", href: "/dashboard", icon: Home },
@@ -17,14 +16,12 @@ const navItems = [
   { label: "Wallet", href: "/wallet", icon: Wallet },
   { label: "Notifications", href: "/notifications", icon: Bell },
   { label: "Profile", href: "/profile", icon: User },
-  { label: "Support", href: "/support", icon: MessageSquare },
 ];
 
 export function AppSidebar() {
   const pathname = usePathname();
   const { sidebarOpen, setSidebarOpen } = useUIStore();
   const { data: session } = useSession();
-  const { data: unreadCount = 0 } = useUnreadSupportCount();
 
   return (
     <>
@@ -67,11 +64,6 @@ export function AppSidebar() {
                   <item.icon className="h-4 w-4" />
                   {item.label}
                 </div>
-                {item.label === "Support" && unreadCount > 0 && (
-                  <span className="flex h-5 min-w-5 items-center justify-center rounded-full bg-destructive px-1 text-[10px] font-bold text-destructive-foreground">
-                    {unreadCount > 99 ? "99+" : unreadCount}
-                  </span>
-                )}
               </Link>
             );
           })}

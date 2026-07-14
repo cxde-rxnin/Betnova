@@ -121,6 +121,7 @@ export default async function LandingPage() {
                     src={sportImages[sport.id] || "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=800&auto=format&fit=crop"}
                     alt={sport.name}
                     fill
+                    sizes="(max-width: 768px) 50vw, 50vw"
                     className="object-cover opacity-70 group-hover:scale-105 group-hover:opacity-90 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent" />
@@ -143,6 +144,7 @@ export default async function LandingPage() {
                     src={sportImages[sport.id] || "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?q=80&w=800&auto=format&fit=crop"}
                     alt={sport.name}
                     fill
+                    sizes="(max-width: 768px) 33vw, 16vw"
                     className="object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/40 to-transparent" />

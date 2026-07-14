@@ -30,11 +30,11 @@ export default function AdminSettingsPage() {
         <div className="space-y-4">
           <div>
             <Label htmlFor="set-name" className="mb-1.5">Platform Name</Label>
-            <Input id="set-name" defaultValue="Betnova" />
+            <Input id="set-name" defaultValue="Betnovo" />
           </div>
           <div>
             <Label htmlFor="set-email" className="mb-1.5">Support Email</Label>
-            <Input id="set-email" defaultValue="support@betnova.com" />
+            <Input id="set-email" defaultValue="support@betnovo.com" />
           </div>
           <div className="flex items-center justify-between">
             <div><p className="text-sm font-medium">Maintenance Mode</p><p className="text-xs text-muted-foreground">Disable public access temporarily.</p></div>

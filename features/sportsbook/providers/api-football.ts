@@ -173,14 +173,36 @@ export class ApiFootballProvider implements ISportsProvider {
     }
     
     const matchWithLogos = (await this.injectLogos([baseMatch]))[0];
+    // Parse Statistics
+    let statistics: any[] = [];
+    try {
+      const statsRes = await this.fetchApi("/fixtures/statistics", { fixture: matchId }).catch(() => null);
+      if (statsRes && statsRes.length === 2) {
+        // API-Football returns an array of two teams.
+        const homeStats = statsRes.find((s: any) => s.team.id === item.teams.home.id)?.statistics || [];
+        const awayStats = statsRes.find((s: any) => s.team.id === item.teams.away.id)?.statistics || [];
+        
+        homeStats.forEach((hStat: any) => {
+          const aStat = awayStats.find((a: any) => a.type === hStat.type);
+          if (hStat.value !== null || (aStat && aStat.value !== null)) {
+            statistics.push({
+              type: hStat.type,
+              homeValue: hStat.value !== null ? hStat.value : 0,
+              awayValue: aStat?.value !== null ? aStat.value : 0
+            });
+          }
+        });
+      }
+    } catch (e) {
+      console.warn("Failed to parse API-Football statistics:", e);
+    }
     
     // In a real app we'd fetch odds from /odds endpoint as well
     // For now we map available base details
     return {
       ...matchWithLogos,
       referee: item.fixture.referee,
-      // Mapping statistics if available
-      statistics: item.statistics ? [] : undefined,
+      statistics,
       prediction
     };
   }

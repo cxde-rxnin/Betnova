@@ -1,4 +1,4 @@
-# Betnova Launch Checklist
+# Betnovo Launch Checklist
 
 ## Security & Access
 - [ ] NextAuth secrets are randomly generated and securely stored.

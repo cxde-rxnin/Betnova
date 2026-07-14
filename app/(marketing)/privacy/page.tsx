@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { MarketingPageHero } from "@/components/marketing/page-hero";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Betnova",
-  description: "How Betnova collects, uses, and protects your information.",
+  title: "Privacy Policy | Betnovo",
+  description: "How Betnovo collects, uses, and protects your information.",
 };
 
 const sections = [
@@ -25,7 +25,7 @@ const sections = [
   },
   {
     title: "5. Your Rights",
-    body: "You have the right to access, correct, or delete your personal information. Contact us at privacy@betnova.com for any data-related requests.",
+    body: "You have the right to access, correct, or delete your personal information. Contact us at privacy@betnovo.com for any data-related requests.",
   },
   {
     title: "6. Cookies",

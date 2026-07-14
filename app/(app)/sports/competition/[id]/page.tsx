@@ -41,7 +41,7 @@ export default function CompetitionDetailsPage() {
               </tr>
             </thead>
             <tbody className="divide-y">
-              {standings.map((entry) => (
+              {standings.map((entry: any) => (
                 <tr key={entry.team.id} className="hover:bg-muted/30 transition-colors">
                   <td className="px-4 py-3 text-center">{entry.rank}</td>
                   <td className="px-4 py-3">
@@ -58,7 +58,7 @@ export default function CompetitionDetailsPage() {
                   <td className="px-4 py-3 text-center font-bold text-primary">{entry.points}</td>
                   <td className="px-4 py-3 text-center hidden md:table-cell">
                     <div className="flex items-center justify-center gap-1">
-                      {entry.form.split('').map((char, i) => (
+                      {entry.form?.split('').map((char: string, i: number) => (
                         <span key={i} className={`flex h-4 w-4 items-center justify-center rounded-[3px] text-[9px] font-bold text-white ${
                           char === 'W' ? 'bg-green-500' : char === 'D' ? 'bg-gray-400' : 'bg-red-500'
                         }`}>

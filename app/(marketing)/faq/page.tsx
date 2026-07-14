@@ -7,10 +7,10 @@ import { MarketingPageHero } from "@/components/marketing/page-hero";
 import { Reveal } from "@/components/marketing/reveal";
 
 const faqs = [
-  { q: "What is Betnova?", a: "Betnova is a real-time sports betting platform. We combine live sports markets with crypto-powered deposits and instant settlement — built more like a trading platform than a traditional sportsbook." },
+  { q: "What is Betnovo?", a: "Betnovo is a real-time sports betting platform. We combine live sports markets with crypto-powered deposits and instant settlement — built more like a trading platform than a traditional sportsbook." },
   { q: "How do I create an account?", a: "Click \"Sign Up\" and provide your email address and a password. Verification is quick and straightforward." },
   { q: "What sports can I trade?", a: "Football, basketball, tennis, cricket, baseball, ice hockey, MMA, esports, and more — with thousands of markets updated daily." },
-  { q: "How do deposits and withdrawals work?", a: "Betnova is crypto-native: fund your wallet directly on-chain. Deposits are instant, and withdrawals settle in seconds once a market resolves." },
+  { q: "How do deposits and withdrawals work?", a: "Betnovo is crypto-native: fund your wallet directly on-chain. Deposits are instant, and withdrawals settle in seconds once a market resolves." },
   { q: "Is my data and funds secure?", a: "Yes. We use 256-bit encryption, two-factor authentication, and on-chain verifiable transactions, following industry best practices throughout." },
   { q: "What are the minimum and maximum position sizes?", a: "Minimum positions start small. Maximum sizes vary by market and are always clearly displayed before you confirm a bet." },
   { q: "Can I trade live, in-play markets?", a: "Yes — our in-play markets update odds in real time as the action unfolds, so you can trade throughout the event." },
@@ -25,7 +25,7 @@ export default function FAQPage() {
       <MarketingPageHero
         eyebrow="Support"
         title="Frequently asked questions"
-        description="Everything you need to know about trading on Betnova."
+        description="Everything you need to know about trading on Betnovo."
       />
       <div className="py-20 sm:py-28">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

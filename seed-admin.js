@@ -11,7 +11,7 @@ async function run() {
   console.log(`Reverted ${revertRes.modifiedCount} users to USER role.`);
 
   // Seed Admin
-  const email = 'admin@betnova.com';
+  const email = 'admin@betnovo.com';
   const existingAdmin = await db.collection('users').findOne({ email });
   const passwordHash = await bcrypt.hash('Admin123!', 10);
 

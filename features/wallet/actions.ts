@@ -60,7 +60,7 @@ export async function requestDeposit(formData: FormData) {
 
     evidenceUrl = await new Promise<string>((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: "betnova/receipts" },
+        { folder: "betnovo/receipts" },
         (error, result) => {
           if (error) reject(error);
           else resolve(result!.secure_url);
@@ -79,23 +79,58 @@ export async function requestDeposit(formData: FormData) {
   return { success: true, transactionId: tx._id.toString() };
 }
 
-export async function requestWithdrawal(amount: number, currency: string, destinationAddress: string) {
+export async function requestWithdrawalOTP(amount: number, currency: string) {
   const userId = await getUserId();
-
   await connectToDatabase();
-  const user = await User.findById(userId).select("kycStatus").lean();
+
+  const user = await User.findById(userId);
   if (!user || user.kycStatus !== "VERIFIED") {
     throw new Error("KYC Verification required to request a withdrawal");
   }
 
-  const tx = await WalletService.createWithdrawalRequest(userId, amount, currency, destinationAddress);
+  // Generate 6 digit code
+  const code = Math.floor(100000 + Math.random() * 900000).toString();
   
-  // Removed mock processing. Admin must approve manually.
+  user.withdrawalOtp = code;
+  user.withdrawalOtpExpires = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+  await user.save();
+
+  const { Notification } = await import("@/models/Notification");
+  await Notification.create({
+    userId,
+    category: "FINANCIAL",
+    title: "Withdrawal Verification Code",
+    message: `Your one-time withdrawal code is: ${code}. It will expire in 10 minutes.`,
+  });
+
+  return { success: true };
+}
+
+export async function requestWithdrawal(amount: number, currency: string, destinationAddress: string, otpCode: string) {
+  const userId = await getUserId();
+
+  await connectToDatabase();
+  const user = await User.findById(userId).select("kycStatus withdrawalOtp withdrawalOtpExpires").lean();
+  if (!user || user.kycStatus !== "VERIFIED") {
+    throw new Error("KYC Verification required to request a withdrawal");
+  }
+
+  if (!user.withdrawalOtp || user.withdrawalOtp !== otpCode) {
+    throw new Error("Invalid verification code");
+  }
+
+  if (!user.withdrawalOtpExpires || new Date() > user.withdrawalOtpExpires) {
+    throw new Error("Verification code has expired. Please request a new one.");
+  }
+
+  // Clear OTP
+  await User.updateOne({ _id: userId }, { $unset: { withdrawalOtp: 1, withdrawalOtpExpires: 1 } });
+
+  const tx = await WalletService.createWithdrawalRequest(userId, amount, currency, destinationAddress);
   
   revalidatePath("/wallet");
   return { success: true, transactionId: tx._id.toString() };
 }
-
 
 export async function getActiveDepositMethods() {
   await connectToDatabase();

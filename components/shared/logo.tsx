@@ -19,7 +19,7 @@ export function Logo({ className, size = "md", showText = true }: LogoProps) {
     <div className={cn("flex items-center", className)}>
       {showText && (
         <span className={cn("font-heading font-bold tracking-tight", textSizes[size])}>
-          Betnova
+          Betnovo
         </span>
       )}
     </div>

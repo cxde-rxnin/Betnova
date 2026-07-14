@@ -13,7 +13,6 @@ const navItems = [
   { name: "Dashboard", href: "/admin", icon: Activity, exact: true },
   { name: "Users", href: "/admin/users", icon: Users },
   { name: "KYC Reviews", href: "/admin/kyc", icon: ShieldCheck },
-  { name: "Live Support", href: "/admin/support", icon: MessageSquare },
   { name: "Bets", href: "/admin/bets", icon: Ticket },
   { name: "Finances", href: "/admin/finances", icon: Wallet },
   { name: "Risk Rules", href: "/admin/risk", icon: ShieldAlert },

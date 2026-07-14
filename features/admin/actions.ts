@@ -295,6 +295,15 @@ export async function adjustUserBalance(targetUserId: string, currency: string, 
     details: { amount, currency, reason, ledgerEntryId }
   });
 
+  // Send notification to user
+  const actionText = amount > 0 ? "credited to" : "debited from";
+  await NotificationService.notifyUser({
+    userId: targetUserId,
+    category: "FINANCIAL",
+    title: "Account Balance Updated",
+    message: `${Math.abs(amount)} ${currency} has been ${actionText} your wallet. Reason: ${reason}`,
+  });
+
   revalidatePath("/admin/users");
   return { success: true };
 }

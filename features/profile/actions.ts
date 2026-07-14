@@ -32,7 +32,7 @@ export async function submitKycDocument(formData: FormData) {
 
     documentUrl = await new Promise<string>((resolve, reject) => {
       const uploadStream = cloudinary.uploader.upload_stream(
-        { folder: "betnova/kyc" },
+        { folder: "betnovo/kyc" },
         (error, result) => {
           if (error) reject(error);
           else resolve(result!.secure_url);

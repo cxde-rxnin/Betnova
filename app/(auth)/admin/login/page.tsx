@@ -58,7 +58,7 @@ export default function AdminLoginPage() {
       <form onSubmit={handleSubmit} className="mt-8 space-y-4">
         <div>
           <Label htmlFor="login-email" className="mb-1.5">Admin Email</Label>
-          <Input id="login-email" name="email" type="email" placeholder="admin@betnova.com" required />
+          <Input id="login-email" name="email" type="email" placeholder="admin@betnovo.com" required />
         </div>
         <div>
           <Label htmlFor="login-password" className="mb-1.5">Master Password</Label>

@@ -41,7 +41,7 @@ export const useBetSlipStore = create<BetSlipState>()(
       close: () => set({ isOpen: false }),
       toggle: () => set((state) => ({ isOpen: !state.isOpen }))
     }),
-    { name: "betnova-betslip" }
+    { name: "betnovo-betslip" }
   )
 );
 

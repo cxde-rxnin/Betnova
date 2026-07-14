@@ -1,9 +1,9 @@
 "use server";
 
-import { ApiFootballProvider } from "./providers/api-football";
+import { SportApi7Provider } from "./providers/sportapi7";
 
 // We use the singleton pattern to initialize our provider
-const sportsProvider = new ApiFootballProvider();
+const sportsProvider = new SportApi7Provider();
 
 export async function getSports() {
   return await sportsProvider.getSports();

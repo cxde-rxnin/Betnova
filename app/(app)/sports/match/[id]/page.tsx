@@ -110,15 +110,15 @@ export default function MatchDetailsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Markets */}
-        <div className="md:col-span-2 space-y-4">
+        {/* Markets (Now taking 1 column) */}
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold flex items-center gap-2">
             <Activity className="h-5 w-5 text-primary" /> Betting Markets
           </h3>
           {match.markets?.map((market) => (
             <div key={market.id} className="rounded-xl border bg-card p-4">
               <h4 className="font-medium mb-4">{market.name}</h4>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 {market.selections.map(sel => {
                   const isSelected = selections.some(s => s.fixtureId === match.id && s.marketName === market.name && s.outcomeName === sel.label);
                   return (
@@ -160,8 +160,8 @@ export default function MatchDetailsPage() {
           )}
         </div>
 
-        {/* Statistics */}
-        <div className="space-y-4">
+        {/* Statistics (Now taking 2 columns) */}
+        <div className="md:col-span-2 space-y-4">
           <h3 className="text-lg font-semibold">Match Stats</h3>
           <div className="rounded-xl border bg-card p-4">
             {match.statistics && match.statistics.length > 0 ? (
@@ -176,7 +176,7 @@ export default function MatchDetailsPage() {
                     <div className="flex h-1.5 rounded-full bg-muted overflow-hidden">
                       <div 
                         className="bg-primary" 
-                        style={{ width: `${(Number(stat.homeValue) / (Number(stat.homeValue) + Number(stat.awayValue)) || 0.5) * 100}%` }} 
+                        style={{ width: `${(parseFloat(String(stat.homeValue)) / (parseFloat(String(stat.homeValue)) + parseFloat(String(stat.awayValue))) || 0.5) * 100}%` }} 
                       />
                     </div>
                   </div>

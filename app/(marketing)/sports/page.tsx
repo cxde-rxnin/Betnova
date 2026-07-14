@@ -7,7 +7,7 @@ import { Flame, CalendarDays, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export const metadata = {
-  title: "Sports | Betnova",
+  title: "Sports | Betnovo",
   description: "Browse all available sports, live matches, and upcoming events.",
 };
 

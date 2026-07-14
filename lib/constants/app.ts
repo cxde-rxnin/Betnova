@@ -1,5 +1,5 @@
 export const APP_CONFIG = {
-  name: "Betnova",
+  name: "Betnovo",
   version: "0.1.0",
-  supportEmail: "support@betnova.com",
+  supportEmail: "support@betnovo.com",
 };

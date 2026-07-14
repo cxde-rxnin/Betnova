@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/shared/page-header";
 
 export const metadata = {
-  title: "Sportsbook | Betnova",
+  title: "Sportsbook | Betnovo",
   description: "Dashboard Sportsbook Hub",
 };
 

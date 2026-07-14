@@ -8,13 +8,17 @@ import { Label } from "@/components/ui/label";
 import { useWithdraw, useWalletBalances } from "../hooks";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, ArrowLeft } from "lucide-react";
+import { requestWithdrawalOTP } from "../actions";
+import { toast } from "sonner";
 
 export function WithdrawModal() {
   const [open, setOpen] = useState(false);
   const [currency, setCurrency] = useState("USDT");
   const [amount, setAmount] = useState("");
   const [address, setAddress] = useState("");
-  const [step, setStep] = useState<1 | 2>(1);
+  const [otpCode, setOtpCode] = useState("");
+  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [isRequestingOtp, setIsRequestingOtp] = useState(false);
 
   const { mutate: withdraw, isPending } = useWithdraw();
   const { data: balances } = useWalletBalances();
@@ -22,18 +26,40 @@ export function WithdrawModal() {
   const selectedWallet = balances?.find((b: any) => b.currency === currency);
   const availableBalance = selectedWallet?.availableBalance || 0;
 
+  const handleRequestOTP = async () => {
+    setIsRequestingOtp(true);
+    try {
+      await requestWithdrawalOTP(parseFloat(amount), currency);
+      toast.success("Verification code sent to your notifications!");
+      setStep(3);
+    } catch (e: any) {
+      toast.error(e.message || "Failed to request code");
+    } finally {
+      setIsRequestingOtp(false);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount || !address) return;
-
-    withdraw(
-      { amount: parseFloat(amount), currency, destinationAddress: address },
-      { onSuccess: () => {
-          setOpen(false);
-          setAmount("");
-          setAddress("");
-      }}
-    );
+    
+    if (step === 2) {
+      handleRequestOTP();
+      return;
+    }
+    
+    if (step === 3) {
+      if (!otpCode) return;
+      withdraw(
+        { amount: parseFloat(amount), currency, destinationAddress: address, otpCode },
+        { onSuccess: () => {
+            setOpen(false);
+            setAmount("");
+            setAddress("");
+            setOtpCode("");
+        }}
+      );
+    }
   };
 
   return (
@@ -47,8 +73,8 @@ export function WithdrawModal() {
       <SheetContent className="theme-marketing dark sm:max-w-[540px] bg-background border-l p-0 flex flex-col w-[90vw]">
         <SheetHeader className="border-b p-4">
           <SheetTitle className="flex items-center gap-2">
-            {step === 2 && (
-              <button onClick={() => setStep(1)} className="mr-2 text-muted-foreground hover:text-foreground transition-colors">
+            {(step === 2 || step === 3) && (
+              <button onClick={() => setStep(step === 3 ? 2 : 1)} className="mr-2 text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-4 w-4" />
               </button>
             )}
@@ -58,8 +84,8 @@ export function WithdrawModal() {
         
         <form onSubmit={handleSubmit} className="flex-1 flex flex-col min-h-0">
           <div className="flex-1 overflow-y-auto p-6">
-            {step === 1 ? (
-              <div className="space-y-6">
+            {step === 1 && (
+              <div className="space-y-6 animate-fade-in">
                 <div className="space-y-2">
                   <Label>Select Currency</Label>
                   <Select value={currency} onValueChange={(val) => val && setCurrency(val)}>
@@ -108,8 +134,10 @@ export function WithdrawModal() {
                   </div>
                 </div>
               </div>
-            ) : (
-              <div className="space-y-6">
+            )}
+
+            {step === 2 && (
+              <div className="space-y-6 animate-fade-in">
                 <div className="rounded-xl border bg-card p-5 space-y-3 mb-6">
                   <div className="flex flex-col gap-2">
                     <span className="text-sm text-muted-foreground">Withdrawal Amount</span>
@@ -135,10 +163,33 @@ export function WithdrawModal() {
                 </div>
               </div>
             )}
+
+            {step === 3 && (
+              <div className="space-y-6 animate-fade-in">
+                <div className="space-y-4">
+                  <div className="text-center space-y-2">
+                    <h3 className="font-semibold text-lg">Verification Code</h3>
+                    <p className="text-sm text-muted-foreground">We've sent a 6-digit verification code to your notifications. Enter it below to confirm your withdrawal.</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label>6-Digit Code</Label>
+                    <Input 
+                      placeholder="000000" 
+                      className="w-full h-14 text-lg text-center tracking-[0.5em] font-mono"
+                      maxLength={6}
+                      value={otpCode} 
+                      onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))} 
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-6 border-t mt-auto bg-card shrink-0">
-            {step === 1 ? (
+            {step === 1 && (
               <Button 
                 type="button" 
                 className="w-full h-14 text-lg font-bold shadow-lg" 
@@ -147,8 +198,15 @@ export function WithdrawModal() {
               >
                 Next: Destination Address
               </Button>
-            ) : (
-              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || !address}>
+            )}
+            {step === 2 && (
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isRequestingOtp || !address}>
+                {isRequestingOtp && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                Send Verification Code
+              </Button>
+            )}
+            {step === 3 && (
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || otpCode.length !== 6}>
                 {isPending && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
                 Confirm Withdrawal
               </Button>

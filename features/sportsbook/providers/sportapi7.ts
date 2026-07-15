@@ -1,6 +1,9 @@
 import { ISportsProvider } from "./types";
 import { Match, MatchDetails, Sport, Competition, StandingEntry, Market } from "../types";
 import { LogoService } from "../services/LogoService";
+import fallbackDataRaw from "./fallback-data.json";
+
+const fallbackData = fallbackDataRaw as { live: Record<string, any>; scheduled: Record<string, any> };
 
 const API_KEY = process.env.SPORTAPI7_KEY;
 const API_URL = "https://sportapi7.p.rapidapi.com/api/v1";
@@ -150,7 +153,13 @@ export class SportApi7Provider implements ISportsProvider {
   async getLiveMatches(sportId?: string): Promise<Match[]> {
     try {
       if (sportId) {
-        const data = await this.fetchApi(`/sport/${sportId}/events/live`);
+        let data;
+        try {
+          data = await this.fetchApi(`/sport/${sportId}/events/live`);
+        } catch (e) {
+          data = fallbackData.live[sportId] || { events: [] };
+        }
+        
         if (!data.events) return [];
         const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId));
         return await this.injectLogos(rawMatches);
@@ -162,8 +171,14 @@ export class SportApi7Provider implements ISportsProvider {
         for (let i = 0; i < allSports.length; i += 4) {
           const chunk = allSports.slice(i, i + 4);
           const chunkPromises = chunk.map(async (sport) => {
-             try {
-               const data = await this.fetchApi(`/sport/${sport}/events/live`);
+              try {
+               let data;
+               try {
+                 data = await this.fetchApi(`/sport/${sport}/events/live`);
+               } catch (e) {
+                 data = fallbackData.live[sport] || { events: [] };
+               }
+               
                if (data.events) {
                  return data.events.map((item: any) => this.mapEventToMatch(item, sport));
                }
@@ -204,13 +219,23 @@ export class SportApi7Provider implements ISportsProvider {
         
         let allEvents: any[] = [];
         try {
-          const data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+          let data1;
+          try {
+            data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+          } catch(e) {
+            data1 = fallbackData.scheduled[`${categoryId}_${targetDate1}`] || { events: [] };
+          }
           if (data1.events) allEvents = allEvents.concat(data1.events);
         } catch (e) { /* ignore */ }
         
         if (targetDate2) {
           try {
-            const data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+            let data2;
+            try {
+              data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+            } catch(e) {
+              data2 = fallbackData.scheduled[`${categoryId}_${targetDate2}`] || { events: [] };
+            }
             if (data2.events) allEvents = allEvents.concat(data2.events);
           } catch (e) { /* ignore */ }
         }
@@ -231,13 +256,23 @@ export class SportApi7Provider implements ISportsProvider {
              try {
                const categoryId = this.categoryMap[sport];
                try {
-                 const data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+                 let data1;
+                 try {
+                   data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+                 } catch(e) {
+                   data1 = fallbackData.scheduled[`${categoryId}_${targetDate1}`] || { events: [] };
+                 }
                  if (data1.events) allEvents = allEvents.concat(data1.events);
                } catch (e) { /* ignore */ }
                
                if (targetDate2) {
                  try {
-                   const data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+                   let data2;
+                   try {
+                     data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+                   } catch(e) {
+                     data2 = fallbackData.scheduled[`${categoryId}_${targetDate2}`] || { events: [] };
+                   }
                    if (data2.events) allEvents = allEvents.concat(data2.events);
                  } catch (e) { /* ignore */ }
                }

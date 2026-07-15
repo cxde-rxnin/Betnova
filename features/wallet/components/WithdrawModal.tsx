@@ -30,7 +30,7 @@ export function WithdrawModal() {
     setIsRequestingOtp(true);
     try {
       await requestWithdrawalOTP(parseFloat(amount), currency);
-      toast.success("Verification code sent to your notifications!");
+      toast.success("Verification code sent to your email!");
       setStep(3);
     } catch (e: any) {
       toast.error(e.message || "Failed to request code");
@@ -169,7 +169,7 @@ export function WithdrawModal() {
                 <div className="space-y-4">
                   <div className="text-center space-y-2">
                     <h3 className="font-semibold text-lg">Verification Code</h3>
-                    <p className="text-sm text-muted-foreground">We've sent a 6-digit verification code to your notifications. Enter it below to confirm your withdrawal.</p>
+                    <p className="text-sm text-muted-foreground">We've sent a 6-digit verification code to your email. Enter it below to confirm your withdrawal.</p>
                   </div>
                   
                   <div className="space-y-2">

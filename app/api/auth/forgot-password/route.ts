@@ -24,12 +24,12 @@ export async function POST(req: Request) {
     user.resetCodeExpires = resetCodeExpires;
     await user.save();
 
-    // Send email via NotificationService
-    await NotificationService.notifyUser({
-      userId: user._id.toString(),
-      category: "ACCOUNT",
-      title: "Your Password Reset Code",
-      message: `Your password reset code is ${resetCode}. It will expire in 15 minutes.`,
+    // Send email directly
+    const { sendEmail } = await import("@/lib/email");
+    await sendEmail({
+      to: user.email,
+      subject: "Your Password Reset Code",
+      text: `Your password reset code is: ${resetCode}\n\nIt will expire in 15 minutes. If you did not request this, please ignore this email.`,
     });
 
     return NextResponse.json({ success: true, message: "Code sent" });

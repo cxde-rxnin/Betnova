@@ -95,12 +95,11 @@ export async function requestWithdrawalOTP(amount: number, currency: string) {
   user.withdrawalOtpExpires = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
   await user.save();
 
-  const { Notification } = await import("@/models/Notification");
-  await Notification.create({
-    userId,
-    category: "FINANCIAL",
-    title: "Withdrawal Verification Code",
-    message: `Your one-time withdrawal code is: ${code}. It will expire in 10 minutes.`,
+  const { sendEmail } = await import("@/lib/email");
+  await sendEmail({
+    to: user.email,
+    subject: "Withdrawal Verification Code",
+    text: `Your one-time withdrawal code is: ${code}\n\nIt will expire in 10 minutes. Do not share this code with anyone.`,
   });
 
   return { success: true };

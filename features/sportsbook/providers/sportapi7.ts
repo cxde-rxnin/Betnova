@@ -9,7 +9,7 @@ const API_KEY = process.env.SPORTAPI7_KEY;
 const API_URL = "https://sportapi7.p.rapidapi.com/api/v1";
 
 export class SportApi7Provider implements ISportsProvider {
-  private async fetchApi(endpoint: string, params: Record<string, string> = {}) {
+  private async fetchApi(endpoint: string, params: Record<string, string> = {}, revalidate: number = 60) {
     if (!API_KEY) {
       throw new Error("SPORTAPI7_KEY is not defined in environment variables.");
     }
@@ -23,7 +23,7 @@ export class SportApi7Provider implements ISportsProvider {
         "x-rapidapi-key": API_KEY,
         "x-rapidapi-host": "sportapi7.p.rapidapi.com"
       },
-      cache: "no-store"
+      next: { revalidate }
     });
 
     if (!response.ok) {
@@ -221,7 +221,7 @@ export class SportApi7Provider implements ISportsProvider {
         try {
           let data1;
           try {
-            data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+            data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`, {}, 3600);
           } catch(e) {
             data1 = fallbackData.scheduled[`${categoryId}_${targetDate1}`] || { events: [] };
           }
@@ -232,7 +232,7 @@ export class SportApi7Provider implements ISportsProvider {
           try {
             let data2;
             try {
-              data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+              data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`, {}, 3600);
             } catch(e) {
               data2 = fallbackData.scheduled[`${categoryId}_${targetDate2}`] || { events: [] };
             }
@@ -258,7 +258,7 @@ export class SportApi7Provider implements ISportsProvider {
                try {
                  let data1;
                  try {
-                   data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+                   data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`, {}, 3600);
                  } catch(e) {
                    data1 = fallbackData.scheduled[`${categoryId}_${targetDate1}`] || { events: [] };
                  }
@@ -269,7 +269,7 @@ export class SportApi7Provider implements ISportsProvider {
                  try {
                    let data2;
                    try {
-                     data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+                     data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`, {}, 3600);
                    } catch(e) {
                      data2 = fallbackData.scheduled[`${categoryId}_${targetDate2}`] || { events: [] };
                    }

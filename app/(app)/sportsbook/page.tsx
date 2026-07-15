@@ -2,15 +2,18 @@ import { getSports, getLiveMatches, getUpcomingMatches } from "@/features/sports
 import { LiveMarketCard } from "@/components/marketing/live-market-card";
 import type { Match } from "@/features/sportsbook/types";
 import type { SportEvent } from "@/lib/mock-data";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Flame, CalendarDays, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/shared/page-header";
 
-export const metadata = {
-  title: "Sportsbook | Betnovo",
-  description: "Dashboard Sportsbook Hub",
+export const metadata: Metadata = {
+  title: "Sportsbook | Betnova",
+  description: "Live betting and sports markets.",
 };
+
+export const revalidate = 60;
 
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;

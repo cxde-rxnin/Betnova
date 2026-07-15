@@ -46,6 +46,8 @@ const sportImages: Record<string, string> = {
 
 import { getLiveMatches, getUpcomingMatches } from "@/features/sportsbook/actions";
 
+export const revalidate = 60;
+
 export default async function LandingPage() {
   const tomorrow = new Date();
   tomorrow.setDate(tomorrow.getDate() + 1);

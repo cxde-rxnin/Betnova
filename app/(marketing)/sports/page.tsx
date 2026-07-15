@@ -11,6 +11,8 @@ export const metadata = {
   description: "Browse all available sports, live matches, and upcoming events.",
 };
 
+export const revalidate = 60;
+
 type Props = {
   searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };

@@ -20,13 +20,13 @@ export class SportApi7Provider implements ISportsProvider {
         "x-rapidapi-key": API_KEY,
         "x-rapidapi-host": "sportapi7.p.rapidapi.com"
       },
-      next: { revalidate: 60 } // Cache for 60 seconds
+      cache: "no-store"
     });
 
     if (!response.ok) {
-      if (response.status !== 404 && response.status !== 429) {
-        console.error(`SportApi7 error: ${response.status} ${response.statusText}`);
-      }
+      console.error(`SportApi7 error: ${response.status} ${response.statusText} on ${endpoint}`);
+      const text = await response.text().catch(() => "No text");
+      console.error(`Error Body: ${text}`);
       throw new Error(`${response.status}`);
     }
 
@@ -155,7 +155,7 @@ export class SportApi7Provider implements ISportsProvider {
         const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId));
         return await this.injectLogos(rawMatches);
       } else {
-        const allSports = Object.keys(this.categoryMap);
+        const allSports = ["football", "basketball", "tennis", "ice-hockey", "volleyball"];
         let allMatches: Match[] = [];
         
         // Use chunk of 4 to avoid exceeding 20req/s when multiple calls are made concurrently
@@ -220,7 +220,7 @@ export class SportApi7Provider implements ISportsProvider {
         const matches = rawMatches.filter((m: Match) => m.status === "PRE_MATCH");
         return await this.injectLogos(matches);
       } else {
-        const allSports = Object.keys(this.categoryMap);
+        const allSports = ["football", "basketball", "tennis", "ice-hockey", "volleyball"];
         let allMatches: Match[] = [];
         
         // Use chunk of 4 to avoid exceeding 20req/s

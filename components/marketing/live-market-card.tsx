@@ -50,7 +50,7 @@ export function LiveMarketCard({ event, basePath = "/live" }: { event: SportEven
   };
 
   return (
-    <Link href={`${basePath}/${event.id}`} className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40 block">
+    <Link href={`${basePath}/${event.id}`} className="flex h-full min-w-0 flex-col rounded-2xl border border-border bg-card p-3 sm:p-4 transition-colors hover:border-primary/40">
       <div className="flex items-center justify-between text-xs">
         <span className="font-medium text-muted-foreground">{event.competitionName}</span>
         {isLive ? (
@@ -59,18 +59,18 @@ export function LiveMarketCard({ event, basePath = "/live" }: { event: SportEven
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-destructive opacity-75" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-destructive" />
             </span>
-            LIVE {event.minute}&apos;
+            {event.minute !== undefined ? `${event.minute}'` : (event.period || '')}
           </span>
         ) : isFinished ? (
           <span className="rounded-md bg-muted px-2 py-1 font-medium text-muted-foreground">Final</span>
         ) : (
-          <span className="rounded-md bg-muted px-2 py-1 font-medium text-muted-foreground">
-            {new Date(event.startTime).toLocaleDateString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" })}
+          <span suppressHydrationWarning className="rounded-md bg-muted px-2 py-1 font-medium text-muted-foreground">
+            {new Date(event.startTime).toLocaleString(undefined, { weekday: "short", hour: "numeric", minute: "2-digit" })}
           </span>
         )}
       </div>
 
-      <div className="mt-4 space-y-2.5">
+      <div className="mt-3 space-y-2">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 overflow-hidden">
             {event.homeTeamLogo && (
@@ -95,7 +95,7 @@ export function LiveMarketCard({ event, basePath = "/live" }: { event: SportEven
         </div>
       </div>
 
-      <div className="mt-5 grid grid-cols-3 gap-1.5 text-center">
+      <div className="mt-4 grid grid-cols-3 gap-1 sm:gap-1.5 text-center">
         {[
           { label: "1", outcome: event.homeTeam, value: event.odds.home },
           { label: "X", outcome: "Draw", value: event.odds.draw },
@@ -108,14 +108,14 @@ export function LiveMarketCard({ event, basePath = "/live" }: { event: SportEven
               onClick={(e) => handleOddsClick(e, m.outcome, m.value)}
               disabled={isFinished || isLive}
               className={cn(
-                "rounded-lg px-1.5 py-2 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none",
+                "rounded-lg px-1 sm:px-1.5 py-1.5 sm:py-2 transition-all active:scale-95 disabled:opacity-50 disabled:pointer-events-none min-w-0 overflow-hidden",
                 isSelected 
                   ? "bg-primary text-primary-foreground shadow-sm ring-2 ring-primary ring-offset-1 ring-offset-background" 
                   : "bg-muted/50 hover:bg-primary/10 hover:text-primary text-foreground"
               )}
             >
-              <p className={cn("text-[10px] font-medium", isSelected ? "text-primary-foreground/80" : "text-muted-foreground")}>{m.label}</p>
-              <p className="mt-0.5 tabular-nums text-sm font-semibold">{m.value.toFixed(2)}</p>
+              <p className={cn("text-[9px] sm:text-[10px] font-medium truncate", isSelected ? "text-primary-foreground/80" : "text-muted-foreground")}>{m.label}</p>
+              <p className="mt-0.5 tabular-nums text-xs sm:text-sm font-semibold truncate">{m.value.toFixed(2)}</p>
             </button>
           );
         })}

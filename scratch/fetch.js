@@ -1,32 +1,43 @@
-const http = require('https');
-const fs = require('fs');
+const https = require('https');
 
-const options = {
-	method: 'GET',
-	hostname: 'sportapi7.p.rapidapi.com',
-	port: null,
-	path: '/api/v1/category/1/scheduled-events/2026-05-03', // using a past date to ensure data
-	headers: {
-		'x-rapidapi-key': '90c9fd4cb7msh5f21720fd5a3961p1a29d4jsnb8258d17ca96',
-		'x-rapidapi-host': 'sportapi7.p.rapidapi.com',
-		'Content-Type': 'application/json'
-	}
-};
+const API_KEY = "90c9fd4cb7msh5f21720fd5a3961p1a29d4jsnb8258d17ca96";
+const HOST = "sportapi7.p.rapidapi.com";
 
-const req = http.request(options, function (res) {
-	const chunks = [];
+function fetchApi(endpoint) {
+  return new Promise((resolve, reject) => {
+    const options = {
+      hostname: HOST,
+      path: `/api/v1${endpoint}`,
+      method: 'GET',
+      headers: {
+        'x-rapidapi-key': API_KEY,
+        'x-rapidapi-host': HOST
+      }
+    };
 
-	res.on('data', function (chunk) {
-		chunks.push(chunk);
-	});
+    const req = https.request(options, res => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => resolve(JSON.parse(data)));
+    });
 
-	res.on('end', function () {
-		const body = Buffer.concat(chunks);
-        try {
-            const data = JSON.parse(body.toString());
-            fs.writeFileSync('scratch/response.json', JSON.stringify(data.events[0], null, 2));
-        } catch(e) {}
-	});
-});
+    req.on('error', reject);
+    req.end();
+  });
+}
 
-req.end();
+async function main() {
+  const sports = [
+    { name: 'football', id: 1 },
+    { name: 'basketball', id: 2 },
+    { name: 'tennis', id: 3 },
+  ];
+
+  for (let s of sports) {
+    const categories = await fetchApi(`/sport/${s.name}/categories`);
+    const world = categories?.categories?.find(c => c.name === 'World' || c.name === 'International' || c.name === 'USA');
+    console.log(`${s.name} World Category ID:`, world?.id, world?.name);
+  }
+}
+
+main().catch(console.error);

@@ -64,7 +64,7 @@ export default function MatchDetailsPage() {
                 LIVE {match.liveStatus?.minute}'
               </Badge>
             ) : (
-              <span className="text-muted-foreground flex items-center gap-1">
+              <span suppressHydrationWarning className="text-muted-foreground flex items-center gap-1">
                 <Calendar className="h-3.5 w-3.5" />
                 {new Date(match.startTime).toLocaleString("en-US", { weekday: 'short', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
               </span>

@@ -31,6 +31,7 @@ function mapMatchToSportEvent(match: Match): SportEvent {
     status: match.status === "LIVE" ? "live" : match.status === "PRE_MATCH" ? "upcoming" : "finished",
     startTime: match.startTime,
     minute: match.liveStatus?.minute,
+    period: match.liveStatus?.period,
     odds: { home: 1.85, draw: 3.20, away: 2.10 }, // Fallback odds
     isFavorite: false,
   };
@@ -83,15 +84,20 @@ export default async function DashboardSportsbookPage(props: Props) {
       <div className="space-y-12">
         {/* Live Section */}
         <section>
-          <div className="mb-6 flex items-center gap-2">
-            <Flame className="h-5 w-5 text-destructive" />
-            <h2 className="text-xl font-bold">Live Now</h2>
-            <span className="ml-2 rounded-full bg-destructive/10 px-2.5 py-0.5 text-xs font-semibold text-destructive">
-              {liveEvents.length}
-            </span>
+          <div className="mb-6 flex items-center justify-between">
+            <h2 className="text-xl font-bold flex items-center gap-2">
+              <span className="relative flex h-2 w-2 mr-1">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              Live Events
+            </h2>
+            <Link href="/sports/live" className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors flex items-center">
+              More Live &gt;
+            </Link>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {liveEvents.length > 0 ? (
               liveEvents.map((event) => (
                 <LiveMarketCard key={event.id} event={event} basePath="/sports/match" />
@@ -116,7 +122,7 @@ export default async function DashboardSportsbookPage(props: Props) {
             </span>
           </div>
 
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {upcomingEvents.length > 0 ? (
               upcomingEvents.map((event) => (
                 <LiveMarketCard key={event.id} event={event} basePath="/sports/match" />

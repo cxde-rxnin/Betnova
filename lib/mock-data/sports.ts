@@ -36,6 +36,7 @@ export interface SportEvent {
   status: EventStatus;
   startTime: string;
   minute?: number;
+  period?: string;
   odds: { home: number; draw: number; away: number };
   isFavorite: boolean;
 }

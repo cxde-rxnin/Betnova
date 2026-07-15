@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Search, Loader2 } from "lucide-react";
 import { Input } from "@/components/ui/input";
-import { useSports, useUpcomingMatches } from "../hooks";
+import { useSports, useUpcomingMatches, useLiveMatches } from "../hooks";
 import Link from "next/link";
 import { useDebounce } from "use-debounce";
 
@@ -14,7 +14,9 @@ export function GlobalSearch() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const { data: sports } = useSports();
-  const { data: upcomingMatches, isLoading } = useUpcomingMatches();
+  const { data: upcomingMatches, isLoading: isLoadingUpcoming } = useUpcomingMatches();
+  const { data: liveMatches, isLoading: isLoadingLive } = useLiveMatches();
+  const isLoading = isLoadingUpcoming || isLoadingLive;
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -32,11 +34,12 @@ export function GlobalSearch() {
     const lowerQuery = debouncedQuery.toLowerCase();
     
     const matchedSports = sports?.filter((s: any) => s.name.toLowerCase().includes(lowerQuery)) || [];
-    const matchedMatches = upcomingMatches?.filter((m: any) => 
+    const allMatches = [...(liveMatches || []), ...(upcomingMatches || [])];
+    const matchedMatches = allMatches.filter((m: any) => 
       m.homeTeam.name.toLowerCase().includes(lowerQuery) || 
       m.awayTeam.name.toLowerCase().includes(lowerQuery) ||
       m.competitionName.toLowerCase().includes(lowerQuery)
-    ) || [];
+    );
 
     return { sports: matchedSports, matches: matchedMatches };
   };

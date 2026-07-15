@@ -79,6 +79,7 @@ export default async function LandingPage() {
       status: match.status === "LIVE" ? "live" : match.status === "PRE_MATCH" ? "upcoming" : "finished",
       startTime: match.startTime,
       minute: match.liveStatus?.minute,
+      period: match.liveStatus?.period,
       odds: { home: 1.85, draw: 3.20, away: 2.10 }, // Fallback odds since API lacks them
       isFavorite: false,
     };
@@ -172,7 +173,7 @@ export default async function LandingPage() {
             </Link>
           </div>
           
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {displayLiveEvents.length > 0 ? (
               displayLiveEvents.map((event) => (
                 <LiveMarketCard key={event.id} event={event} />
@@ -196,7 +197,7 @@ export default async function LandingPage() {
             </Link>
           </div>
           
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {displayUpcomingEvents.length > 0 ? (
               displayUpcomingEvents.map((event) => (
                 <LiveMarketCard key={event.id} event={event} />

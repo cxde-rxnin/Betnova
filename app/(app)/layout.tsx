@@ -19,7 +19,7 @@ export default async function AppLayout({ children }: { children: React.ReactNod
   return (
     <div className="theme-marketing dark flex min-h-screen bg-background text-foreground">
       <AppSidebar />
-      <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 min-w-0 flex-col overflow-x-hidden">
         <AppHeader />
         <main className="flex-1 p-4 sm:p-6 lg:p-8">{children}</main>
       </div>

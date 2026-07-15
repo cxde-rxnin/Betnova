@@ -34,9 +34,9 @@ export class SportApi7Provider implements ISportsProvider {
   }
 
   private categoryMap: Record<string, number> = {
-    football: 1,
-    basketball: 2,
-    tennis: 3,
+    football: 1468, // World
+    basketball: 103, // International
+    tennis: 2377, // International
     "ice-hockey": 4,
     volleyball: 5,
     handball: 6,
@@ -105,7 +105,7 @@ export class SportApi7Provider implements ISportsProvider {
     // code 31 = Halftime
     // code 100 = Ended
     if (event.status?.type === "inprogress") status = "LIVE";
-    else if (event.status?.type === "finished") status = "FINISHED";
+    else if (event.status?.type === "finished" || event.status?.type === "ended") status = "FINISHED";
     else if (event.status?.type === "canceled" || event.status?.type === "postponed") status = "POSTPONED";
 
     return {
@@ -131,7 +131,7 @@ export class SportApi7Provider implements ISportsProvider {
       },
       liveStatus: status === "LIVE" ? {
         minute: event.time?.currentPeriodStartTimestamp 
-            ? Math.floor((Date.now() / 1000 - event.time.currentPeriodStartTimestamp) / 60)
+            ? Math.floor((Date.now() / 1000 - event.time.currentPeriodStartTimestamp) / 60) + (event.status?.code === 7 && sportGroup === "football" ? 45 : 0)
             : undefined,
         period: event.status?.description || "Live"
       } : undefined
@@ -192,13 +192,31 @@ export class SportApi7Provider implements ISportsProvider {
 
   async getUpcomingMatches(sportId?: string, date?: string): Promise<Match[]> {
     try {
-      const targetDate = date || new Date().toISOString().split('T')[0];
+      const today = new Date();
+      const tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      
+      const targetDate1 = date || today.toISOString().split('T')[0];
+      const targetDate2 = date ? null : tomorrow.toISOString().split('T')[0];
       
       if (sportId) {
         const categoryId = this.categoryMap[sportId] || 1;
-        const data = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate}`);
-        if (!data.events) return [];
-        const rawMatches = data.events.map((item: any) => this.mapEventToMatch(item, sportId));
+        
+        let allEvents: any[] = [];
+        try {
+          const data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+          if (data1.events) allEvents = allEvents.concat(data1.events);
+        } catch (e) { /* ignore */ }
+        
+        if (targetDate2) {
+          try {
+            const data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+            if (data2.events) allEvents = allEvents.concat(data2.events);
+          } catch (e) { /* ignore */ }
+        }
+
+        if (allEvents.length === 0) return [];
+        const rawMatches = allEvents.map((item: any) => this.mapEventToMatch(item, sportId));
         const matches = rawMatches.filter((m: Match) => m.status === "PRE_MATCH");
         return await this.injectLogos(matches);
       } else {
@@ -209,11 +227,23 @@ export class SportApi7Provider implements ISportsProvider {
         for (let i = 0; i < allSports.length; i += 4) {
           const chunk = allSports.slice(i, i + 4);
           const chunkPromises = chunk.map(async (sport) => {
+             let allEvents: any[] = [];
              try {
                const categoryId = this.categoryMap[sport];
-               const data = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate}`);
-               if (data.events) {
-                 return data.events.map((item: any) => this.mapEventToMatch(item, sport))
+               try {
+                 const data1 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate1}`);
+                 if (data1.events) allEvents = allEvents.concat(data1.events);
+               } catch (e) { /* ignore */ }
+               
+               if (targetDate2) {
+                 try {
+                   const data2 = await this.fetchApi(`/category/${categoryId}/scheduled-events/${targetDate2}`);
+                   if (data2.events) allEvents = allEvents.concat(data2.events);
+                 } catch (e) { /* ignore */ }
+               }
+
+               if (allEvents.length > 0) {
+                 return allEvents.map((item: any) => this.mapEventToMatch(item, sport))
                                    .filter((m: Match) => m.status === "PRE_MATCH");
                }
              } catch (e: any) {
@@ -273,15 +303,12 @@ export class SportApi7Provider implements ISportsProvider {
         }
       }
 
-      // We'll leave prediction empty for now as it requires specific prediction endpoints 
-      // like /event/{matchId}/pregame-form which might not exist for all matches.
-      const prediction = undefined;
-
-      return {
+      const matchDetails: MatchDetails = {
         ...matchWithLogos,
-        statistics,
-        prediction
+        statistics
       };
+
+      return matchDetails;
     } catch (e: any) {
       console.warn("Failed to fetch match details:", e);
       if (e.message?.includes("429")) {

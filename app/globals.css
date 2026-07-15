@@ -85,38 +85,38 @@
 }
 
 .dark {
-  --background: hsl(222 47% 6%);
-  --foreground: hsl(210 40% 98%);
-  --card: hsl(223 47% 8%);
-  --card-foreground: hsl(210 40% 98%);
-  --popover: hsl(223 47% 8%);
-  --popover-foreground: hsl(210 40% 98%);
+  --background: hsl(0 0% 4%);
+  --foreground: hsl(0 0% 96%);
+  --card: hsl(0 0% 7%);
+  --card-foreground: hsl(0 0% 96%);
+  --popover: hsl(0 0% 7%);
+  --popover-foreground: hsl(0 0% 96%);
   --primary: hsl(160 84% 39%);
   --primary-foreground: hsl(160 84% 6%);
-  --secondary: hsl(217.2 32.6% 17.5%);
-  --secondary-foreground: hsl(210 40% 98%);
-  --muted: hsl(217.2 32.6% 17.5%);
-  --muted-foreground: hsl(215 20.2% 65.1%);
-  --accent: hsl(217.2 32.6% 17.5%);
-  --accent-foreground: hsl(210 40% 98%);
-  --destructive: hsl(0 62.8% 30.6%);
-  --destructive-foreground: hsl(210 40% 98%);
+  --secondary: hsl(0 0% 12%);
+  --secondary-foreground: hsl(0 0% 96%);
+  --muted: hsl(0 0% 10%);
+  --muted-foreground: hsl(0 0% 63%);
+  --accent: hsl(0 0% 14%);
+  --accent-foreground: hsl(0 0% 96%);
+  --destructive: hsl(0 72% 51%);
+  --destructive-foreground: hsl(0 0% 98%);
   --success: hsl(160 84% 39%);
   --success-foreground: hsl(160 84% 6%);
   --warning: hsl(38 92% 50%);
-  --warning-foreground: hsl(0 0% 100%);
+  --warning-foreground: hsl(0 0% 6%);
   --info: hsl(199 89% 48%);
-  --info-foreground: hsl(0 0% 100%);
-  --border: hsl(217.2 32.6% 17.5%);
-  --input: hsl(217.2 32.6% 17.5%);
+  --info-foreground: hsl(0 0% 98%);
+  --border: hsl(0 0% 16%);
+  --input: hsl(0 0% 16%);
   --ring: hsl(160 84% 39%);
-  --sidebar: hsl(222 47% 6%);
-  --sidebar-foreground: hsl(240 4.8% 95.9%);
+  --sidebar: hsl(0 0% 4%);
+  --sidebar-foreground: hsl(0 0% 96%);
   --sidebar-primary: hsl(160 84% 39%);
   --sidebar-primary-foreground: hsl(160 84% 6%);
-  --sidebar-accent: hsl(240 3.7% 15.9%);
-  --sidebar-accent-foreground: hsl(240 4.8% 95.9%);
-  --sidebar-border: hsl(240 3.7% 15.9%);
+  --sidebar-accent: hsl(0 0% 10%);
+  --sidebar-accent-foreground: hsl(0 0% 96%);
+  --sidebar-border: hsl(0 0% 16%);
   --sidebar-ring: hsl(160 84% 39%);
 }
 

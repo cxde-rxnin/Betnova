@@ -12,7 +12,7 @@ export function getNotificationProviders(): NotificationProvider[] {
   activeProviders.push(new InAppProvider());
 
   // Optionally enable Email if configured
-  if (process.env.ENABLE_EMAIL_NOTIFICATIONS === "true") {
+  if (process.env.ENABLE_EMAIL_NOTIFICATION === "true") {
     activeProviders.push(new EmailProvider());
   }
   

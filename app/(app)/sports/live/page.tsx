@@ -18,6 +18,9 @@ export default async function LiveEventsPage() {
         <div className="space-y-3">
           {liveEvents.map((event) => {
             const eventName = `${event.homeTeam?.name} vs ${event.awayTeam?.name}`;
+            const increaseMultiplier = 1 + (event.oddsIncreasePercent || 0) / 100;
+            const homeOdds = parseFloat((2.10 * increaseMultiplier).toFixed(2));
+            const awayOdds = parseFloat((3.50 * increaseMultiplier).toFixed(2));
             return (
               <div key={event.id} className="rounded-xl border bg-card p-4 transition-all hover:shadow-sm hover:border-primary/20 sm:p-5">
                 <div className="flex items-center justify-between gap-3">
@@ -42,8 +45,8 @@ export default async function LiveEventsPage() {
                   <p className="shrink-0 text-2xl font-bold tabular-nums">{event.score?.home ?? 0} - {event.score?.away ?? 0}</p>
                 </div>
                 <div className="mt-3 flex gap-1.5">
-                  <OddsButton eventId={event.id} eventName={eventName} market="Match Result" label={event.homeTeam?.name} homeLogo={event.homeTeam?.logo} awayLogo={event.awayTeam?.logo} odds={2.10} className="flex-1" />
-                  <OddsButton eventId={event.id} eventName={eventName} market="Match Result" label={event.awayTeam?.name} homeLogo={event.homeTeam?.logo} awayLogo={event.awayTeam?.logo} odds={3.50} className="flex-1" />
+                  <OddsButton eventId={event.id} eventName={eventName} market="Match Result" label={event.homeTeam?.name} homeLogo={event.homeTeam?.logo} awayLogo={event.awayTeam?.logo} odds={homeOdds} className="flex-1" />
+                  <OddsButton eventId={event.id} eventName={eventName} market="Match Result" label={event.awayTeam?.name} homeLogo={event.homeTeam?.logo} awayLogo={event.awayTeam?.logo} odds={awayOdds} className="flex-1" />
                 </div>
               </div>
             );

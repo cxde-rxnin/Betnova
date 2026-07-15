@@ -53,9 +53,9 @@ export default function SportCompetitionsPage() {
                 <div className="divide-y">
                   {events.map((event) => {
                     const eventName = `${event.homeTeam.name} vs ${event.awayTeam.name}`;
-                    const homeOdds = 2.10; // For mock display
-                    const drawOdds = 3.10;
-                    const awayOdds = 3.50;
+                    const increaseMultiplier = 1 + (event.oddsIncreasePercent || 0) / 100;
+                    const homeOdds = parseFloat((2.10 * increaseMultiplier).toFixed(2));
+                    const awayOdds = parseFloat((3.50 * increaseMultiplier).toFixed(2));
                     return (
                       <div key={event.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 px-4 py-3 sm:px-5 hover:bg-muted/30 transition-colors border-b last:border-0">
                         <Link href={`/sports/match/${event.id}`} className="min-w-0 flex-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">

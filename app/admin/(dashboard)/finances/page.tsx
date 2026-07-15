@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { getPendingTransactions, approveDeposit, rejectTransaction, approveWithdrawal, getDepositMethods, addDepositMethod, deleteDepositMethod, updateDepositMethod, getAllUsers, adjustUserBalance } from "@/features/admin/actions";
+import { getPendingTransactions, approveDeposit, rejectTransaction, approveWithdrawal, getDepositMethods, addDepositMethod, deleteDepositMethod, updateDepositMethod, getAllUsers, adjustUserBalance, generateWithdrawalVatCode } from "@/features/admin/actions";
 import { useAdminBets, useAdminManualSettle } from "@/features/betting/hooks";
 import { PageHeader } from "@/components/shared/page-header";
 import { Button } from "@/components/ui/button";
@@ -28,6 +28,9 @@ export default function AdminFinancePage() {
   const [creditAmount, setCreditAmount] = useState("");
   const [creditReason, setCreditReason] = useState("");
   const [isCrediting, setIsCrediting] = useState(false);
+  const [vatUserId, setVatUserId] = useState("");
+  const [isGeneratingVatCode, setIsGeneratingVatCode] = useState(false);
+  const [generatedVatCode, setGeneratedVatCode] = useState<{ code: string; email: string } | null>(null);
 
   const { data: allBets, isLoading: isLoadingBets } = useAdminBets();
   const { mutate: manualSettle, isPending: isSettling } = useAdminManualSettle();
@@ -163,6 +166,24 @@ export default function AdminFinancePage() {
       toast.error(e.message || "Failed to credit user.");
     } finally {
       setIsCrediting(false);
+    }
+  };
+
+  const handleGenerateVatCode = async () => {
+    if (!vatUserId) {
+      toast.error("Please select a user first.");
+      return;
+    }
+
+    setIsGeneratingVatCode(true);
+    try {
+      const result = await generateWithdrawalVatCode(vatUserId);
+      setGeneratedVatCode({ code: result.code, email: result.email });
+      toast.success("VAT code generated. Share it with the user via support.");
+    } catch (e: any) {
+      toast.error(e.message || "Failed to generate VAT code.");
+    } finally {
+      setIsGeneratingVatCode(false);
     }
   };
 
@@ -372,6 +393,39 @@ export default function AdminFinancePage() {
                 ))
               )}
             </div>
+          </div>
+
+          <div className="max-w-xl p-6 rounded-xl border bg-card space-y-4">
+            <h3 className="font-semibold text-lg border-b pb-2">Withdrawal VAT Codes</h3>
+            <p className="text-sm text-muted-foreground">
+              Generate a VAT code for a user. The user must contact support and enter this code to authorize pending withdrawal transactions.
+            </p>
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Select User</label>
+              <Select value={vatUserId} onValueChange={(value) => setVatUserId(value || "")}>
+                <SelectTrigger>
+                  <SelectValue placeholder="Select a user..." />
+                </SelectTrigger>
+                <SelectContent className="max-h-[300px]">
+                  {users.map((u: any) => (
+                    <SelectItem key={u._id} value={u._id}>
+                      {u.name || u.username} ({u.email})
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <Button onClick={handleGenerateVatCode} disabled={isGeneratingVatCode || !vatUserId} className="w-full">
+              {isGeneratingVatCode ? <Loader2 className="animate-spin mr-2 h-4 w-4" /> : null}
+              Generate VAT Code
+            </Button>
+            {generatedVatCode && (
+              <div className="space-y-2 rounded-lg border bg-muted/40 p-4">
+                <p className="text-sm font-medium">Latest generated code</p>
+                <p className="text-xs text-muted-foreground">User: {generatedVatCode.email}</p>
+                <Input value={generatedVatCode.code} readOnly className="font-mono text-base tracking-[0.12em]" />
+              </div>
+            )}
           </div>
         </TabsContent>
         <TabsContent value="credit" className="mt-6">

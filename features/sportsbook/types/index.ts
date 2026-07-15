@@ -40,6 +40,7 @@ export interface Match {
     period?: string;
   };
   score: MatchScore;
+  oddsIncreasePercent?: number;
 }
 
 export interface MarketSelection {

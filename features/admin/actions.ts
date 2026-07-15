@@ -11,11 +11,16 @@ import { User } from "@/models/User";
 import { RiskConfig } from "@/models/RiskConfig";
 import { DepositMethod } from "@/models/DepositMethod";
 import { NotificationService } from "@/features/notifications/NotificationService";
+import { randomBytes } from "crypto";
 
 async function getAdminId() {
   const session = await auth();
   if (!session?.user?.id) throw new Error("Unauthorized");
   return session.user.id;
+}
+
+function generateVatCode() {
+  return randomBytes(4).toString("hex").toUpperCase();
 }
 
 export async function getPendingTransactions() {
@@ -156,6 +161,31 @@ export async function approveWithdrawal(transactionId: string, providerTxHash: s
 
   revalidatePath("/admin/finances");
   return { success: true };
+}
+
+export async function generateWithdrawalVatCode(userId: string) {
+  await requirePermission("MANAGE_FINANCES");
+  const adminId = await getAdminId();
+  await connectToDatabase();
+
+  const user = await User.findById(userId).select("email");
+  if (!user) throw new Error("User not found");
+
+  const code = generateVatCode();
+  user.withdrawalVatCode = code;
+  user.withdrawalVatCodeIssuedAt = new Date();
+  await user.save();
+
+  await AuditLog.create({
+    adminId,
+    action: "GENERATE_WITHDRAWAL_VAT_CODE",
+    resource: "User",
+    resourceId: user._id.toString(),
+    details: { userId: user._id.toString() },
+  });
+
+  revalidatePath("/admin/finances");
+  return { success: true, code, userId: user._id.toString(), email: user.email };
 }
 
 // USERS & KYC

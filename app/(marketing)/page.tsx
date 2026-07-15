@@ -19,6 +19,7 @@ import Image from "next/image";
 import { LiveTicker } from "@/components/marketing/live-ticker";
 import { HeroCarousel } from "@/components/marketing/hero-carousel";
 import { LiveMarketCard } from "@/components/marketing/live-market-card";
+import { WorldCupSection } from "@/features/sportsbook/components/WorldCupSection";
 import { SPORTS, EVENTS, type SportEvent } from "@/lib/mock-data";
 import { type Match } from "@/features/sportsbook/types";
 
@@ -99,6 +100,9 @@ export default async function LandingPage() {
 
       {/* Main Content Area */}
       <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8 space-y-8">
+        
+        {/* World Cup 2026 Special Section */}
+        <WorldCupSection />
 
         {/* Sports Categories Bento Grid */}
         <section className="space-y-4">

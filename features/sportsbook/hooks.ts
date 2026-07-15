@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { getSports, getLiveMatches, getUpcomingMatches, getMatchDetails, getStandings, getCompetitions } from "./actions";
+import { getSports, getLiveMatches, getUpcomingMatches, getMatchDetails, getStandings, getCompetitions, setMatchOddsIncrease } from "./actions";
+import { toast } from "sonner";
 
 export function useSports() {
   return useQuery({
@@ -78,5 +79,23 @@ export function useToggleFavorite() {
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["favorites"] });
     }
+  });
+}
+
+export function useAdminSetMatchOddsIncrease() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async ({ matchId, increasePercent }: { matchId: string; increasePercent: number }) => {
+      return await setMatchOddsIncrease(matchId, increasePercent);
+    },
+    onSuccess: () => {
+      toast.success("Match odds increase updated.");
+      queryClient.invalidateQueries({ queryKey: ["liveMatches"] });
+      queryClient.invalidateQueries({ queryKey: ["upcomingMatches"] });
+      queryClient.invalidateQueries({ queryKey: ["matchDetails"] });
+    },
+    onError: (error: any) => {
+      toast.error(error.message || "Failed to update match odds increase.");
+    },
   });
 }

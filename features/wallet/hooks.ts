@@ -39,8 +39,8 @@ export function useWithdraw() {
   const queryClient = useQueryClient();
   
   return useMutation({
-    mutationFn: async ({ amount, currency, destinationAddress, otpCode }: { amount: number; currency: string; destinationAddress: string, otpCode: string }) => {
-      return await requestWithdrawal(amount, currency, destinationAddress, otpCode);
+    mutationFn: async ({ amount, currency, destinationAddress, vatCode }: { amount: number; currency: string; destinationAddress: string, vatCode: string }) => {
+      return await requestWithdrawal(amount, currency, destinationAddress, vatCode);
     },
     onSuccess: () => {
       toast.success("Withdrawal request submitted! Processing...");

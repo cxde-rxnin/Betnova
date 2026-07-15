@@ -1,8 +1,8 @@
-import { SportApi7Provider } from "../features/sportsbook/providers/sportapi7";
-process.env.SPORTAPI7_KEY = "90c9fd4cb7msh5f21720fd5a3961p1a29d4jsnb8258d17ca96";
+import { TheSportsDBProvider } from "../features/sportsbook/providers/thesportsdb";
+process.env.THESPORTSDB_API_KEY = "90c9fd4cb7msh5f21720fd5a3961p1a29d4jsnb8258d17ca96";
 
 async function main() {
-  const provider = new SportApi7Provider();
+  const provider = new TheSportsDBProvider();
   
   console.log("Fetching live matches...");
   const live = await provider.getLiveMatches("football");

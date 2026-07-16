@@ -32,6 +32,11 @@ export default async function PublicLivePage(props: Props) {
   ]);
 
   function mapMatchToSportEvent(match: Match): SportEvent {
+    const matchResultMarket = match.markets?.find(m => m.id === "match_result");
+    const homeOdd = matchResultMarket?.selections.find(s => s.id === "home")?.odds ?? 1.85;
+    const drawOdd = matchResultMarket?.selections.find(s => s.id === "draw")?.odds ?? 3.20;
+    const awayOdd = matchResultMarket?.selections.find(s => s.id === "away")?.odds ?? 2.10;
+
     return {
       id: match.id,
       sportId: match.sportId,
@@ -46,7 +51,7 @@ export default async function PublicLivePage(props: Props) {
       status: match.status === "LIVE" ? "live" : match.status === "PRE_MATCH" ? "upcoming" : "finished",
       startTime: match.startTime,
       minute: match.liveStatus?.minute,
-      odds: { home: 1.85, draw: 3.20, away: 2.10 }, // Fallback odds
+      odds: { home: homeOdd, draw: drawOdd, away: awayOdd },
       isFavorite: false,
     };
   }

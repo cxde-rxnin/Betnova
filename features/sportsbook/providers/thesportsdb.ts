@@ -55,7 +55,7 @@ export class TheSportsDBProvider implements ISportsProvider {
     const isLive = event.strStatus !== "Not Started" && event.strStatus !== "NS" && event.strStatus !== "Match Finished" && event.strStatus !== "FT" && event.strStatus !== "AOT" && event.strStatus !== "AET" && event.strStatus !== "Postponed" && event.strStatus !== "Cancelled";
     const isFinished = event.strStatus === "Match Finished" || event.strStatus === "FT" || event.strStatus === "AOT" || event.strStatus === "AET";
 
-    return {
+    const baseMatch: Match = {
       id: event.idEvent,
       sportId: this.reverseCategoryMap[event.strSport] || event.strSport.toLowerCase().replace(/ /g, '-'),
       competitionId: event.idLeague,
@@ -84,6 +84,79 @@ export class TheSportsDBProvider implements ISportsProvider {
         minute: event.strProgress || undefined
       } : undefined
     };
+    
+    return {
+      ...baseMatch,
+      markets: this.generateMockMarkets(baseMatch)
+    };
+  }
+
+  private generateMockMarkets(match: Match): Market[] {
+    const seed = match.id;
+    const randomOdd = (index: number, min = 0.10, max = 19.99) => {
+      let hash = 0;
+      const str = seed + index.toString();
+      for (let i = 0; i < str.length; i++) {
+        hash = Math.imul(31, hash) + str.charCodeAt(i) | 0;
+      }
+      const random = Math.abs(Math.sin(hash)) || 0.5;
+      return Number((random * (max - min) + min).toFixed(2));
+    };
+
+    return [
+      {
+        id: "match_result",
+        name: "Match Result",
+        selections: [
+          { id: "home", label: match.homeTeam.name, odds: randomOdd(1, 1.1, 5.0) },
+          { id: "draw", label: "Draw", odds: randomOdd(2, 2.0, 6.0) },
+          { id: "away", label: match.awayTeam.name, odds: randomOdd(3, 1.1, 5.0) }
+        ]
+      },
+      {
+        id: "double_chance",
+        name: "Double Chance",
+        selections: [
+          { id: "1x", label: `${match.homeTeam.name} or Draw`, odds: randomOdd(4, 1.05, 2.5) },
+          { id: "12", label: `${match.homeTeam.name} or ${match.awayTeam.name}`, odds: randomOdd(5, 1.05, 1.5) },
+          { id: "x2", label: `Draw or ${match.awayTeam.name}`, odds: randomOdd(6, 1.05, 2.5) }
+        ]
+      },
+      {
+        id: "over_under_25",
+        name: "Over/Under 2.5 Goals",
+        selections: [
+          { id: "over", label: "Over 2.5", odds: randomOdd(9, 1.5, 3.0) },
+          { id: "under", label: "Under 2.5", odds: randomOdd(10, 1.5, 3.0) }
+        ]
+      },
+      {
+        id: "btts",
+        name: "Both Teams to Score",
+        selections: [
+          { id: "yes", label: "Yes", odds: randomOdd(13, 1.5, 3.0) },
+          { id: "no", label: "No", odds: randomOdd(14, 1.5, 3.0) }
+        ]
+      },
+      {
+        id: "home_team_odds",
+        name: `${match.homeTeam.name} Special Markets`,
+        selections: [
+          { id: "home_over_15", label: "Total Goals Over 1.5", odds: randomOdd(15, 0.10, 19.99) },
+          { id: "home_first_to_score", label: "First to Score", odds: randomOdd(16, 0.10, 19.99) },
+          { id: "home_clean_sheet", label: "To Keep a Clean Sheet", odds: randomOdd(17, 0.10, 19.99) }
+        ]
+      },
+      {
+        id: "away_team_odds",
+        name: `${match.awayTeam.name} Special Markets`,
+        selections: [
+          { id: "away_over_15", label: "Total Goals Over 1.5", odds: randomOdd(18, 0.10, 19.99) },
+          { id: "away_first_to_score", label: "First to Score", odds: randomOdd(19, 0.10, 19.99) },
+          { id: "away_clean_sheet", label: "To Keep a Clean Sheet", odds: randomOdd(20, 0.10, 19.99) }
+        ]
+      }
+    ];
   }
 
   async getSports(): Promise<Sport[]> {
@@ -212,39 +285,7 @@ export class TheSportsDBProvider implements ISportsProvider {
     const event = data.event[0];
     const match = this.mapEventToMatch(event);
     
-    // Create mock market data with standard odds
-    const mockMarkets: Market[] = [
-      {
-        id: "match_result",
-        name: "Match Result",
-        selections: [
-          { id: "home", label: match.homeTeam.name, odds: 2.10 },
-          { id: "draw", label: "Draw", odds: 3.20 },
-          { id: "away", label: match.awayTeam.name, odds: 3.50 }
-        ]
-      },
-      {
-        id: "over_under_25",
-        name: "Over/Under 2.5 Goals",
-        selections: [
-          { id: "over", label: "Over 2.5", odds: 1.95 },
-          { id: "under", label: "Under 2.5", odds: 1.95 }
-        ]
-      },
-      {
-        id: "btts",
-        name: "Both Teams to Score",
-        selections: [
-          { id: "yes", label: "Yes", odds: 1.95 },
-          { id: "no", label: "No", odds: 1.95 }
-        ]
-      }
-    ];
-    
-    return {
-      ...match,
-      markets: mockMarkets
-    };
+    return match;
   }
 
   async getMatchDetails(matchId: string): Promise<MatchDetails> {
@@ -268,39 +309,9 @@ export class TheSportsDBProvider implements ISportsProvider {
       console.error("Error fetching stats:", e);
     }
     
-    // Create mock market data with standard odds
-    const mockMarkets: Market[] = [
-      {
-        id: "match_result",
-        name: "Match Result",
-        selections: [
-          { id: "home", label: match.homeTeam.name, odds: 2.10 },
-          { id: "draw", label: "Draw", odds: 3.20 },
-          { id: "away", label: match.awayTeam.name, odds: 3.50 }
-        ]
-      },
-      {
-        id: "over_under_25",
-        name: "Over/Under 2.5 Goals",
-        selections: [
-          { id: "over", label: "Over 2.5", odds: 1.95 },
-          { id: "under", label: "Under 2.5", odds: 1.95 }
-        ]
-      },
-      {
-        id: "btts",
-        name: "Both Teams to Score",
-        selections: [
-          { id: "yes", label: "Yes", odds: 1.95 },
-          { id: "no", label: "No", odds: 1.95 }
-        ]
-      }
-    ];
-    
     return {
       ...match,
-      statistics,
-      markets: mockMarkets
+      statistics
     };
   }
 

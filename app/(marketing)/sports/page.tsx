@@ -18,24 +18,29 @@ type Props = {
 };
 
 function mapMatchToSportEvent(match: Match): SportEvent {
-  return {
-    id: match.id,
-    sportId: match.sportId,
-    competitionId: match.competitionId,
-    competitionName: match.competitionName,
-    homeTeam: match.homeTeam.name,
-    homeTeamLogo: match.homeTeam.logo,
-    awayTeam: match.awayTeam.name,
-    awayTeamLogo: match.awayTeam.logo,
-    homeScore: match.score?.home ?? undefined,
-    awayScore: match.score?.away ?? undefined,
-    status: match.status === "LIVE" ? "live" : match.status === "PRE_MATCH" ? "upcoming" : "finished",
-    startTime: match.startTime,
-    minute: match.liveStatus?.minute,
-    period: match.liveStatus?.period,
-    odds: { home: 1.85, draw: 3.20, away: 2.10 }, // Fallback odds
-    isFavorite: false,
-  };
+    const matchResultMarket = match.markets?.find(m => m.id === "match_result");
+    const homeOdd = matchResultMarket?.selections.find(s => s.id === "home")?.odds ?? 1.85;
+    const drawOdd = matchResultMarket?.selections.find(s => s.id === "draw")?.odds ?? 3.20;
+    const awayOdd = matchResultMarket?.selections.find(s => s.id === "away")?.odds ?? 2.10;
+
+    return {
+      id: match.id,
+      sportId: match.sportId,
+      competitionId: match.competitionId,
+      competitionName: match.competitionName,
+      homeTeam: match.homeTeam.name,
+      homeTeamLogo: match.homeTeam.logo,
+      awayTeam: match.awayTeam.name,
+      awayTeamLogo: match.awayTeam.logo,
+      homeScore: match.score?.home ?? undefined,
+      awayScore: match.score?.away ?? undefined,
+      status: match.status === "LIVE" ? "live" : match.status === "PRE_MATCH" ? "upcoming" : "finished",
+      startTime: match.startTime,
+      minute: match.liveStatus?.minute,
+      period: match.liveStatus?.period,
+      odds: { home: homeOdd, draw: drawOdd, away: awayOdd },
+      isFavorite: false,
+    };
 }
 
 export default async function PublicSportsPage(props: Props) {

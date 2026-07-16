@@ -59,7 +59,11 @@ export function useSubmitBet() {
   
   return useMutation({
     mutationFn: async ({ selections, stake }: { selections: Omit<IBetSelection, "status">[], stake: number }) => {
-      return await submitBet(selections, stake);
+      const response = await submitBet(selections, stake);
+      if (!response.success) {
+        throw new Error(response.error);
+      }
+      return response.bet;
     },
     onSuccess: () => {
       toast.success("Bet placed successfully! Good luck!");
@@ -96,7 +100,11 @@ export function useAdminManualSettle() {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: async ({ betId, result }: { betId: string, result: "WON" | "LOST" | "VOID" }) => {
-      return await adminManualSettle(betId, result);
+      const response = await adminManualSettle(betId, result);
+      if (!response.success) {
+        throw new Error(response.error);
+      }
+      return response.bet;
     },
     onSuccess: () => {
       toast.success("Bet manually settled.");

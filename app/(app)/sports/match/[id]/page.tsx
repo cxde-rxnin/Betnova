@@ -86,8 +86,15 @@ export default function MatchDetailsPage() {
             {match.status === "PRE_MATCH" ? (
               <div className="text-4xl md:text-5xl font-black text-muted-foreground/30 font-heading">VS</div>
             ) : (
-              <div className="text-5xl md:text-7xl font-black font-heading tracking-tighter tabular-nums">
-                {match.score.home ?? 0} - {match.score.away ?? 0}
+              <div className="flex flex-col items-center gap-1">
+                <div className="text-5xl md:text-7xl font-black font-heading tracking-tighter tabular-nums leading-none">
+                  {match.score.home ?? 0} - {match.score.away ?? 0}
+                </div>
+                {match.penaltyScore && (
+                  <div className="text-sm md:text-base font-bold text-muted-foreground mt-2">
+                    ({match.penaltyScore.home}) Penalties ({match.penaltyScore.away})
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -193,6 +200,47 @@ export default function MatchDetailsPage() {
             <MatchPredictionCard prediction={match.prediction} />
           )}
         </div>
+
+        {/* Goals Timeline */}
+        {match.goals && match.goals.length > 0 && (
+          <div className="mt-8 pt-6 border-t flex flex-col items-center space-y-3">
+            <div className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Goals</div>
+            <div className="w-full max-w-2xl flex flex-col gap-2">
+              {match.goals.map(goal => (
+                <div key={goal.id} className="flex items-center w-full text-sm">
+                  {/* Home Team Goal */}
+                  <div className="flex-1 flex flex-col items-end text-right pr-4">
+                    {goal.isHome && (
+                      <>
+                        <span className="font-semibold">{goal.scorer}</span>
+                        {goal.assist && <span className="text-xs text-muted-foreground">Assist: {goal.assist}</span>}
+                        {goal.type === "Penalty" && <span className="text-[10px] text-muted-foreground uppercase">(Pen)</span>}
+                        {goal.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
+                      </>
+                    )}
+                  </div>
+                  
+                  {/* Minute Badge */}
+                  <div className="flex-shrink-0 w-12 flex justify-center">
+                    <span className="bg-muted px-2 py-1 rounded text-xs font-bold font-mono">{goal.minute}'</span>
+                  </div>
+                  
+                  {/* Away Team Goal */}
+                  <div className="flex-1 flex flex-col items-start pl-4">
+                    {!goal.isHome && (
+                      <>
+                        <span className="font-semibold">{goal.scorer}</span>
+                        {goal.assist && <span className="text-xs text-muted-foreground">Assist: {goal.assist}</span>}
+                        {goal.type === "Penalty" && <span className="text-[10px] text-muted-foreground uppercase">(Pen)</span>}
+                        {goal.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
+                      </>
+                    )}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

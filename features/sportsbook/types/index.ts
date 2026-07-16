@@ -56,6 +56,15 @@ export interface Market {
   selections: MarketSelection[];
 }
 
+export interface GoalEvent {
+  id: string;
+  minute: number;
+  scorer: string;
+  assist?: string;
+  isHome: boolean;
+  type: string;
+}
+
 export interface MatchDetails extends Match {
   referee?: string;
   statistics?: {
@@ -63,6 +72,11 @@ export interface MatchDetails extends Match {
     homeValue: number | string;
     awayValue: number | string;
   }[];
+  penaltyScore?: {
+    home: number;
+    away: number;
+  };
+  goals?: GoalEvent[];
   markets?: Market[];
   prediction?: MatchPrediction;
 }

@@ -149,9 +149,15 @@ export class SettlementService {
         selection.status = selectionResult;
         if (selectionResult === "LOST") anyLost = true;
 
-      } catch (e) {
-        console.error(`[SettlementService] Failed to fetch match details for auto-settlement: ${selection.fixtureId}`, e);
-        allSettled = false;
+      } catch (e: any) {
+        if (e.message === "Match not found") {
+          console.warn(`[SettlementService] Legacy match not found for ${selection.fixtureId}, voiding selection.`);
+          selection.status = "VOID";
+          anyVoid = true;
+        } else {
+          console.error(`[SettlementService] Failed to fetch match details for auto-settlement: ${selection.fixtureId}`, e);
+          allSettled = false;
+        }
       }
     }
 

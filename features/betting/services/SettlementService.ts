@@ -150,10 +150,47 @@ export class SettlementService {
         if (selectionResult === "LOST") anyLost = true;
 
       } catch (e: any) {
-        if (e.message === "Match not found") {
-          console.warn(`[SettlementService] Legacy match not found for ${selection.fixtureId}, voiding selection.`);
-          selection.status = "VOID";
-          anyVoid = true;
+        if (e.message === "Match not found" && selection.matchName) {
+          console.log(`[SettlementService] Legacy match not found for ${selection.fixtureId}, attempting name search: ${selection.matchName}`);
+          try {
+            const fallbackMatch = await (provider as any).getMatchDetailsByName(selection.matchName);
+            // Re-process the settlement logic with the fallbackMatch
+            if (fallbackMatch.status !== "FINISHED") {
+              allSettled = false;
+              continue;
+            }
+            
+            let selectionResult: "WON" | "LOST" | "VOID" = "LOST";
+            if (selection.marketName === "Match Result" || selection.marketName === "h2h") {
+              const homeScore = fallbackMatch.score?.home ?? 0;
+              const awayScore = fallbackMatch.score?.away ?? 0;
+              let actualOutcome: string;
+              if (homeScore > awayScore) {
+                actualOutcome = fallbackMatch.homeTeam.name;
+              } else if (awayScore > homeScore) {
+                actualOutcome = fallbackMatch.awayTeam.name;
+              } else {
+                actualOutcome = "Draw";
+              }
+              if (selection.outcomeName === actualOutcome) {
+                selectionResult = "WON";
+              } else {
+                selectionResult = "LOST";
+              }
+            } else {
+              allSettled = false;
+              continue;
+            }
+            
+            selection.status = selectionResult;
+            if (selectionResult === "LOST") anyLost = true;
+            // Update the fixture ID so we don't have to fuzzy search again
+            selection.fixtureId = fallbackMatch.id;
+          } catch (fallbackErr) {
+            console.warn(`[SettlementService] Legacy match not found for ${selection.fixtureId}, voiding selection.`);
+            selection.status = "VOID";
+            anyVoid = true;
+          }
         } else {
           console.error(`[SettlementService] Failed to fetch match details for auto-settlement: ${selection.fixtureId}`, e);
           allSettled = false;

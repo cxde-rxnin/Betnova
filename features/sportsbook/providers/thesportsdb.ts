@@ -205,6 +205,48 @@ export class TheSportsDBProvider implements ISportsProvider {
     }
   }
 
+  async getMatchDetailsByName(matchName: string): Promise<MatchDetails> {
+    const query = encodeURIComponent(matchName.replace(/ /g, '_'));
+    const data = await this.fetchApi(`/searchevents.php?e=${query}`);
+    if (!data.event || data.event.length === 0) throw new Error("Match not found by name");
+    const event = data.event[0];
+    const match = this.mapEventToMatch(event);
+    
+    // Create mock market data with standard odds
+    const mockMarkets: Market[] = [
+      {
+        id: "match_result",
+        name: "Match Result",
+        selections: [
+          { id: "home", label: match.homeTeam.name, odds: 2.10 },
+          { id: "draw", label: "Draw", odds: 3.20 },
+          { id: "away", label: match.awayTeam.name, odds: 3.50 }
+        ]
+      },
+      {
+        id: "over_under_25",
+        name: "Over/Under 2.5 Goals",
+        selections: [
+          { id: "over", label: "Over 2.5", odds: 1.95 },
+          { id: "under", label: "Under 2.5", odds: 1.95 }
+        ]
+      },
+      {
+        id: "btts",
+        name: "Both Teams to Score",
+        selections: [
+          { id: "yes", label: "Yes", odds: 1.95 },
+          { id: "no", label: "No", odds: 1.95 }
+        ]
+      }
+    ];
+    
+    return {
+      ...match,
+      markets: mockMarkets
+    };
+  }
+
   async getMatchDetails(matchId: string): Promise<MatchDetails> {
     const data = await this.fetchApi(`/lookupevent.php?id=${matchId}`);
     if (!data.events || data.events.length === 0) throw new Error("Match not found");

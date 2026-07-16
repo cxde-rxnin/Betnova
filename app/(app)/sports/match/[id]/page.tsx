@@ -150,7 +150,7 @@ export default function MatchDetailsPage() {
           {match.markets?.map((market) => (
             <div key={market.id} className="rounded-xl border bg-card p-4">
               <h4 className="font-medium mb-4">{market.name}</h4>
-              <div className="grid grid-cols-1 gap-3">
+              <div className={`grid grid-cols-1 gap-3 ${market.selections.length === 2 ? 'md:grid-cols-2' : market.selections.length === 3 ? 'md:grid-cols-3' : market.selections.length % 2 === 0 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
                 {market.selections.map(sel => {
                   const isSelected = selections.some(s => s.fixtureId === match.id && s.marketName === market.name && s.outcomeName === sel.label);
                   return (

@@ -80,6 +80,18 @@ export default function MatchDetailsPage() {
               <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center text-xl">{match.homeTeam.name.substring(0,3)}</div>
             )}
             <h2 className="text-xl md:text-2xl font-bold text-center">{match.homeTeam.name}</h2>
+            {match.goals && match.goals.filter(g => g.isHome).length > 0 && (
+              <div className="flex flex-col items-center gap-0.5 mt-2 text-xs md:text-sm text-muted-foreground w-full">
+                {match.goals.filter(g => g.isHome).map(g => (
+                  <div key={g.id} className="flex items-center gap-1.5 justify-center w-full">
+                    <span>{g.scorer}</span>
+                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}'</span>
+                    {g.type === "Penalty" && <span className="text-[10px] uppercase">(Pen)</span>}
+                    {g.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
+                  </div>
+                ))}
+              </div>
+            )}
           </Link>
 
           <div className="flex flex-col items-center justify-center px-4 md:px-8">
@@ -106,6 +118,18 @@ export default function MatchDetailsPage() {
               <div className="h-20 w-20 rounded-full bg-muted flex items-center justify-center text-xl">{match.awayTeam.name.substring(0,3)}</div>
             )}
             <h2 className="text-xl md:text-2xl font-bold text-center">{match.awayTeam.name}</h2>
+            {match.goals && match.goals.filter(g => !g.isHome).length > 0 && (
+              <div className="flex flex-col items-center gap-0.5 mt-2 text-xs md:text-sm text-muted-foreground w-full">
+                {match.goals.filter(g => !g.isHome).map(g => (
+                  <div key={g.id} className="flex items-center gap-1.5 justify-center w-full">
+                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}'</span>
+                    <span>{g.scorer}</span>
+                    {g.type === "Penalty" && <span className="text-[10px] uppercase">(Pen)</span>}
+                    {g.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
+                  </div>
+                ))}
+              </div>
+            )}
           </Link>
         </div>
 

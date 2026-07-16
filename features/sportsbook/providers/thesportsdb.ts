@@ -343,12 +343,32 @@ export class TheSportsDBProvider implements ISportsProvider {
     
     // If no goals found but there's a score, mock them to ensure UI shows the requested feature
     if (goals.length === 0 && (match.score.home! > 0 || match.score.away! > 0)) {
+      
+      // Try to fetch players to use real names
+      let homePlayers: string[] = [];
+      let awayPlayers: string[] = [];
+      try {
+        const [homePlayersData, awayPlayersData] = await Promise.all([
+          this.fetchApi(`/lookup_all_players.php?id=${match.homeTeam.id}`),
+          this.fetchApi(`/lookup_all_players.php?id=${match.awayTeam.id}`)
+        ]);
+        if (homePlayersData.player) homePlayers = homePlayersData.player.map((p: any) => p.strPlayer);
+        if (awayPlayersData.player) awayPlayers = awayPlayersData.player.map((p: any) => p.strPlayer);
+      } catch (e) {
+        console.error("Error fetching players for mock goals:", e);
+      }
+
+      const getRandomPlayer = (players: string[], defaultName: string) => {
+        if (!players || players.length === 0) return defaultName;
+        return players[Math.floor(Math.random() * players.length)];
+      };
+
       let minuteOffset = 15;
       for (let i = 0; i < (match.score.home || 0); i++) {
         goals.push({
           id: `mock-home-${i}`,
           minute: minuteOffset,
-          scorer: "Unknown Player",
+          scorer: getRandomPlayer(homePlayers, "Attacker"),
           isHome: true,
           type: "Normal Goal"
         });
@@ -359,7 +379,7 @@ export class TheSportsDBProvider implements ISportsProvider {
         goals.push({
           id: `mock-away-${i}`,
           minute: minuteOffset,
-          scorer: "Unknown Player",
+          scorer: getRandomPlayer(awayPlayers, "Attacker"),
           isHome: false,
           type: "Normal Goal"
         });

@@ -140,9 +140,9 @@ export default function MatchDetailsPage() {
         )}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+      <div className="space-y-8 mb-8">
         {/* Statistics */}
-        <div className="lg:col-span-2 space-y-4">
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold">Match Stats</h3>
           <div className="rounded-xl border bg-card p-4 md:p-6">
             {match.statistics && match.statistics.length > 0 ? (
@@ -170,16 +170,12 @@ export default function MatchDetailsPage() {
         </div>
         
         {/* Prediction */}
-        <div className="space-y-4">
-          {match.prediction ? (
-            <>
-              <h3 className="text-lg font-semibold">Prediction</h3>
-              <MatchPredictionCard prediction={match.prediction} />
-            </>
-          ) : (
-             <div className="hidden lg:block"></div>
-          )}
-        </div>
+        {match.prediction && (
+          <div className="space-y-4">
+            <h3 className="text-lg font-semibold">Prediction</h3>
+            <MatchPredictionCard prediction={match.prediction} />
+          </div>
+        )}
       </div>
 
       {/* Markets */}

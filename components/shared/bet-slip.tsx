@@ -94,7 +94,7 @@ export function BetSlip() {
               ) : (
                 <div className="space-y-3">
                   {selections.map((sel) => (
-                    <div key={sel.fixtureId} className="rounded-xl border bg-card p-4">
+                    <div key={`${sel.fixtureId}-${sel.marketName}-${sel.outcomeName}`} className="rounded-xl border bg-card p-4">
                       <div className="flex items-start justify-between gap-2">
                         <div className="min-w-0 pr-4">
                           <p className="truncate text-sm font-bold text-primary mb-1 uppercase tracking-wider">{sel.marketName}</p>
@@ -114,7 +114,7 @@ export function BetSlip() {
                         </div>
                         <button
                           type="button"
-                          onClick={() => removeSelection(sel.fixtureId)}
+                          onClick={() => removeSelection(sel.fixtureId, sel.marketName, sel.outcomeName)}
                           className="shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-destructive"
                           aria-label={`Remove ${sel.outcomeName}`}
                         >

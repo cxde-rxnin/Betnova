@@ -29,7 +29,7 @@ export function OddsButton({ eventId, eventName, market, label, homeLogo, awayLo
         e.stopPropagation();
         if (odds > 0) {
           if (isSelected) {
-            removeSelection(eventId);
+            removeSelection(eventId, market, label);
           } else {
             addSelection({ 
               fixtureId: eventId, 

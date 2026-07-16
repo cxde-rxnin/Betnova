@@ -33,7 +33,7 @@ export function LiveMarketCard({ event, basePath = "/live" }: { event: SportEven
     const isSelected = selections.some(s => s.fixtureId === event.id && s.marketName === "Match Result" && s.outcomeName === outcomeName);
 
     if (isSelected) {
-      removeSelection(event.id);
+      removeSelection(event.id, "Match Result", outcomeName);
     } else {
       addSelection({
         fixtureId: event.id,

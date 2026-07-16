@@ -11,7 +11,7 @@ interface BetSlipState {
   stake: number;
   isOpen: boolean;
   addSelection: (selection: Omit<IBetSelection, "status">) => void;
-  removeSelection: (fixtureId: string) => void;
+  removeSelection: (fixtureId: string, marketName: string, outcomeName: string) => void;
   setStake: (stake: number) => void;
   clearSlip: () => void;
   open: () => void;
@@ -27,13 +27,21 @@ export const useBetSlipStore = create<BetSlipState>()(
       isOpen: false,
       addSelection: (selection) => 
         set((state) => {
-          // Prevent multiple selections from the same fixture
-          const filtered = state.selections.filter(s => s.fixtureId !== selection.fixtureId);
-          return { selections: [...filtered, selection], isOpen: true };
+          // Prevent exact duplicate selections (same fixture, market, and outcome)
+          const isDuplicate = state.selections.some(s => 
+            s.fixtureId === selection.fixtureId && 
+            s.marketName === selection.marketName && 
+            s.outcomeName === selection.outcomeName
+          );
+          if (isDuplicate) return state;
+          
+          return { selections: [...state.selections, selection], isOpen: true };
         }),
-      removeSelection: (fixtureId) =>
+      removeSelection: (fixtureId, marketName, outcomeName) =>
         set((state) => ({
-          selections: state.selections.filter(s => s.fixtureId !== fixtureId)
+          selections: state.selections.filter(s => 
+            !(s.fixtureId === fixtureId && s.marketName === marketName && s.outcomeName === outcomeName)
+          )
         })),
       setStake: (stake) => set({ stake }),
       clearSlip: () => set({ selections: [], stake: 0, isOpen: false }),

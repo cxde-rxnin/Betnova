@@ -57,9 +57,9 @@ export function BetSlip() {
           ) : (
             <div className="space-y-3">
               {selections.map((sel) => (
-                <div key={sel.fixtureId} className="bg-card border rounded-xl p-3 relative shadow-sm">
+                <div key={`${sel.fixtureId}-${sel.marketName}-${sel.outcomeName}`} className="bg-card border rounded-xl p-3 relative shadow-sm">
                   <button 
-                    onClick={() => removeSelection(sel.fixtureId)}
+                    onClick={() => removeSelection(sel.fixtureId, sel.marketName, sel.outcomeName)}
                     className="absolute top-2 right-2 text-muted-foreground hover:text-destructive transition-colors"
                   >
                     <X className="h-4 w-4" />

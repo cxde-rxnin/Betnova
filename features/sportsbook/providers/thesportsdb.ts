@@ -52,8 +52,8 @@ export class TheSportsDBProvider implements ISportsProvider {
   }
 
   private mapEventToMatch(event: any): Match {
-    const isLive = event.strStatus !== "Not Started" && event.strStatus !== "NS" && event.strStatus !== "Match Finished" && event.strStatus !== "FT" && event.strStatus !== "AOT" && event.strStatus !== "Postponed" && event.strStatus !== "Cancelled";
-    const isFinished = event.strStatus === "Match Finished" || event.strStatus === "FT" || event.strStatus === "AOT";
+    const isLive = event.strStatus !== "Not Started" && event.strStatus !== "NS" && event.strStatus !== "Match Finished" && event.strStatus !== "FT" && event.strStatus !== "AOT" && event.strStatus !== "AET" && event.strStatus !== "Postponed" && event.strStatus !== "Cancelled";
+    const isFinished = event.strStatus === "Match Finished" || event.strStatus === "FT" || event.strStatus === "AOT" || event.strStatus === "AET";
 
     return {
       id: event.idEvent,
@@ -116,7 +116,7 @@ export class TheSportsDBProvider implements ISportsProvider {
         if (!data.events) return [];
         
         return data.events
-          .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
+          .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "AOT" && e.strStatus !== "AET" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
           .map((e: any) => this.mapEventToMatch(e));
       } else {
         const topSports = ["football", "basketball", "tennis", "ice-hockey", "volleyball"];
@@ -129,7 +129,7 @@ export class TheSportsDBProvider implements ISportsProvider {
             const data = await this.fetchApi(`/eventsday.php?d=${today}&s=${encodeURIComponent(sportStr)}`, 60);
             if (data.events) {
               const liveEvents = data.events
-                .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
+                .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "AOT" && e.strStatus !== "AET" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
                 .map((e: any) => this.mapEventToMatch(e));
               matches.push(...liveEvents);
             }
@@ -316,7 +316,7 @@ export class TheSportsDBProvider implements ISportsProvider {
       if (!data.events) return [];
       
       return data.events
-        .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
+        .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "AOT" && e.strStatus !== "AET" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
         .map((e: any) => this.mapEventToMatch(e));
     } catch (error) {
       console.error("Error fetching World Cup live matches:", error);

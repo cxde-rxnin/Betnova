@@ -17,6 +17,8 @@ export default function MatchDetailsPage() {
   const { data: match, isLoading, error } = useMatchDetails(matchId);
   const { selections, addSelection, removeSelection } = useBetSlipStore();
 
+  const isMatchEnded = match?.status === "FINISHED";
+
   if (isLoading) {
     return <div className="flex h-[50vh] items-center justify-center"><Loader2 className="h-8 w-8 animate-spin text-muted-foreground" /></div>;
   }
@@ -109,7 +111,8 @@ export default function MatchDetailsPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* Markets (Now taking 2 columns) */}
-        <div className="md:col-span-2 space-y-4">
+        {!isMatchEnded && (
+          <div className="md:col-span-2 space-y-4">
           <h3 className="text-lg font-semibold flex items-center gap-2">
             <Activity className="h-5 w-5 text-primary" /> Betting Markets
           </h3>
@@ -130,7 +133,7 @@ export default function MatchDetailsPage() {
                       onClick={() => {
                         if (match.status === "LIVE" || match.status === "FINISHED") return;
                         if (isSelected) {
-                          removeSelection(match.id);
+                          removeSelection(match.id, market.name, sel.label);
                         } else {
                           addSelection({
                             fixtureId: match.id,
@@ -157,9 +160,10 @@ export default function MatchDetailsPage() {
             </div>
           )}
         </div>
+        )}
 
-        {/* Statistics (Now taking 1 column) */}
-        <div className="space-y-4">
+        {/* Statistics (Dynamically expanding) */}
+        <div className={isMatchEnded ? "md:col-span-3 space-y-4" : "space-y-4"}>
           <h3 className="text-lg font-semibold">Match Stats</h3>
           <div className="rounded-xl border bg-card p-4">
             {match.statistics && match.statistics.length > 0 ? (

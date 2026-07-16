@@ -140,65 +140,13 @@ export default function MatchDetailsPage() {
         )}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Markets (Now taking 2 columns) */}
-        {!isMatchEnded && (
-          <div className="md:col-span-2 space-y-4">
-          <h3 className="text-lg font-semibold flex items-center gap-2">
-            <Activity className="h-5 w-5 text-primary" /> Betting Markets
-          </h3>
-          {match.markets?.map((market) => (
-            <div key={market.id} className="rounded-xl border bg-card p-4">
-              <h4 className="font-medium mb-4">{market.name}</h4>
-              <div className={`grid grid-cols-1 gap-3 ${market.selections.length === 2 ? 'md:grid-cols-2' : market.selections.length === 3 ? 'md:grid-cols-3' : market.selections.length % 2 === 0 ? 'md:grid-cols-2 lg:grid-cols-4' : 'md:grid-cols-3'}`}>
-                {market.selections.map(sel => {
-                  const isSelected = selections.some(s => s.fixtureId === match.id && s.marketName === market.name && s.outcomeName === sel.label);
-                  return (
-                    <OddsDisplay 
-                      key={sel.id} 
-                      odds={sel.odds} 
-                      label={sel.label} 
-                      size="lg" 
-                      isSelected={isSelected}
-                      disabled={match.status === "LIVE" || match.status === "FINISHED"}
-                      onClick={() => {
-                        if (match.status === "LIVE" || match.status === "FINISHED") return;
-                        if (isSelected) {
-                          removeSelection(match.id, market.name, sel.label);
-                        } else {
-                          addSelection({
-                            fixtureId: match.id,
-                            sportId: match.sportId,
-                            competitionId: match.competitionId,
-                            matchName: `${match.homeTeam.name} vs ${match.awayTeam.name}`,
-                            marketName: market.name,
-                            outcomeName: sel.label,
-                            homeLogo: match.homeTeam.logo,
-                            awayLogo: match.awayTeam.logo,
-                            lockedOdds: sel.odds
-                          });
-                        }
-                      }}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          ))}
-          {(!match.markets || match.markets.length === 0) && (
-            <div className="rounded-xl border border-dashed p-8 text-center text-muted-foreground">
-              No markets available for this match.
-            </div>
-          )}
-        </div>
-        )}
-
-        {/* Statistics (Dynamically expanding) */}
-        <div className={isMatchEnded ? "md:col-span-3 space-y-4" : "space-y-4"}>
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+        {/* Statistics */}
+        <div className="lg:col-span-2 space-y-4">
           <h3 className="text-lg font-semibold">Match Stats</h3>
-          <div className="rounded-xl border bg-card p-4">
+          <div className="rounded-xl border bg-card p-4 md:p-6">
             {match.statistics && match.statistics.length > 0 ? (
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4">
                 {match.statistics.map((stat, idx) => (
                   <div key={idx} className="space-y-1.5">
                     <div className="flex justify-between text-xs text-muted-foreground">
@@ -219,11 +167,74 @@ export default function MatchDetailsPage() {
               <p className="text-sm text-muted-foreground text-center py-4">Stats not available yet.</p>
             )}
           </div>
-          
-          {match.prediction && (
-            <MatchPredictionCard prediction={match.prediction} />
+        </div>
+        
+        {/* Prediction */}
+        <div className="space-y-4">
+          {match.prediction ? (
+            <>
+              <h3 className="text-lg font-semibold">Prediction</h3>
+              <MatchPredictionCard prediction={match.prediction} />
+            </>
+          ) : (
+             <div className="hidden lg:block"></div>
           )}
         </div>
+      </div>
+
+      {/* Markets */}
+      {!isMatchEnded && (
+        <div className="space-y-4 mb-8">
+          <h3 className="text-lg font-semibold flex items-center gap-2">
+            <Activity className="h-5 w-5 text-primary" /> Betting Markets
+          </h3>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {match.markets?.map((market) => (
+              <div key={market.id} className="rounded-xl border bg-card p-4">
+                <h4 className="font-medium mb-4">{market.name}</h4>
+                <div className={`grid grid-cols-1 gap-3 ${market.selections.length === 2 ? 'md:grid-cols-2' : market.selections.length === 3 ? 'md:grid-cols-3' : market.selections.length % 2 === 0 ? 'md:grid-cols-2 xl:grid-cols-4' : 'md:grid-cols-3'}`}>
+                  {market.selections.map(sel => {
+                    const isSelected = selections.some(s => s.fixtureId === match.id && s.marketName === market.name && s.outcomeName === sel.label);
+                    return (
+                      <OddsDisplay 
+                        key={sel.id} 
+                        odds={sel.odds} 
+                        label={sel.label} 
+                        size="lg" 
+                        isSelected={isSelected}
+                        disabled={match.status === "LIVE" || match.status === "FINISHED"}
+                        onClick={() => {
+                          if (match.status === "LIVE" || match.status === "FINISHED") return;
+                          if (isSelected) {
+                            removeSelection(match.id, market.name, sel.label);
+                          } else {
+                            addSelection({
+                              fixtureId: match.id,
+                              sportId: match.sportId,
+                              competitionId: match.competitionId,
+                              matchName: `${match.homeTeam.name} vs ${match.awayTeam.name}`,
+                              marketName: market.name,
+                              outcomeName: sel.label,
+                              homeLogo: match.homeTeam.logo,
+                              awayLogo: match.awayTeam.logo,
+                              lockedOdds: sel.odds
+                            });
+                          }
+                        }}
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            ))}
+            {(!match.markets || match.markets.length === 0) && (
+              <div className="rounded-xl border border-dashed p-8 text-center text-muted-foreground lg:col-span-2">
+                No markets available for this match.
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
         {/* Goals Timeline */}
         {match.goals && match.goals.length > 0 && (

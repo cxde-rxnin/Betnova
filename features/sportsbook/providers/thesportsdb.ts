@@ -253,6 +253,21 @@ export class TheSportsDBProvider implements ISportsProvider {
     const event = data.events[0];
     const match = this.mapEventToMatch(event);
     
+    // Fetch stats
+    let statistics = [];
+    try {
+      const statsData = await this.fetchApi(`/lookupeventstats.php?id=${matchId}`);
+      if (statsData.eventstats) {
+        statistics = statsData.eventstats.map((s: any) => ({
+          type: s.strStat,
+          homeValue: s.intHome,
+          awayValue: s.intAway
+        }));
+      }
+    } catch (e) {
+      console.error("Error fetching stats:", e);
+    }
+    
     // Create mock market data with standard odds
     const mockMarkets: Market[] = [
       {
@@ -284,6 +299,7 @@ export class TheSportsDBProvider implements ISportsProvider {
     
     return {
       ...match,
+      statistics,
       markets: mockMarkets
     };
   }

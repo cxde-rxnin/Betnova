@@ -1,16 +1,18 @@
 "use client";
 
 import { useMatchDetails } from "@/features/sportsbook/hooks";
-import { useParams } from "next/navigation";
-import { Loader2, Calendar, MapPin, Activity } from "lucide-react";
+import { useParams, useRouter } from "next/navigation";
+import { Loader2, Calendar, MapPin, Activity, ArrowLeft } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { OddsDisplay } from "@/features/sportsbook/components/OddsDisplay";
 import { MatchPredictionCard } from "@/features/sportsbook/components/MatchPredictionCard";
 import { useBetSlipStore } from "@/features/betting/hooks";
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function MatchDetailsPage() {
   const params = useParams();
+  const router = useRouter();
   const matchId = params.id as string;
   const { data: match, isLoading, error } = useMatchDetails(matchId);
   const { selections, addSelection, removeSelection } = useBetSlipStore();
@@ -38,14 +40,10 @@ export default function MatchDetailsPage() {
 
   return (
     <div className="max-w-4xl mx-auto space-y-6 animate-fade-in">
-      {/* Breadcrumb */}
-      <div className="flex items-center text-sm text-muted-foreground">
-        <Link href="/sports" className="hover:text-primary transition-colors">Sports</Link>
-        <span className="mx-2">/</span>
-        <Link href={`/sports/${match.sportId}`} className="hover:text-primary transition-colors capitalize">{match.sportId.replace(/_/g, " ")}</Link>
-        <span className="mx-2">/</span>
-        <Link href={`/sports/competition/${match.competitionId}`} className="hover:text-primary transition-colors">{match.competitionName}</Link>
-      </div>
+      {/* Back Button */}
+      <Button variant="ghost" className="pl-0 text-muted-foreground hover:text-foreground" onClick={() => router.back()}>
+        <ArrowLeft className="mr-2 h-4 w-4" /> Back
+      </Button>
 
       {/* Match Header */}
       <div className="rounded-2xl border bg-card p-6 md:p-8 relative overflow-hidden">
@@ -110,8 +108,8 @@ export default function MatchDetailsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* Markets (Now taking 1 column) */}
-        <div className="space-y-4">
+        {/* Markets (Now taking 2 columns) */}
+        <div className="md:col-span-2 space-y-4">
           <h3 className="text-lg font-semibold flex items-center gap-2">
             <Activity className="h-5 w-5 text-primary" /> Betting Markets
           </h3>
@@ -160,8 +158,8 @@ export default function MatchDetailsPage() {
           )}
         </div>
 
-        {/* Statistics (Now taking 2 columns) */}
-        <div className="md:col-span-2 space-y-4">
+        {/* Statistics (Now taking 1 column) */}
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold">Match Stats</h3>
           <div className="rounded-xl border bg-card p-4">
             {match.statistics && match.statistics.length > 0 ? (

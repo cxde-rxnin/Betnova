@@ -4,7 +4,11 @@ import { Match } from "@/features/sportsbook/types";
 import { SportEvent } from "@/lib/mock-data";
 import Image from "next/image";
 
-export async function WorldCupSection() {
+interface WorldCupSectionProps {
+  basePath?: string;
+}
+
+export async function WorldCupSection({ basePath = "/live" }: WorldCupSectionProps = {}) {
   const [live, upcoming, past] = await Promise.all([
     getWorldCupLive().catch(() => []),
     getWorldCupUpcoming().catch(() => []),
@@ -89,7 +93,7 @@ export async function WorldCupSection() {
             Live Now
           </h3>
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {liveEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath="/sports/match" />)}
+            {liveEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath={basePath} />)}
           </div>
         </div>
       )}
@@ -99,7 +103,7 @@ export async function WorldCupSection() {
         <div className="space-y-3">
           <h3 className="text-xl font-bold text-primary">Upcoming Matches</h3>
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-            {upcomingEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath="/sports/match" />)}
+            {upcomingEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath={basePath} />)}
           </div>
         </div>
       )}
@@ -109,7 +113,7 @@ export async function WorldCupSection() {
         <div className="space-y-3">
           <h3 className="text-xl font-bold text-muted-foreground">Past Results</h3>
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 opacity-80 hover:opacity-100 transition-opacity">
-            {pastEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath="/sports/match" />)}
+            {pastEvents.map(event => <LiveMarketCard key={event.id} event={event} basePath={basePath} />)}
           </div>
         </div>
       )}

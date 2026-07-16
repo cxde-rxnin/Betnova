@@ -65,7 +65,7 @@ export default async function DashboardSportsbookPage(props: Props) {
     <div className="space-y-6 animate-fade-in">
       <PageHeader title="Sportsbook Hub" description="Browse live and upcoming matches by sport." />
 
-      <WorldCupSection />
+      <WorldCupSection basePath="/sports/match" />
 
       {/* Tabs */}
       <div className="mb-8 overflow-x-auto pb-2 scrollbar-hide">

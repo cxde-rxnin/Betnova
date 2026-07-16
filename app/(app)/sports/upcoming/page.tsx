@@ -17,9 +17,12 @@ export default async function UpcomingEventsPage() {
         <div className="space-y-3">
           {upcoming.map((event) => {
             const eventName = `${event.homeTeam?.name} vs ${event.awayTeam?.name}`;
-            const increaseMultiplier = 1 + (event.oddsIncreasePercent || 0) / 100;
-            const homeOdds = parseFloat((2.10 * increaseMultiplier).toFixed(2));
-            const awayOdds = parseFloat((3.50 * increaseMultiplier).toFixed(2));
+            
+            // Get odds from Match Result market
+            const matchResultMarket = event.markets?.find(m => m.name === "Match Result");
+            const homeOdds = matchResultMarket?.selections.find(s => s.label === event.homeTeam?.name)?.odds || 2.10;
+            const awayOdds = matchResultMarket?.selections.find(s => s.label === event.awayTeam?.name)?.odds || 3.50;
+            
             return (
               <div key={event.id} className="flex flex-col gap-3 rounded-xl border bg-card p-4 transition-all hover:shadow-sm hover:border-primary/20 sm:flex-row sm:items-center sm:justify-between sm:p-5">
                 <Link href={`/sports/match/${event.id}`} className="min-w-0 flex-1 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">

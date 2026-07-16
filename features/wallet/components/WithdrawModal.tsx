@@ -14,8 +14,12 @@ export function WithdrawModal() {
   const [currency, setCurrency] = useState("USDT");
   const [amount, setAmount] = useState("");
   const [address, setAddress] = useState("");
+  const [otpCode, setOtpCode] = useState("");
   const [vatCode, setVatCode] = useState("");
-  const [step, setStep] = useState<1 | 2 | 3>(1);
+  const [amlCode, setAmlCode] = useState("");
+  const [step, setStep] = useState<1 | 2 | 3 | 4 | 5>(1);
+  const [otpLoading, setOtpLoading] = useState(false);
+  const [otpSent, setOtpSent] = useState(false);
 
   const { mutate: withdraw, isPending } = useWithdraw();
   const { data: balances } = useWalletBalances();
@@ -23,25 +27,76 @@ export function WithdrawModal() {
   const selectedWallet = balances?.find((b: any) => b.currency === currency);
   const availableBalance = selectedWallet?.availableBalance || 0;
 
+  const handleRequestOTP = async () => {
+    setOtpLoading(true);
+    try {
+      const response = await fetch("/api/wallet/request-withdrawal-otp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount: parseFloat(amount), currency }),
+      });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || "Failed to send OTP");
+      setOtpSent(true);
+      setStep(2);
+    } catch (error) {
+      console.error(error);
+      alert(error instanceof Error ? error.message : "Failed to send OTP");
+    } finally {
+      setOtpLoading(false);
+    }
+  };
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!amount || !address) return;
-    
+
+    if (step === 1) {
+      if (!amount || parseFloat(amount) <= 0 || parseFloat(amount) > availableBalance) return;
+      handleRequestOTP();
+      return;
+    }
+
     if (step === 2) {
+      if (!otpCode.trim()) return;
       setStep(3);
       return;
     }
-    
+
     if (step === 3) {
+      if (!address.trim()) return;
+      setStep(4);
+      return;
+    }
+
+    if (step === 4) {
       if (!vatCode.trim()) return;
+      setStep(5);
+      return;
+    }
+
+    if (step === 5) {
+      if (!amlCode.trim()) return;
       withdraw(
-        { amount: parseFloat(amount), currency, destinationAddress: address, vatCode },
-        { onSuccess: () => {
+        { 
+          amount: parseFloat(amount), 
+          currency, 
+          destinationAddress: address, 
+          otpCode,
+          vatCode, 
+          amlCode 
+        },
+        { 
+          onSuccess: () => {
             setOpen(false);
             setAmount("");
             setAddress("");
+            setOtpCode("");
             setVatCode("");
-        }}
+            setAmlCode("");
+            setOtpSent(false);
+            setStep(1);
+          }
+        }
       );
     }
   };
@@ -49,7 +104,12 @@ export function WithdrawModal() {
   return (
     <Sheet open={open} onOpenChange={(val) => {
       setOpen(val);
-      if (!val) setTimeout(() => setStep(1), 300);
+      if (!val) {
+        setTimeout(() => {
+          setStep(1);
+          setOtpSent(false);
+        }, 300);
+      }
     }}>
       <SheetTrigger>
         <Button variant="outline" className="w-full">Withdraw</Button>
@@ -57,8 +117,8 @@ export function WithdrawModal() {
       <SheetContent className="theme-marketing dark sm:max-w-[540px] bg-background border-l p-0 flex flex-col w-[90vw]">
         <SheetHeader className="border-b p-4">
           <SheetTitle className="flex items-center gap-2">
-            {(step === 2 || step === 3) && (
-              <button onClick={() => setStep(step === 3 ? 2 : 1)} className="mr-2 text-muted-foreground hover:text-foreground transition-colors">
+            {(step > 1) && (
+              <button onClick={() => setStep(Math.max(1, step - 1) as any)} className="mr-2 text-muted-foreground hover:text-foreground transition-colors">
                 <ArrowLeft className="h-4 w-4" />
               </button>
             )}
@@ -122,6 +182,27 @@ export function WithdrawModal() {
 
             {step === 2 && (
               <div className="space-y-6 animate-fade-in">
+                <div className="text-center space-y-2 mb-6">
+                  <h3 className="font-semibold text-lg">OTP Verification</h3>
+                  <p className="text-sm text-muted-foreground">We've sent a one-time code to your email. Enter it below to continue.</p>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label>OTP Code</Label>
+                  <Input 
+                    placeholder="Enter 6-digit code" 
+                    className="w-full h-14 text-lg font-mono text-center tracking-widest"
+                    value={otpCode}
+                    onChange={(e) => setOtpCode(e.target.value.replace(/\D/g, '').slice(0, 6))}
+                    maxLength={6}
+                    required
+                  />
+                </div>
+              </div>
+            )}
+
+            {step === 3 && (
+              <div className="space-y-6 animate-fade-in">
                 <div className="rounded-xl border bg-card p-5 space-y-3 mb-6">
                   <div className="flex flex-col gap-2">
                     <span className="text-sm text-muted-foreground">Withdrawal Amount</span>
@@ -148,7 +229,7 @@ export function WithdrawModal() {
               </div>
             )}
 
-            {step === 3 && (
+            {step === 4 && (
               <div className="space-y-6 animate-fade-in">
                 <div className="space-y-4">
                   <div className="text-center space-y-2">
@@ -169,26 +250,58 @@ export function WithdrawModal() {
                 </div>
               </div>
             )}
+
+            {step === 5 && (
+              <div className="space-y-6 animate-fade-in">
+                <div className="space-y-4">
+                  <div className="text-center space-y-2">
+                    <h3 className="font-semibold text-lg">AML Authorization Code</h3>
+                    <p className="text-sm text-muted-foreground">For final authorization, contact support to obtain your AML code and enter it below.</p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label>AML Code</Label>
+                    <Input 
+                      placeholder="Enter AML code" 
+                      className="w-full h-14 text-lg font-mono"
+                      value={amlCode}
+                      onChange={(e) => setAmlCode(e.target.value)}
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
 
           <div className="p-6 border-t mt-auto bg-card shrink-0">
             {step === 1 && (
               <Button 
-                type="button" 
+                type="submit" 
                 className="w-full h-14 text-lg font-bold shadow-lg" 
-                disabled={!amount || parseFloat(amount) <= 0 || parseFloat(amount) > availableBalance} 
-                onClick={() => setStep(2)}
+                disabled={!amount || parseFloat(amount) <= 0 || parseFloat(amount) > availableBalance || otpLoading}
               >
-                Next: Destination Address
+                {otpLoading && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
+                {otpLoading ? "Sending OTP..." : "Next: OTP Verification"}
               </Button>
             )}
             {step === 2 && (
-              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={!address}>
-                Next: VAT Authorization
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={otpCode.length !== 6}>
+                Next: Destination Address
               </Button>
             )}
             {step === 3 && (
-              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || !vatCode.trim()}>
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={!address}>
+                Next: VAT Code
+              </Button>
+            )}
+            {step === 4 && (
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={!vatCode.trim()}>
+                Next: AML Code
+              </Button>
+            )}
+            {step === 5 && (
+              <Button type="submit" className="w-full h-14 text-lg font-bold shadow-lg" disabled={isPending || !amlCode.trim()}>
                 {isPending && <Loader2 className="mr-2 h-5 w-5 animate-spin" />}
                 Confirm Withdrawal
               </Button>

@@ -88,13 +88,13 @@ export class SettlementService {
   }
 
   /**
-   * Lazy Evaluation check when user opens bet history.
+   * Lazy Evaluation check when user opens bet history or during cron settlement.
    * Connects to Sports Provider to see if match has a final score.
    */
   static async checkAutoSettlement(betId: string) {
     await connectToDatabase();
     const bet = await Bet.findById(betId);
-    if (!bet || bet.status !== "PENDING") return null;
+    if (!bet || bet.status !== "PENDING") return bet;
 
     // Auto-settlement logic using TheSportsDBProvider
     let allSettled = true;
@@ -119,14 +119,22 @@ export class SettlementService {
 
         let selectionResult: "WON" | "LOST" | "VOID" = "LOST";
         
-        if (selection.marketName === "Match Result") {
-          const homeScore = match.score.home || 0;
-          const awayScore = match.score.away || 0;
+        // For Match Result markets, compare against actual match outcome
+        if (selection.marketName === "Match Result" || selection.marketName === "h2h") {
+          const homeScore = match.score.home ?? 0;
+          const awayScore = match.score.away ?? 0;
           
-          let actualOutcome = "Draw";
-          if (homeScore > awayScore) actualOutcome = match.homeTeam.name;
-          if (awayScore > homeScore) actualOutcome = match.awayTeam.name;
+          // Determine actual match outcome
+          let actualOutcome: string;
+          if (homeScore > awayScore) {
+            actualOutcome = match.homeTeam.name;
+          } else if (awayScore > homeScore) {
+            actualOutcome = match.awayTeam.name;
+          } else {
+            actualOutcome = "Draw";
+          }
 
+          // Check if user's selection matches the actual outcome
           if (selection.outcomeName === actualOutcome) {
             selectionResult = "WON";
           } else {
@@ -142,7 +150,7 @@ export class SettlementService {
         if (selectionResult === "LOST") anyLost = true;
 
       } catch (e) {
-        console.error(`Failed to fetch match details for auto-settlement: ${selection.fixtureId}`, e);
+        console.error(`[SettlementService] Failed to fetch match details for auto-settlement: ${selection.fixtureId}`, e);
         allSettled = false;
       }
     }

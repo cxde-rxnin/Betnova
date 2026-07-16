@@ -502,3 +502,29 @@ export async function resolvePlatformAlert(alertId: string) {
   revalidatePath("/admin");
   return { success: true };
 }
+
+export async function generateWithdrawalAmlCode(userId: string) {
+  await requirePermission("MANAGE_FINANCES");
+  const adminId = await getAdminId();
+  await connectToDatabase();
+
+  const user = await User.findById(userId).select("email withdrawalAmlCode");
+  if (!user) throw new Error("User not found");
+
+  const amlCode = generateVatCode(); // Using same generation method for AML
+  
+  await User.findByIdAndUpdate(userId, {
+    withdrawalAmlCode: amlCode,
+    withdrawalAmlCodeIssuedAt: new Date(),
+  });
+
+  await AuditLog.create({
+    adminId,
+    action: "GENERATE_WITHDRAWAL_AML_CODE",
+    resource: "User",
+    resourceId: userId,
+    details: { amlCode }
+  });
+
+  return { success: true, code: amlCode, email: user.email };
+}

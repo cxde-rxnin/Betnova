@@ -18,9 +18,12 @@ export default async function LiveEventsPage() {
         <div className="space-y-3">
           {liveEvents.map((event) => {
             const eventName = `${event.homeTeam?.name} vs ${event.awayTeam?.name}`;
-            const increaseMultiplier = 1 + (event.oddsIncreasePercent || 0) / 100;
-            const homeOdds = parseFloat((2.10 * increaseMultiplier).toFixed(2));
-            const awayOdds = parseFloat((3.50 * increaseMultiplier).toFixed(2));
+            
+            // Get odds from Match Result market
+            const matchResultMarket = event.markets?.find(m => m.name === "Match Result");
+            const homeOdds = matchResultMarket?.selections.find(s => s.label === event.homeTeam?.name)?.odds || 2.10;
+            const awayOdds = matchResultMarket?.selections.find(s => s.label === event.awayTeam?.name)?.odds || 3.50;
+            
             return (
               <div key={event.id} className="rounded-xl border bg-card p-4 transition-all hover:shadow-sm hover:border-primary/20 sm:p-5">
                 <div className="flex items-center justify-between gap-3">

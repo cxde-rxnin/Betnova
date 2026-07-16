@@ -49,12 +49,46 @@ export async function getCompetitions(sportId: string) {
 
 export async function getLiveMatches(sportId?: string) {
   const matches = await sportsProvider.getLiveMatches(sportId);
-  return await withOddsIncrease(matches);
+  const withIncrease = await withOddsIncrease(matches);
+  
+  return withIncrease.map(match => {
+    const increasePercent = match.oddsIncreasePercent || 0;
+    if (increasePercent <= 0 || !match.markets?.length) {
+      return match;
+    }
+    return {
+      ...match,
+      markets: match.markets.map((market) => ({
+        ...market,
+        selections: market.selections.map((selection) => ({
+          ...selection,
+          odds: applyIncreaseToOdds(selection.odds, increasePercent),
+        })),
+      })),
+    };
+  });
 }
 
 export async function getUpcomingMatches(sportId?: string, date?: string) {
   const matches = await sportsProvider.getUpcomingMatches(sportId, date);
-  return await withOddsIncrease(matches);
+  const withIncrease = await withOddsIncrease(matches);
+  
+  return withIncrease.map(match => {
+    const increasePercent = match.oddsIncreasePercent || 0;
+    if (increasePercent <= 0 || !match.markets?.length) {
+      return match;
+    }
+    return {
+      ...match,
+      markets: match.markets.map((market) => ({
+        ...market,
+        selections: market.selections.map((selection) => ({
+          ...selection,
+          odds: applyIncreaseToOdds(selection.odds, increasePercent),
+        })),
+      })),
+    };
+  });
 }
 
 export async function getMatchDetails(matchId: string) {

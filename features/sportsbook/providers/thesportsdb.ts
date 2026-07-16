@@ -211,9 +211,38 @@ export class TheSportsDBProvider implements ISportsProvider {
     const event = data.events[0];
     const match = this.mapEventToMatch(event);
     
+    // Create mock market data with standard odds
+    const mockMarkets: Market[] = [
+      {
+        id: "match_result",
+        name: "Match Result",
+        selections: [
+          { id: "home", label: match.homeTeam.name, odds: 2.10 },
+          { id: "draw", label: "Draw", odds: 3.20 },
+          { id: "away", label: match.awayTeam.name, odds: 3.50 }
+        ]
+      },
+      {
+        id: "over_under_25",
+        name: "Over/Under 2.5 Goals",
+        selections: [
+          { id: "over", label: "Over 2.5", odds: 1.95 },
+          { id: "under", label: "Under 2.5", odds: 1.95 }
+        ]
+      },
+      {
+        id: "btts",
+        name: "Both Teams to Score",
+        selections: [
+          { id: "yes", label: "Yes", odds: 1.95 },
+          { id: "no", label: "No", odds: 1.95 }
+        ]
+      }
+    ];
+    
     return {
       ...match,
-      markets: []
+      markets: mockMarkets
     };
   }
 

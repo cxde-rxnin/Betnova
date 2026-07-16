@@ -41,6 +41,7 @@ export interface Match {
   };
   score: MatchScore;
   oddsIncreasePercent?: number;
+  markets?: Market[];
 }
 
 export interface MarketSelection {

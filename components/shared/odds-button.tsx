@@ -1,6 +1,6 @@
 "use client";
 
-import { useBetSlipStore } from "@/lib/store/bet-slip-store";
+import { useBetSlipStore } from "@/features/betting/hooks";
 import { cn } from "@/lib/utils";
 
 interface OddsButtonProps {
@@ -16,9 +16,9 @@ interface OddsButtonProps {
 }
 
 export function OddsButton({ eventId, eventName, market, label, homeLogo, awayLogo, odds, size = "md", className }: OddsButtonProps) {
-  const id = `${eventId}:${market}:${label}`;
-  const isSelected = useBetSlipStore((s) => s.selections.some((sel) => sel.id === id));
+  const isSelected = useBetSlipStore((s) => s.selections.some((sel) => sel.fixtureId === eventId && sel.marketName === market && sel.outcomeName === label));
   const addSelection = useBetSlipStore((s) => s.addSelection);
+  const removeSelection = useBetSlipStore((s) => s.removeSelection);
 
   return (
     <button
@@ -28,7 +28,21 @@ export function OddsButton({ eventId, eventName, market, label, homeLogo, awayLo
         e.preventDefault();
         e.stopPropagation();
         if (odds > 0) {
-          addSelection({ id, eventId, eventName, market, label, homeLogo, awayLogo, odds });
+          if (isSelected) {
+            removeSelection(eventId);
+          } else {
+            addSelection({ 
+              fixtureId: eventId, 
+              sportId: "unknown", 
+              competitionId: "unknown", 
+              matchName: eventName, 
+              marketName: market, 
+              outcomeName: label, 
+              homeLogo, 
+              awayLogo, 
+              lockedOdds: odds 
+            });
+          }
         }
       }}
       aria-pressed={isSelected}

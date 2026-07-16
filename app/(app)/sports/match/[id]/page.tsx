@@ -61,7 +61,7 @@ export default function MatchDetailsPage() {
             {match.status === "LIVE" ? (
               <Badge variant="secondary" className="bg-red-500/10 text-red-600 px-2 h-6 flex items-center gap-1.5">
                 <span className="h-1.5 w-1.5 rounded-full bg-red-500 animate-pulse" />
-                LIVE {match.liveStatus?.minute}'
+                LIVE {match.liveStatus?.minute}&apos;
               </Badge>
             ) : (
               <span suppressHydrationWarning className="text-muted-foreground flex items-center gap-1">
@@ -85,7 +85,7 @@ export default function MatchDetailsPage() {
                 {match.goals.filter(g => g.isHome).map(g => (
                   <div key={g.id} className="flex items-center gap-1.5 justify-center w-full">
                     <span>{g.scorer}</span>
-                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}'</span>
+                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}&apos;</span>
                     {g.type === "Penalty" && <span className="text-[10px] uppercase">(Pen)</span>}
                     {g.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
                   </div>
@@ -122,7 +122,7 @@ export default function MatchDetailsPage() {
               <div className="flex flex-col items-center gap-0.5 mt-2 text-xs md:text-sm text-muted-foreground w-full">
                 {match.goals.filter(g => !g.isHome).map(g => (
                   <div key={g.id} className="flex items-center gap-1.5 justify-center w-full">
-                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}'</span>
+                    <span className="font-mono text-[10px] md:text-xs text-muted-foreground/70">{g.minute}&apos;</span>
                     <span>{g.scorer}</span>
                     {g.type === "Penalty" && <span className="text-[10px] uppercase">(Pen)</span>}
                     {g.type === "Own Goal" && <span className="text-[10px] text-red-500 uppercase">(OG)</span>}
@@ -257,7 +257,7 @@ export default function MatchDetailsPage() {
                   
                   {/* Minute Badge */}
                   <div className="flex-shrink-0 w-12 flex justify-center">
-                    <span className="bg-muted px-2 py-1 rounded text-xs font-bold font-mono">{goal.minute}'</span>
+                    <span className="bg-muted px-2 py-1 rounded text-xs font-bold font-mono">{goal.minute}&apos;</span>
                   </div>
                   
                   {/* Away Team Goal */}
@@ -276,7 +276,6 @@ export default function MatchDetailsPage() {
             </div>
           </div>
         )}
-      </div>
     </div>
   );
 }

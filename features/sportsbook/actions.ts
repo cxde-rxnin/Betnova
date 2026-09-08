@@ -122,18 +122,22 @@ export async function getStandings(competitionId: string, season?: string) {
   return await sportsProvider.getStandings(competitionId, season);
 }
 
-export async function getWorldCupLive() {
-  const matches = await sportsProvider.getWorldCupLive();
+export async function getLeagueInfo(leagueId: string) {
+  return await sportsProvider.getLeagueInfo(leagueId);
+}
+
+export async function getLeagueLive(leagueId: string) {
+  const matches = await sportsProvider.getLeagueLive(leagueId);
   return await withOddsIncrease(matches);
 }
 
-export async function getWorldCupUpcoming() {
-  const matches = await sportsProvider.getWorldCupUpcoming();
+export async function getLeagueUpcoming(leagueId: string) {
+  const matches = await sportsProvider.getLeagueUpcoming(leagueId);
   return await withOddsIncrease(matches);
 }
 
-export async function getWorldCupPast() {
-  const matches = await sportsProvider.getWorldCupPast();
+export async function getLeaguePast(leagueId: string) {
+  const matches = await sportsProvider.getLeaguePast(leagueId);
   return await withOddsIncrease(matches);
 }
 

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { Flame, CalendarDays, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { PageHeader } from "@/components/shared/page-header";
-import { WorldCupSection } from "@/features/sportsbook/components/WorldCupSection";
+import { LeaguesSection } from "@/features/sportsbook/components/LeaguesSection";
 
 export const metadata: Metadata = {
   title: "Sportsbook | Betnova",
@@ -65,7 +65,7 @@ export default async function DashboardSportsbookPage(props: Props) {
     <div className="space-y-6 animate-fade-in">
       <PageHeader title="Sportsbook Hub" description="Browse live and upcoming matches by sport." />
 
-      <WorldCupSection basePath="/sports/match" />
+      <LeaguesSection basePath="/sports/match" />
 
       {/* Tabs */}
       <div className="mb-8 overflow-x-auto pb-2 scrollbar-hide">

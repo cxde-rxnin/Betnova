@@ -355,42 +355,59 @@ export class TheSportsDBProvider implements ISportsProvider {
     return [];
   }
 
-  // World Cup 2026 Specific Methods (League ID: 4429)
-  async getWorldCupLive(): Promise<Match[]> {
+  // Generic League Methods (by TheSportsDB league ID)
+  async getLeagueInfo(leagueId: string): Promise<{ id: string; name: string; badge: string | null; banner: string | null } | null> {
+    try {
+      const data = await this.fetchApi(`/lookupleague.php?id=${leagueId}`, 86400);
+      const league = data.leagues?.[0];
+      if (!league) return null;
+      return {
+        id: leagueId,
+        name: league.strLeague,
+        badge: league.strBadge || league.strLogo || null,
+        banner: league.strBanner || league.strFanart1 || null,
+      };
+    } catch (error) {
+      console.error(`Error fetching league info for ${leagueId}:`, error);
+      return null;
+    }
+  }
+
+  async getLeagueLive(leagueId: string): Promise<Match[]> {
     const today = new Date().toISOString().split('T')[0];
     try {
-      const data = await this.fetchApi(`/eventsday.php?d=${today}&l=4429`, 60);
+      const data = await this.fetchApi(`/eventsday.php?d=${today}&l=${leagueId}`, 60);
       if (!data.events) return [];
-      
+
       return data.events
         .filter((e: any) => e.strStatus !== "Not Started" && e.strStatus !== "NS" && e.strStatus !== "Match Finished" && e.strStatus !== "FT" && e.strStatus !== "AOT" && e.strStatus !== "AET" && e.strStatus !== "Postponed" && e.strStatus !== "Cancelled")
         .map((e: any) => this.mapEventToMatch(e));
     } catch (error) {
-      console.error("Error fetching World Cup live matches:", error);
+      console.error(`Error fetching live matches for league ${leagueId}:`, error);
       return [];
     }
   }
 
-  async getWorldCupUpcoming(): Promise<Match[]> {
+  async getLeagueUpcoming(leagueId: string): Promise<Match[]> {
     try {
-      const data = await this.fetchApi(`/eventsnextleague.php?id=4429`, 3600);
+      const data = await this.fetchApi(`/eventsnextleague.php?id=${leagueId}`, 3600);
       if (!data.events) return [];
-      
+
       return data.events.map((e: any) => this.mapEventToMatch(e));
     } catch (error) {
-      console.error("Error fetching World Cup upcoming matches:", error);
+      console.error(`Error fetching upcoming matches for league ${leagueId}:`, error);
       return [];
     }
   }
 
-  async getWorldCupPast(): Promise<Match[]> {
+  async getLeaguePast(leagueId: string): Promise<Match[]> {
     try {
-      const data = await this.fetchApi(`/eventspastleague.php?id=4429`, 3600);
+      const data = await this.fetchApi(`/eventspastleague.php?id=${leagueId}`, 3600);
       if (!data.events) return [];
-      
+
       return data.events.map((e: any) => this.mapEventToMatch(e));
     } catch (error) {
-      console.error("Error fetching World Cup past matches:", error);
+      console.error(`Error fetching past matches for league ${leagueId}:`, error);
       return [];
     }
   }

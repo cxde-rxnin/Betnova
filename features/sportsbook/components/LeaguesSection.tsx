@@ -55,7 +55,7 @@ function mapMatchToSportEvent(match: Match): SportEvent {
 }
 
 async function LeaguePanel({ league, basePath }: { league: LeagueConfig; basePath: string }) {
-  const [info, live, upcoming, past] = await Promise.all([
+  const [info, live, upcoming] = await Promise.all([
     getLeagueInfo(league.id).catch(() => null),
     getLeagueLive(league.id).catch(() => []),
     getLeagueUpcoming(league.id).catch(() => []),

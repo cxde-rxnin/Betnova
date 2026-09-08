@@ -7,7 +7,7 @@ import { QueryProvider } from "@/providers/query-provider";
 import { SessionProvider } from "@/providers/session-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { TawkTo } from "@/components/shared/tawk-to";
+import { Chatwoot } from "@/components/shared/chatwoot";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -54,7 +54,7 @@ export default function RootLayout({
             </QueryProvider>
           </SessionProvider>
           <Toaster richColors position="top-right" />
-          <TawkTo />
+          <Chatwoot />
         </ThemeProvider>
       </body>
     </html>
